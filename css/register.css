@@ -5,151 +5,194 @@ body {
   word-break: keep-all;
 }
 
-/* web ver. nav design */
-#web-head {
-  width: 100%;
-  height: 100px;
-  background-color: white;
-  font-size: 20px;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 70px;
-  border-bottom: 1px solid lightgray;
-}
-#logo {
-  margin-left: 30px;
-  display: flex;
-}
-.web-menu {
-  padding: 0;
-  margin-right: 60px;
-  margin-left: 100px;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-.web-menu > li,
-a {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-}
-.web-menu li {
-  margin-left: 30px;
-}
-.web-menu a:hover {
-  color: #ff8f8f;
-}
-.web-menu li::after {
-  position: relative;
-  content: '';
-  display: block;
-  border-bottom: 2px solid #ff8f8f;
-  transition: width 250ms ease-out;
-  left: auto;
-  right: 0;
-  width: 0;
-  /* border-bottom이 왜 header 밖에 있을까.. */
-  /* 클릭하면 언더라인 고정되게, nth-child */
-}
-.web-menu li:hover::after {
-  width: 100%;
-  left: 0;
-  right: auto;
-}
-
-/* main content */
-main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#main-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 80px 1px;
-}
-
-form {
-  width: 70%;
-  margin: 30px 0;
-  border: 1px solid lightgray;
-}
-p.title {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0;
-  padding: 10px 40px;
-}
-label {
-  display: flex;
-  align-items: center;
-}
-div.input-category {
-  float: left;
-  width: 150px;
-  text-align: right;
-}
-input {
-  border: 2px solid #ff8f8f;
-  border-radius: 6px;
-  height: 24px;
-  margin-bottom: 4px;
-  padding: 4px;
-}
-
-[type='text'],
-[type='date'],
-[type='password'],
-[type='email'] {
-  width: 300px;
-}
-input[type='button'] {
-  border: none;
-  width: 120px;
-  height: 34px;
-  margin-left: 10px;
-}
-input.searchAdd {
-  display: flex;
-  flex-direction: column;
-}
-
-.petInfoEvent {
-  width: 95%;
-  height: 24px;
-  background-color: #ff8f8f;
-  color: white;
-  font-weight: 500;
-  margin: 0;
-  padding: 8px 30px;
-}
-#petType {
-  display: flex;
-  justify-content: center;
-  margin: 4px 1px;
-}
-#petGender {
-  display: flex;
-  margin: 4px 1px;
-}
-
 /* media query for web*/
 @media screen and (min-width: 480px) {
   #small-head > * {
     display: none;
   }
 
+  /* web ver. nav design */
+  #web-head {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 70px;
+    border-bottom: 1px solid lightgray;
+  }
+  #logo {
+    margin-left: 30px;
+    display: flex;
+  }
+  .web-menu {
+    padding: 0;
+    margin-right: 60px;
+    margin-left: 100px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .web-menu > li,
+  a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+  }
+  .web-menu li {
+    margin-left: 30px;
+  }
+  .web-menu a:hover {
+    color: #ff8f8f;
+  }
+  .web-menu li::after {
+    position: relative;
+    content: '';
+    display: block;
+    border-bottom: 2px solid #ff8f8f;
+    transition: width 250ms ease-out;
+    left: auto;
+    right: 0;
+    width: 0;
+    /* border-bottom이 왜 header 밖에 있을까.. */
+    /* 클릭하면 언더라인 고정되게, nth-child */
+  }
+  .web-menu li:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  /* main content */
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+  #main-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 80px 1px;
+  }
+
+  /* form area */
+  form {
+    width: 70%;
+    margin: 30px 0;
+    padding: 10px 30px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+  }
+  p.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px 40px;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    margin: 5px 1px;
+    height: 40px;
+    line-height: 36px;
+  }
+  div.input-category {
+    float: left;
+    width: 150px;
+    text-align: right;
+    line-height: 40px;
+  }
+  input {
+    border: 2px solid #ff8f8f;
+    border-radius: 6px;
+    height: 36px;
+    padding: 4px;
+  }
+
+  [type='text'],
+  [type='date'],
+  [type='password'],
+  [type='email'] {
+    width: 300px;
+  }
+  input[type='button'] {
+    border: none;
+    width: 120px;
+    height: 36px;
+    margin-left: 10px;
+    text-align: center;
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+  }
+  [type='checkbox'] {
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 우편번호로 주소 찾기 영역 */
+
+  /* pet input area */
+  .petTypeBtn img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #ff8f8f;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .petInfoEvent {
+    width: 100%;
+    height: 38px;
+    background-color: #ff8f8f;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+    padding: 8px 30px;
+  }
+  #petType {
+    display: flex;
+    margin: 4px 1px;
+  }
+  #petGender {
+    display: flex;
+    margin: 4px 1px;
+    align-items: center;
+  }
+  select {
+    height: 32px;
+  }
+  .dogSearch > i,
+  .catSearch > i {
+    /* 돋보기 아이콘 이동 */
+    transform: translateX(-180%);
+    position: absolute;
+  }
+
+  /* 약관동의 checkbox */
+  .must-check h5,
+  .must-check .checkbox {
+    padding: 10px 40px;
+  }
+  .must-check .checkbox label {
+    margin: 0;
+  }
+
   /* web btn style */
   #registerBtn {
-    width: 400px;
-    height: 80px;
+    width: 300px;
+    height: 70px;
     background-color: #ff8f8f;
     color: white;
     border: 0;
@@ -158,14 +201,12 @@ input.searchAdd {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
     transition: 0.1s;
-    margin-top: 100px;
+    margin: 80px auto;
   }
   #registerBtn:active {
     box-shadow: 0 1px #000;
