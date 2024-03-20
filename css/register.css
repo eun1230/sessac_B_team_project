@@ -1,8 +1,21 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   word-break: keep-all;
+  font-family: 'GmarketSansMedium';
+}
+
+.footer {
+  font-family: 'GmarketSansMedium';
 }
 
 /* media query for web*/
@@ -22,7 +35,6 @@ body {
     justify-content: space-between;
     align-items: center;
     line-height: 70px;
-    border-bottom: 1px solid lightgray;
   }
   #logo {
     margin-left: 30px;
@@ -59,7 +71,6 @@ body {
     left: auto;
     right: 0;
     width: 0;
-    /* border-bottom이 왜 header 밖에 있을까.. */
     /* 클릭하면 언더라인 고정되게, nth-child */
   }
   .web-menu li:hover::after {
@@ -76,45 +87,57 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 150px;
+    font-family: 'GmarketSansMedium';
   }
-  #main-title {
+  #mainTitle {
     font-size: 36px;
     font-weight: 700;
-    margin: 80px 1px;
+    margin: 80px 1px 40px;
   }
 
   /* form area */
+  table,
   form {
-    width: 70%;
-    margin: 30px 0;
-    padding: 10px 30px;
-    border: 1px solid lightgray;
-    border-radius: 6px;
+    width: 100%;
+    margin: 40px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  p.title {
-    font-size: 24px;
+  .mustInput,
+  .secondInput,
+  .petInput {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    width: 80%;
+    padding: 30px 0 50px;
+  }
+
+  td.title {
+    font-size: 28px;
     font-weight: 600;
     margin: 0;
-    padding: 10px 40px;
+    padding: 12px 0 24px;
+    text-align: center;
+    width: 100%;
+  }
+  td {
+    padding-bottom: 10px;
+  }
+  td[scope='row'] {
+    text-align: right;
+    line-height: 40px;
   }
   label {
-    display: flex;
-    align-items: center;
-    margin: 5px 1px;
-    height: 40px;
-    line-height: 36px;
-  }
-  div.input-category {
-    float: left;
-    width: 150px;
-    text-align: right;
     line-height: 40px;
   }
   input {
     border: 2px solid #ff8f8f;
-    border-radius: 6px;
-    height: 36px;
-    padding: 4px;
+    border-radius: 12px;
+    height: 40px;
+    padding: 6px;
   }
 
   [type='text'],
@@ -122,70 +145,87 @@ body {
   [type='password'],
   [type='email'] {
     width: 300px;
+    padding: 8px;
+  }
+  [placeholder] {
+    font-size: 14px;
+    line-height: 40px;
   }
   input[type='button'] {
     border: none;
-    width: 120px;
+    width: 60px;
     height: 36px;
     margin-left: 10px;
-    text-align: center;
     display: flex;
     float: right;
+    text-align: center;
     align-items: center;
     justify-content: center;
   }
-  [type='checkbox'] {
+  label > input[type='checkbox'] {
     display: flex;
     float: left;
     align-items: center;
     justify-content: center;
+    accent-color: #ff8f8f;
+    /* 체크박스 컬러 변경 */
   }
 
   /* 우편번호로 주소 찾기 영역 */
+  #sample6_address,
+  #sample6_detailAddress,
+  #sample6_extraAddress {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 1px;
+  }
 
   /* pet input area */
   .petTypeBtn img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     padding: 10px;
     border: 2px solid #ff8f8f;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
   }
   .petInfoEvent {
-    width: 100%;
+    width: 100vw;
     height: 38px;
     background-color: #ff8f8f;
     color: white;
     font-weight: 500;
     margin: 0;
     padding: 8px 30px;
+    text-align: center;
   }
   #petType {
     display: flex;
-    margin: 4px 1px;
+    margin: 28px 0 4px;
   }
   #petGender {
     display: flex;
-    margin: 4px 1px;
+    margin: 4px 32px;
     align-items: center;
+    line-height: 40px;
   }
   select {
-    height: 32px;
-  }
-  .dogSearch > i,
-  .catSearch > i {
-    /* 돋보기 아이콘 이동 */
-    transform: translateX(-180%);
-    position: absolute;
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 4px;
   }
 
   /* 약관동의 checkbox */
-  .must-check h5,
-  .must-check .checkbox {
+  .mustCheck h5,
+  .mustCheck .checkbox {
     padding: 10px 40px;
   }
-  .must-check .checkbox label {
+  .mustCheck .checkbox label {
     margin: 0;
   }
 
@@ -196,8 +236,7 @@ body {
     background-color: #ff8f8f;
     color: white;
     border: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px #000;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,11 +245,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     transition: 0.1s;
-    margin: 80px auto;
-  }
-  #registerBtn:active {
-    box-shadow: 0 1px #000;
-    transform: translateY(10px);
+    margin: 40px auto;
   }
 }
 
@@ -218,6 +253,158 @@ body {
 @media screen and (max-width: 480px) {
   #web-head {
     display: none;
+  }
+
+  /* mobile header design */
+
+  /* main content */
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: 'GmarketSansMedium';
+  }
+  #mainTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 80px 1px 40px;
+  }
+
+  /* form area */
+  table,
+  form {
+    width: 100%;
+    margin: 20px 0 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mustInput,
+  .secondInput,
+  .petInput {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    width: 95%;
+    padding: 30px 0 50px;
+  }
+
+  td.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding: 12px 0 18px;
+    text-align: center;
+    width: 100%;
+  }
+  td {
+    padding-bottom: 10px;
+  }
+  td[scope='row'] {
+    text-align: right;
+    line-height: 40px;
+  }
+  label {
+    line-height: 40px;
+  }
+  input {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+    padding: 6px;
+  }
+
+  [type='text'],
+  [type='date'],
+  [type='password'],
+  [type='email'] {
+    width: 250px;
+    padding: 8px;
+  }
+  [placeholder] {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  input[type='button'] {
+    border: none;
+    width: 60px;
+    height: 36px;
+    margin-left: 10px;
+    display: flex;
+    float: right;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  label > input[type='checkbox'] {
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    accent-color: #ff8f8f;
+    /* 체크박스 컬러 변경 */
+  }
+
+  /* 우편번호로 주소 찾기 영역 */
+  #sample6_address,
+  #sample6_detailAddress,
+  #sample6_extraAddress {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 1px;
+  }
+
+  /* pet input area */
+  .petTypeBtn img {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+  }
+  .petInfoEvent {
+    width: 100vw;
+    height: 38px;
+    background-color: #ff8f8f;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+    padding: 8px 30px;
+    text-align: center;
+  }
+  #petType {
+    display: flex;
+    margin: 12px 0 1px;
+  }
+  #petGender {
+    display: flex;
+    margin: 4px 32px;
+    align-items: center;
+    line-height: 40px;
+  }
+  select {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 6px;
+  }
+
+  /* 약관동의 checkbox */
+  .mustCheck h5,
+  .mustCheck .checkbox {
+    padding: 10px 40px;
+  }
+  .mustCheck .checkbox label {
+    margin: 0;
   }
 
   /* mobile btn style */
@@ -228,21 +415,14 @@ body {
     color: white;
     border: 0;
     border-radius: 12px;
-    box-shadow: 0 4px #000;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
     transition: 0.1s;
-    margin-top: 100px;
-  }
-  #registerBtn:active {
-    box-shadow: 0 1px #000;
-    transform: translateY(10px);
+    margin: 50px auto;
   }
 }
