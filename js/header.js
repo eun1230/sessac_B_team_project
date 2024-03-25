@@ -15,3 +15,63 @@ menuItems.forEach((item) => {
     item.parentElement.querySelector('.hover-img').innerHTML = '';
   });
 });
+
+const header = `    <div class="header-container">
+<!-- nav메뉴 -->
+<!-- 모바일 햄버거 -->
+<div class="m-nav hamb">
+  <img src="./img/hamb.png" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+    aria-controls="offcanvasExample">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul id="m-ul">
+        <li class="m-li">
+          <a href="./html/about.html">ABOUT</a>
+        </li>
+        <li class="m-li">
+          <a href="./html/communityMain.html">COMMUNITY</a>
+        </li>
+        <li class="m-li">
+          <a href="./html/map.html">MAP</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="nav-left">
+  <ul id="leftToRight">
+    <li class="nav-li">
+      <div class="hover-img">
+      </div>
+      <a href="./html/about.html">ABOUT</a>
+    </li>
+    <li class="nav-li">
+      <div class="hover-img"></div>
+      <a href="./html/communityMain">COMMUNITY</a>
+    </li>
+    <li class="nav-li">
+      <div class="hover-img"></div>
+      <a href="./html/map.html">MAP</a>
+    </li>
+  </ul>
+</div>
+<!-- 가운데 로고 -->
+<div class="nav-center">
+  <a href='./index.html'><img class="logo" src="./img/logo.png" /></a>
+</div>
+<!-- 로그인/마이페이지 -->
+<div class="nav-right">
+  <div style="width:20px; height:20px;">
+  </div>
+  <a href="./html/login.html" class="loginOnOff">LOGIN </a>
+</div>
+<div class="m-nav login">
+  <span>LOGIN</span>
+  <!-- <img src="./img/profile.png" /> -->
+</div>
+</div>`;
+document.querySelector('header').innerHTML = header;
