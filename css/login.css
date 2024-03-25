@@ -10,6 +10,8 @@ body {
   padding: 0;
   width: 100%;
   word-break: keep-all;
+  background-image: url('../img/main-frame.png');
+  background-size: auto;
 }
 .footer {
   font-family: 'GmarketSansMedium';
@@ -17,95 +19,36 @@ body {
 
 /* media query for web*/
 @media screen and (min-width: 480px) {
-  #small-head > * {
-    display: none;
-  }
-
-  /* web nav design */
-  #web-head {
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 70px;
-  }
-  #logo {
-    margin-left: 30px;
-    display: flex;
-  }
-  .web-menu {
-    padding: 0;
-    margin-right: 60px;
-    margin-left: 100px;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-  .web-menu > li,
-  a {
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    border-bottom: 2px solid transparent;
-  }
-  .web-menu li {
-    margin-left: 30px;
-  }
-  .web-menu a:hover {
-    color: #ff8f8f;
-  }
-  .web-menu li::after {
-    position: relative;
-    content: '';
-    display: block;
-    border-bottom: 2px solid #ff8f8f;
-    transition: width 250ms ease-out;
-    left: auto;
-    right: 0;
-    width: 0;
-    /* 클릭하면 언더라인 고정되게, nth-child */
-  }
-  .web-menu li:hover::after {
-    width: 100%;
-    left: 0;
-    right: auto;
-  }
-
-  /* main content */
   main {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     font-family: 'GmarketSansMedium';
   }
   #main-title {
     font-size: 36px;
     font-weight: 700;
-    margin: 60px 1px 30px;
+    margin: 30px 0;
   }
 
   /* input area */
   #inputArea,
   #moveToRegister {
-    width: 70%;
     padding: 30px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  #moveToRegister {
-    border: 1px solid lightgray;
+    width: 60%;
+    border: 1px solid #e5e4e4;
     border-radius: 6px;
+  }
+  #inputArea {
+    margin-top: 90px;
   }
 
   label {
@@ -123,7 +66,7 @@ body {
   }
   [type='password'],
   [type='email'] {
-    width: 300px;
+    width: 275px;
   }
   [placeholder] {
     font-size: 14px;
@@ -131,62 +74,58 @@ body {
 
   /* btn */
   #loginBtn {
-    width: 300px;
+    width: 275px;
     height: 50px;
+    line-height: 50px;
     background-color: #ff8f8f;
     color: white;
     border: none;
     border-radius: 8px;
     text-align: center;
-    line-height: 50px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     cursor: pointer;
     margin: 20px 1px;
   }
+  #loginBtn:hover {
+    color: black;
+  }
+  #loginBtn:active {
+    color: black;
+    font-weight: 700;
+  }
 
   /* to register area */
   #subTitle {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     margin: 30px 1px;
   }
   #moveToRegister {
     margin: 40px 1px;
   }
-  #registerBtn {
+  #registerArea {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
   }
-  #emailRegister {
+  #emailRegiBtn {
     width: 40px;
     height: 40px;
+    line-height: 42px;
     background-color: #ff8f8f;
-    border-radius: 4px;
-    margin: 0 5px;
-  }
-  #emailRegister > a {
     color: white;
-    text-decoration: none;
+    border-radius: 4px;
     font-size: 20px;
-    text-align: center;
+    margin: 0 5px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    line-height: 40px;
+    cursor: pointer;
   }
 }
 
 /* mediaquery for mobile */
 @media screen and (max-width: 480px) {
-  #web-head {
-    display: none;
-  }
-
-  /* mobile nav design */
-
-  /* main content */
   main {
     width: 100%;
     display: flex;
@@ -197,9 +136,9 @@ body {
     font-family: 'GmarketSansMedium';
   }
   #main-title {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    margin: 70px 1px 40px;
+    margin: 40px 0;
   }
 
   /* input area */
@@ -207,13 +146,16 @@ body {
   #moveToRegister {
     width: 80%;
     padding: 30px;
-    border: 1px solid lightgray;
+    border: 1px solid #e5e4e4;
     border-radius: 6px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  #inputArea {
+    margin-top: 70px;
   }
   label {
     display: flex;
@@ -240,16 +182,23 @@ body {
   #loginBtn {
     width: 300px;
     height: 50px;
+    line-height: 50px;
     background-color: #ff8f8f;
     color: white;
     border: none;
     border-radius: 8px;
     text-align: center;
-    line-height: 50px;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     margin: 20px 1px;
+  }
+  #loginBtn:hover {
+    color: black;
+  }
+  #loginBtn:active {
+    color: black;
+    font-weight: 700;
   }
 
   /* to register area */
@@ -261,26 +210,29 @@ body {
   #moveToRegister {
     margin: 40px 1px;
   }
-  #registerBtn {
+  #registerArea {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
   }
-  #emailRegister {
+  #emailRegiBtn {
     width: 40px;
     height: 40px;
+    line-height: 42px;
     background-color: #ff8f8f;
-    border-radius: 4px;
-    margin: 0 5px;
-  }
-  #emailRegister > a {
     color: white;
-    text-decoration: none;
+    border-radius: 4px;
     font-size: 20px;
-    text-align: center;
+    margin: 0 5px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    line-height: 40px;
+    cursor: pointer;
+  }
+  #emailRegister:hover {
+    color: black;
+  }
+  #emailRegister:active {
+    color: black;
+    font-weight: 700;
   }
 }
