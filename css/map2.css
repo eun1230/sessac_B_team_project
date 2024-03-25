@@ -1,0 +1,131 @@
+.info-container2 {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  width: 800px;
+  height: 600px;
+  overflow: scroll;
+  background-color: #fff5f5ee;
+  border-radius: 10px;
+}
+.info-detail-2 {
+  padding-left: 200px;
+}
+
+.dt-box {
+  padding-top: 30px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  /* overflow: scroll; */
+}
+
+.dt-left {
+  width: 50%;
+  justify-content: center;
+}
+.dt-right {
+  width: 50%;
+  justify-content: center;
+}
+
+.back2 {
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+#pl-img2 {
+  width: 275px;
+  height: 180px;
+  border-radius: 10px;
+  /* margin-left: 275px; */
+}
+.info-start2 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+#place-category2 {
+  height: 20px;
+  margin-top: 15px;
+  margin-left: 60px;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#place-name2 {
+  font-size: 35px;
+}
+.bookmark2 {
+  padding-left: 30px;
+  padding-top: 10px;
+  height: 35px;
+}
+#road-name2 {
+  margin: auto;
+  /* margin-left: 275px; */
+  font-size: 14px;
+}
+#road-name2 > span {
+  color: #fb8074;
+}
+#jibun-name2 {
+  margin: auto;
+  font-size: 14px;
+}
+#jibun-name2 > span {
+  color: #fb8074;
+  margin-right: 15px;
+}
+#time2 {
+  margin-top: 20px;
+  font-size: 13px;
+}
+#time2 > span {
+  color: #fb8074;
+  margin-right: 6px;
+}
+#call2 {
+  margin-top: 20px;
+  font-size: 13px;
+}
+#call2 > span {
+  color: #fb8074;
+  margin-right: 15px;
+}
+#pl-content2 {
+  width: 275px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.review2 {
+  width: 275px;
+  margin-top: 20px;
+}
+.review-2 {
+  color: #fb8074;
+}
+.re {
+  margin-bottom: 10px;
+}
+.reservationBtn2 {
+  margin-bottom: 30px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: rgba(253, 253, 229, 0.883);
+  width: 275px;
+  margin-left: 350px;
+  height: 30px;
+  box-shadow: 1px 1px 1px gray;
+}
+
+.reservationBtn2:active {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px gray inset;
+}
+.reservationBtn2:hover {
+  background-color: rgb(252, 252, 214);
+}
