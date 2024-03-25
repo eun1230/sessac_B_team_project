@@ -282,6 +282,11 @@ h3 {
   .container-hospital {
     width: 390px;
   }
+
+  #hospital {
+    height: 200px;
+    width: 200px;
+  }
 }
 
 
