@@ -2,7 +2,7 @@
   main {
     width: 480px;
     overflow: hidden;
-    height: 10000px;
+    height: 1500px;
   }
 
   #map {
@@ -15,6 +15,19 @@
 
   #map_header {
     display: none;
+  }
+
+  .info-detail {
+    overflow: scroll;
+    height: 520px;
+    position: absolute;
+    z-index: 999;
+    top: 400px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.905);
+    width: 480px;
+    height: 670px;
+    border-radius: 15px;
   }
 
   .m_map_header {
@@ -90,43 +103,47 @@
     border-radius: 10px;
     width: 460px;
   }
+
   .info-detail-2 {
-    overflow: scroll;
-    height: 670px;
-    width: 480px;
-    position: absolute;
-    z-index: 998;
-    top: 400px;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    width: 480px;
-    border-radius: 15px;
+    display: none;
   }
+  .btn.gotoDetailBtn {
+    display: none;
+  }
+
   #pl-img {
     margin-left: 25%;
     border-radius: 10px;
     width: 50%;
     height: 180px;
     margin-bottom: 10px;
-    cursor: pointer;
   }
+  #place-name {
+    font-weight: bolder;
+    font-size: medium;
+    margin-bottom: 10px;
+  }
+
   .info-detail .bookmark {
     left: 400px;
   }
+
   .info-detail #pl-review {
     width: 430px;
   }
+
   .info-container2.info-detail-2 {
     position: absolute;
     top: 420px;
     left: 0;
-    width: 800px;
+    width: 400px;
     height: 600px;
     overflow: scroll;
     background-color: #fff5f5ee;
     border-radius: 10px;
     z-index: 999;
   }
+
   .footer {
     display: none;
   }

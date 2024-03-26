@@ -52,6 +52,7 @@
   border-radius: 10px;
   margin-left: 2px;
 }
+
 #map_header ul li {
   list-style: none;
   margin: auto;
@@ -68,22 +69,8 @@
   height: 40px;
   border-radius: 15px;
   cursor: pointer;
-  /* background-color: hsl(0, 0%, 100%); */
 }
 
-/* .map-header-btn.btn-1 {
-  border: 0.3px solid green;
-  
-  color: rgb(103, 103, 103);
-  background-color: #ecfeed;
-}
-
-#map_header .map-header-btn.btn-1:hover {
-  #menu_wrap {
-    border: 1px solid green;
-  }
-  border: 1.5px solid #228027;
-  /* background-color: rgb(219, 249, 211); */
 #map_header .map-header-btn:hover {
   border: 1px solid #fbb3b3;
   background-color: rgb(249, 219, 211);
@@ -252,18 +239,7 @@ li.item:hover {
 .info-container {
   overflow: scroll;
 }
-.info-detail {
-  overflow: scroll;
-  height: 520px;
-  position: absolute;
-  z-index: 999;
-  top: 19px;
-  left: 400px;
-  background-color: rgba(255, 255, 255, 0.905);
-  width: 300px;
-  height: 522px;
-  border-radius: 15px;
-}
+
 .info-start {
   display: flex;
   flex-direction: row;
@@ -303,12 +279,6 @@ li.item:hover {
   margin-right: 9px;
 }
 .side-header {
-  cursor: pointer;
-}
-#place-name {
-  font-weight: bolder;
-  font-size: medium;
-  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -368,10 +338,36 @@ li.item:hover {
 .reservationBtn:hover {
   background-color: rgb(252, 252, 214);
 }
+
 @media screen and (min-width: 480px) {
   .m_map_header {
     display: none;
   }
+  .info-detail {
+    overflow: scroll;
+    height: 520px;
+    position: absolute;
+    z-index: 999;
+    top: 19px;
+    left: 400px;
+    background-color: rgba(255, 255, 255, 0.905);
+    width: 300px;
+    height: 522px;
+    border-radius: 15px;
+  }
+  #place-name {
+    font-weight: bolder;
+    font-size: medium;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .reveiw-more {
+    display: none;
+  }
+  #map_header a:hover {
+    color: #ff8f8f;
+  }
+
   #pl-img {
     margin-left: 5%;
     border-radius: 10px;
@@ -380,6 +376,7 @@ li.item:hover {
     margin-bottom: 10px;
     cursor: pointer;
   }
+
   .info-container2 {
     position: absolute;
     top: 0;
