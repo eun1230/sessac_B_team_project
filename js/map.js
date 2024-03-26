@@ -31,7 +31,7 @@ function success({ coords }) {
   map = new kakao.maps.Map(mapContainer, mapOption);
   // 현재위치 마커를 생성
   var currentMarker = new kakao.maps.MarkerImage(
-    './../img/c-marker.png',
+    './../img/map/c-marker.png',
     new kakao.maps.Size(33, 35),
     {
       offset: new kakao.maps.Point(16, 34),
@@ -130,9 +130,13 @@ function searchPlaces() {
     alert('키워드를 입력해주세요!');
     return false;
   }
-
+  let options = {
+    location: markerPosition,
+    radius: 10000,
+    sort: kakao.maps.services.SortBy.DISTANCE,
+  };
   // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-  ps.keywordSearch(keyword, placesSearchCB);
+  ps.keywordSearch(keyword, placesSearchCB,options);
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -315,7 +319,6 @@ function handleListItemClick(places, index) {
     </div>
     <div class='dt-box'>
       <div class='dt-left'>
-      
         <div class='dt-img-box'>
           <img onclick=gotoDetail() id='pl-img2' src=${Data[index].image} />
         </div>
@@ -333,18 +336,14 @@ function handleListItemClick(places, index) {
             <br />
             <span>점심시간</span>12:00~13:00
           </p>
-
           <p id='call2'>
             <span>전화번호</span>${places.phone}
           </p>
-
           <p id='pl-content2'>
             <br />${Data[index].content}
           </p>
         </div>
-
         <div class='dt-right'>
-        
           <div class='review2'>
             <div id='review-2> <label style=' font-size:10px;'>총평점</label>
               <img id='star2' src=${Data[index].star} alt='총평점' />
@@ -371,6 +370,12 @@ function handleListItemClick(places, index) {
   </div>
 `;
   document.querySelector('.info-detail-2').innerHTML = detailHTML2;
+
+  document.querySelector('.reservationBtn').addEventListener('click',()=>{
+    window.href='../html/reservation.html';
+  })
+  console.log("ㅇㅇㅇㅇ" ,window.location.search); //쿼리스트링 중 search만
+
 
   // 즐겨찾기 아이콘 클릭 이벤트 처리
   const bookmarkImg = document.querySelector('.bookmark');
@@ -447,23 +452,6 @@ function getListItem(index, places) {
   el.className = 'item';
 
   el.addEventListener('click', function () {
-    // maker클릭시 해당 위치로 setcenter
-    // function setCenter() {
-    //   // 이동할 위도 경도 위치를 생성합니다
-    //   var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
-
-    //   // 지도 중심을 이동 시킵니다
-    //   map.setCenter(moveLatLon);
-    // }
-
-    // function panTo() {
-    //   // 이동할 위도 경도 위치를 생성합니다
-    //   var moveLatLon = new kakao.maps.LatLng(33.450580, 126.574942);
-
-    //   // 지도 중심을 부드럽게 이동시킵니다
-    //   // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-    //   map.panTo(moveLatLon);
-    // }
     handleListItemClick(places, index); // 수정된 부분
   });
 
@@ -472,7 +460,7 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-  var imageSrc = './../img/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+  var imageSrc = './../img/map/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
     imageSize = new kakao.maps.Size(22, 33), // 마커 이미지의 크기
     imgOptions = {
       spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기

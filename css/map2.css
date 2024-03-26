@@ -1,16 +1,3 @@
-.info-container2 {
-  position: absolute;
-  top: 0;
-  left: 250px;
-  width: 800px;
-  height: 600px;
-  overflow: scroll;
-  background-color: #fff5f5ee;
-  border-radius: 10px;
-}
-.info-detail-2 {
-  padding-left: 200px;
-}
 
 .dt-box {
   padding-top: 30px;
