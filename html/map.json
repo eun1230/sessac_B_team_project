@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "content": "최신 시설과 전문가로 구성된 팀으로 구성된 동물병원입니다. 반려동물의 건강과 행복을 최우선으로 생각하며 친절한 서비스를 제공합니다.",
+    "review1": "최근에 동물병원을 찾았는데, 여기 직원들은 매우 친절하고 전문적이었습니다. 우리 강아지를 치료해줘서 정말 감사합니다.",
+    "review2": "이 동물병원은 정말 전문적이고 친절한 직원들이 있어요. 우리 반려동물을 위해 최선을 다해줘서 너무 감사합니다.",
+    "review3": "처음 방문했는데 시설도 깨끗하고 진료도 친절했어요. 다음에도 또 이용할 의향 있습니다.",
+    "review4": "진료 과정에서 세심한 배려를 느낄 수 있었습니다. 정말 고맙습니다.",
+    "review5": "진료 과정이 꼼꼼하고 설명도 친절했어요. 애완동물에 대한 사랑을 느낄 수 있었습니다.",
+    "star": "./../img/map/star4.png",
+    "image": "./../img/map/detail-img1.png"
+  },
+  {
+    "id": 2,
+    "content": "ddd",
+    "star": "./../img/map/star3.png",
+    "image": "./../img/map/detail-img2.png"
+  },
+  {
+    "id": 3,
+    "content": "ddd",
+    "star": "./../img/map/star4.png",
+    "image": "./../img/detail-img1.png"
+  },
+  {
+    "id": 4,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 5,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 6,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 7,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 8,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 9,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 10,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 11,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 12,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 13,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 14,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  },
+  {
+    "id": 15,
+    "content": "ddd",
+    "review": "ddd",
+    "image": " "
+  }
+]
