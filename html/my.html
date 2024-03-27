@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- .. : 현재 폴더에서 빠져나가기 -->
+    <link rel="stylesheet" href="./mypage.css" />
+    <!-- <link rel="icon" type="image/png" href="../img/logo_transparent.png" /> -->
+    <script defer src="./mypage.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="mywhole">
+        <!-- 마이페이지 왼쪽 파트 -->
+        <aside>
+          <!-- 프로필 -->
+          <div class="asidenav">
+            <div class="profileinfo">
+              <div class="profilephoto"></div>
+              <div class="profilename">제리</div>
+            </div>
+            <!-- 루미 -->
+            <div class="lumi">
+              <div class="lumi_total">
+                <div>내가 모은 루미</div>
+                <div>🌟30</div>
+              </div>
+              <!-- <div class="lumi_exchange">
+              <div>루미</div>
+              <div>교환하기</div>
+            </div> -->
+              <div class="lumi_collect">
+                <div class="lumiQ">루미를 더 받고 싶어요🌟</div>
+                <div
+                  class="lumiA"
+                  onclick="location.href='https://www.naver.com'"
+                >
+                  모으러 가기
+                </div>
+              </div>
+            </div>
+            <!-- 마이페이지네브바 -->
+            <div class="mypage_nav">
+              <div class="mypagenav_acc active">
+                <div class="panel_head">
+                  <div class="vh" style="margin-left: 10px"></div>
+                  <div onclick="dishos()">예약 내역</div>
+                  <div class="navdown">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px; margin-right: 10px"
+                    />
+                  </div>
+                  <!-- <div class="navup">
+                    <img src="./img/up.png" style="width: 20px; height: 20px" />
+                  </div> -->
+                </div>
+                <div class="panel_body thisone" onclick="dishos()">병원</div>
+                <div class="panel_body thisone" onclick="disrepl()">장소</div>
+                <div class="panel_body thisone" onclick="dissal()">미용실</div>
+              </div>
+              <div class="mypagenav_acc">
+                <div class="panel_head">
+                  <div class="vh" style="margin-left: 10px"></div>
+                  <div onclick="dispos()">커뮤니티</div>
+                  <div class="navdown">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px; margin-right: 10px"
+                    />
+                  </div>
+                </div>
+                <div class="panel_body thisone" onclick="dispos()">
+                  내 게시글
+                </div>
+                <div class="panel_body thisone" onclick="discomme()">
+                  내 댓글
+                </div>
+              </div>
+              <div class="mypagenav_acc">
+                <div class="panel_head">
+                  <div class="vh" style="margin-left: 10px"></div>
+                  <div>북마크</div>
+                  <div class="navdown">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px; margin-right: 10px"
+                    />
+                  </div>
+                </div>
+                <div class="panel_body thisone">컨텐츠</div>
+                <div class="panel_body thisone">플레이스</div>
+              </div>
+              <div class="mypagenav_acc">
+                <div class="panel_head">
+                  <div class="vh"></div>
+                  <div onclick="disinq()">1:1 문의</div>
+                  <div class="navdown vh">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="mypagenav_acc">
+                <div class="panel_head">
+                  <div class="vh" style="margin-left: 10px"></div>
+                  <div onclick="disani()">내 정보 관리</div>
+                  <div class="navdown">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px; margin-right: 10px"
+                    />
+                  </div>
+                </div>
+                <div class="panel_body thisone" onclick="disani()">
+                  반려동물 정보 변경
+                </div>
+                <div class="panel_body thisone" onclick="dispw()">
+                  비밀번호 변경
+                </div>
+              </div>
+              <div class="mypagenav_acc">
+                <div class="panel_head">
+                  <div class="vh"></div>
+                  <div onclick="disala()">알림설정</div>
+                  <div class="navdown vh">
+                    <img
+                      src="./img/down.png"
+                      style="width: 20px; height: 20px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <section class="rightpart">
+          <!-- 항목별 페이지 -->
+          <article>
+            <!-- 예약 -->
+            <div class="reservation">
+              <div class="myhospital" onclick="dishos()">
+                <h2>예약내역</h2>
+                <h3>병원</h3>
+                <div class="reservbutton">
+                  <div class="now">현재 예약</div>
+                  <div class="past">지난 예약</div>
+                  <div class="cancel">취소된 예약</div>
+                </div>
+                <div class="hospitalreserv">
+                  <div class="reservitem">
+                    <div class="reservinfo">
+                      <div class="reservname">강동동물병원</div>
+                      <div class="reservdate">2024.03.10 12:00</div>
+                    </div>
+                    <div
+                      class="changebutton"
+                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                    >
+                      변경
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="myplace" onclick="disrepl()">
+                <h2>예약내역</h2>
+                <h3>장소</h3>
+                <div class="reservbutton">
+                  <div class="now">현재 예약</div>
+                  <div class="past">지난 예약</div>
+                  <div class="cancel">취소된 예약</div>
+                </div>
+                <div class="placereserv">
+                  <div class="reservitem">
+                    <div class="reservinfo">
+                      <div class="reservname">냥카페</div>
+                      <div class="reservdate">2024.03.10 12:00</div>
+                    </div>
+                    <div
+                      class="changebutton"
+                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                    >
+                      변경
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mysalon" onclick="dissal()">
+                <h2>예약내역</h2>
+                <h3>미용실</h3>
+                <div class="reservbutton">
+                  <div class="now">현재 예약</div>
+                  <div class="past">지난 예약</div>
+                  <div class="cancel">취소된 예약</div>
+                </div>
+                <div class="salonreserv">
+                  <div class="reservitem">
+                    <div class="reservinfo">
+                      <div class="reservname">미묘샵</div>
+                      <div class="reservdate">2024.03.10 12:00</div>
+                    </div>
+                    <div
+                      class="changebutton"
+                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                    >
+                      변경
+                    </div>
+                  </div>
+                  <div class="reservitem">
+                    <div class="reservinfo">
+                      <div class="reservname">미묘샵</div>
+                      <div class="reservdate">2024.03.10 12:00</div>
+                    </div>
+                    <div
+                      class="changebutton"
+                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                    >
+                      변경
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 나의 글 -->
+            <div class="mywriting">
+              <div class="mypost" onclick="dispos()">
+                <h2>커뮤니티</h2>
+                <h3>내 게시글</h3>
+                <div class="postitemtitle">
+                  <div class="posttitle">제목</div>
+                  <div class="postitem">
+                    <div class="postdate">작성일</div>
+                    <div class="postcomment">댓글</div>
+                    <div class="heartbox">
+                      <img
+                        class="heart"
+                        src="./img/h_on.png"
+                        alt="좋아요 수"
+                        style="width: 30px; height: 30px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="postwriting">
+                  <div class="mypostitem">
+                    <div class="myposttitle">고양이 사료 추천해주세요😺</div>
+                    <div class="mypostinfo">
+                      <div class="mypostdate">2024.03.10 12:00</div>
+                      <div class="mypostcomment">2</div>
+                      <div class="hearttotal">2</div>
+                    </div>
+                  </div>
+                  <div class="mypostitem">
+                    <div class="myposttitle">고양이 사료 추천해주세요😺</div>
+                    <div class="mypostinfo">
+                      <div class="mypostdate">2024.03.10 12:00</div>
+                      <div class="mypostcomment">2</div>
+                      <div class="hearttotal">2</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mycomment" onclick="discomme()">
+                <h2>커뮤니티</h2>
+                <h3>내 댓글</h3>
+                <div class="commentitemtitle">
+                  <div class="commenttitle">댓글</div>
+                  <div class="commentdate">작성일</div>
+                </div>
+                <div class="commentwriting">
+                  <div class="mycommentitem">
+                    <div class="mycommenttitle">고양이 사료 추천해주세요😺</div>
+                    <div class="mycommentdate">2024.03.10 12:00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inquirysection" onclick="disinq()">
+              <div class="inquirytopm">
+                <div class="back"></div>
+                <div class="inquiry">1:1 문의</div>
+                <div class="mobiledone">확인</div>
+              </div>
+              <div class="inquirytop">
+                <div class="di"><h2>1:1 문의</h2></div>
+                <h3>사진 및 동영상 첨부하기</h3>
+              </div>
+              <div class="boxarrange">
+                <div class="fbwhole">
+                  <div class="filebox">
+                    <form method="post" enctype="multipart/form-data">
+                      <label for="file"
+                        ><img src="./img/plus.png" alt=""
+                      /></label>
+                      <br />
+                      <input
+                        type="file"
+                        id="file"
+                        accept="image/*"
+                        onchange="loadFile(this)"
+                      />
+                    </form>
+                  </div>
+                  <div class="showpetimg" onclick="showimg()"></div>
+                </div>
+                <div class="tnbox">
+                  <input
+                    type="text"
+                    class="inquirytitlename"
+                    placeholder="제목을 입력해주세요."
+                  />
+                </div>
+                <div class="inquirybox">
+                  <!-- cols : 가로 너비 속성 rows : 세로 너비 속성 -->
+                  <label for="textarea"></label>
+                  <br />
+                  <textarea
+                    id="textarea"
+                    placeholder="문의 내용을 입력해주세요."
+                  ></textarea>
+                </div>
+                <div class="donebox">
+                  <div class="done">확인</div>
+                </div>
+              </div>
+            </div>
+            <div class="myinfo">
+              <div class="anichange" onclick="disani()">
+                <h2>내 정보 관리</h2>
+                <h3>반려동물 정보 변경</h3>
+                <div class="anibox">
+                  <form>
+                    <table class="petInput">
+                      <colgroup>
+                        <col style="width: 30%" />
+                        <col style="width: 70%" />
+                      </colgroup>
+                      <tr id="petType">
+                        <td scope="row">반려가족&nbsp;&nbsp;</td>
+                        <td class="radio">
+                          <input type="radio" name="petType" id="dog" />
+                          <label for="dog" style="line-height: 20px"
+                            >강아지&nbsp;&nbsp;&nbsp;</label
+                          >
+                          <input type="radio" name="petType" id="cat" />
+                          <label for="cat" style="line-height: 20px"
+                            >고양이</label
+                          >
+                        </td>
+                      </tr>
+                      <tr class="petPhoto">
+                        <td scope="row">사진&nbsp;&nbsp;</td>
+                        <td>
+                          <div class="petPhoto">
+                            <form method="post" enctype="multipart/form-data">
+                              <label for="chooseFile" id="petPhoto">찾기</label>
+                              <input
+                                type="file"
+                                id="chooseFile"
+                                accept="image/*"
+                                onchange="loadFile(this)"
+                              />
+                            </form>
+                          </div>
+                          <div class="showPetImg" onclick="showImage()"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">이름&nbsp;&nbsp;</td>
+                        <td><input type="text" class="aniinput" /></td>
+                      </tr>
+                      <tr>
+                        <td scope="row">생년월일&nbsp;&nbsp;</td>
+                        <td>
+                          <input type="date" name="petBirth" class="anibirth" />
+                        </td>
+                      </tr>
+                      <tr id="petGender">
+                        <td scope="row">성별&nbsp;&nbsp;</td>
+                        <td>
+                          <div>
+                            <select name="petGender">
+                              <option value="default">선택하기</option>
+                              <option value="boy">남아</option>
+                              <option value="girl">여아</option></select
+                            >&nbsp;&nbsp;
+                            <label
+                              ><input type="checkbox" />&nbsp;중성화
+                              했어요</label
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                  <div id="registerBtn">수정 하기</div>
+                </div>
+              </div>
+              <div class="pwchange" onclick="dispw()">
+                <h2>내 정보 관리</h2>
+                <h3>비밀번호 변경</h3>
+                <div class="pwinfo">
+                  회원님의 소중한 개인정보 보호를 위해<br />새로운 비밀번호를
+                  등록해주세요.
+                </div>
+                <div class="changenewpw">
+                  <div class="newpw">
+                    <div class="newpwtext">새 비밀번호</div>
+                    <div class="newpwinput">
+                      <input
+                        type="text"
+                        placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+                      />
+                    </div>
+                  </div>
+                  <div class="newpwcheck">
+                    <div class="newpwchecktext">새 비밀번호 확인</div>
+                    <div class="newpwcheckinput">
+                      <input
+                        type="text"
+                        placeholder="비밃번호를 다시 한번 입력해주세요."
+                      />
+                    </div>
+                  </div>
+                  <div class="pwbutton">변경하기</div>
+                </div>
+              </div>
+            </div>
+            <div class="alarmsetting" onclick="disala()">
+              <div>
+                <div></div>
+                <div><h2>알림 설정</h2></div>
+                <div></div>
+              </div>
+              <!-- <div>이벤트 및 공지사항 알림</div> -->
+              <label class="toggles">
+                <span>이벤트 및 공지사항 알림</span>&nbsp;&nbsp;
+                <input type="checkbox" role="switch" />
+              </label>
+              <br />
+              <label class="toggles">
+                <span>댓글 푸시 알림</span>&nbsp;&nbsp;
+                <input type="checkbox" role="switch" />
+              </label>
+              <br />
+              <label class="toggles">
+                <span>문의 푸시 알림</span>&nbsp;&nbsp;
+                <input type="checkbox" role="switch" />
+              </label>
+              <br />
+              <label class="toggles">
+                <span>서비스 기본 푸시 알림</span>&nbsp;&nbsp;
+                <input type="checkbox" role="switch" />
+              </label>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
