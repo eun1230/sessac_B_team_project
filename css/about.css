@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* word-break: keep-all; */
+  background-image: url('../img/main-frame.png');
+  background-size: cover;
+}
+.footer {
+  font-family: 'GmarketSansMedium';
+}
+
+/* media query for web*/
+@media screen and (min-width: 480px) {
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    font-family: 'GmarketSansMedium';
+  }
+  #main-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 150px 0;
+  }
+
+  #about {
+    width: 200px;
+    margin-bottom: 60px;
+  }
+
+  #introduce {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 120px;
+    line-height: 1.7;
+  }
+  #forPet {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 180px;
+    line-height: 1.7;
+  }
+  #last-ment {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  #brandname {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+  }
+}
+
+/* mediaquery for mobile */
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    font-family: 'GmarketSansMedium';
+  }
+  #main-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 140px 0;
+  }
+
+  #about {
+    width: 200px;
+    margin-bottom: 70px;
+  }
+
+  #introduce {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 120px;
+    line-height: 1.7;
+  }
+  #forPet {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    line-height: 1.7;
+  }
+  #last-ment {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0px;
+    line-height: 1.7;
+  }
+  #brandname {
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+  }
+}

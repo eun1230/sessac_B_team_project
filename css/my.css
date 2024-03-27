@@ -1,0 +1,1014 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'GmarketSansMedium';
+}
+body {
+  margin: 0;
+  padding: 20px;
+}
+main {
+  margin-top: 100px;
+  /* 요소들 중앙으로 하기 위해 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mywhole {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+}
+/* --------------------------------------------------------- */
+/* 마이페이지 왼쪽파트 */
+.asidenav {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-right: 5vw;
+}
+
+/* --------------------------------------------------------- */
+/* 프로필 */
+.profilephoto {
+  background-color: lightgray;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  margin: 0 auto;
+}
+.profilename {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* --------------------------------------------------------- */
+/* 루미 */
+.lumi {
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  /* 요소를 양끝과 요소 사이 거리 다 동일하게 */
+  justify-content: space-evenly;
+}
+.lumi_total,
+.lumi_collect {
+  /* flex-wrap: wrap; */
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid #e5e4e4;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+.lumi_total {
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+}
+.lumi_collect {
+  height: 40px;
+  line-height: 40px;
+}
+.lumi_total:hover,
+.lumi_collect:hover {
+  background-color: aliceblue;
+}
+.lumiQ {
+  width: 70rem;
+}
+.lumiA {
+  cursor: pointer;
+  width: 30rem;
+  font-size: 0.8rem;
+  text-align: right;
+}
+.lumiA:hover {
+  /* 텍스트 스타일 */
+  text-decoration: underline;
+}
+
+/* .mylumi {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    height: 50px;
+  } */
+
+/* .lumi_exchange {
+    width: 20vw;
+    text-align: center;
+    padding-top: 4px;
+  } */
+/* --------------------------------------------------------- */
+/* 마이페이지 네브바 */
+.mypage_nav {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 3px solid #e5e4e4;
+  border-radius: 8px;
+}
+.mypagenav_acc:last-child {
+  border: none;
+}
+.mypagenav_acc {
+  /* margin: 0 auto; */
+  /* 패널헤드랑 바디에 각각 center 준거랑 같음 */
+  text-align: center;
+  border-bottom: 1px solid #e5e4e4;
+  /* padding: 10px; */
+}
+.panel_head {
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.panel_body {
+  padding: 6px 0;
+  display: none;
+}
+
+.vh {
+  width: 20px;
+  height: 20px;
+  /* 자리는 차지는 있으나 요소만 안보이게 */
+  visibility: hidden;
+}
+.active .panel_body {
+  /* active가 있으면 그 패널바디가 화면에 다시 나타나게 */
+  display: block;
+  transition-duration: 1s;
+}
+.panel_head:hover,
+.panel_body:hover {
+  background-color: aliceblue;
+  border-radius: 8px;
+}
+/* --------------------------------------------------------- */
+/* 마이페이지 오른쪽 파트 */
+.rightpart {
+  margin-top: 50px;
+  width: 70%;
+}
+/* 마이페이지 항목 펼쳐지는 부분 */
+article {
+  /* width: 80vh; */
+  margin-top: 40px;
+  border: 3px double lightgray;
+  border-radius: 8px;
+  /* .reservation 이 아닌 article에 주니까 패딩 먹음 */
+  padding: 16px;
+}
+/* --------------------------------------------------------- */
+/* 예약 내역 */
+/* 예약버튼 나열 */
+.reservbutton {
+  display: flex;
+  margin-bottom: 40px;
+}
+/* 현재예약, 지난예약, 취소된예약 */
+.now,
+.past,
+.cancel {
+  background-color: #e5e4e4;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.now:hover,
+.past:hover,
+.cancel:hover {
+  background-color: aliceblue;
+}
+.hospitalreserv,
+.placereserv,
+.salonreserv {
+  background-color: rgb(219, 218, 218);
+  height: 50vh;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 예약항목에 들어간 정보 나열 */
+.reservinfo {
+  display: flex;
+  /* padding: 0 10px; */
+}
+/* 예약항목 형태 */
+.reservitem {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: aliceblue;
+  /* border: 3px solid gray; */
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+.reservname {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.reservdate {
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .mywhole {
+    margin: 0 auto;
+  }
+  .asidenav {
+    width: 100%;
+    text-align: center;
+  }
+  .profilephoto {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+  }
+  .rightpart {
+    display: none;
+  }
+  article {
+    width: 100%;
+    height: 100%;
+  }
+  .reservbutton {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .now,
+  .past,
+  .cancel {
+    padding: 0 auto;
+    cursor: pointer;
+  }
+  .hospitalreserv,
+  .placereserv,
+  .salonreserv {
+    background-color: rgb(219, 218, 218);
+    height: 70vh;
+    border-radius: 8px;
+    padding: 8px;
+  }
+}
+/* 변경 버튼 */
+.changebutton {
+  cursor: pointer;
+  padding: 0 6px;
+  border-radius: 20px;
+  background-color: #e5e4e4;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.changebutton:hover {
+  background-color: #ff8f8f;
+}
+/* 예약내역 존재여부 */
+/* .reservation을 다 해줬기 때문에 block을 해도 안나타났던것 */
+
+.myhospital {
+  display: none;
+}
+
+.myplace {
+  display: none;
+}
+
+.mysalon {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 나의 글 */
+/* 게시글 항목이름 */
+.postitemtitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  font-weight: 600;
+  background-color: aliceblue;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 8px;
+}
+/* 작성일 & 댓글 */
+.postitem {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.heart {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+.hearttotal {
+  margin-left: 40px;
+}
+.postcomment {
+  margin-left: 120px;
+}
+
+/* 게시글항목 형태 */
+.postwriting {
+  background-color: rgb(219, 218, 218);
+  height: 50vh;
+  border-radius: 20px;
+  padding: 10px;
+}
+.mypostitem {
+  display: flex;
+  background-color: aliceblue;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 8px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+.myposttitle {
+  font-size: 14px;
+}
+.mypostinfo {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+  font-size: 12px;
+}
+
+.mypostcomment {
+  margin-left: 40px;
+}
+
+/* 내 댓글 */
+.commentitemtitle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  font-weight: 600;
+  background-color: aliceblue;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
+}
+.commentwriting {
+  background-color: rgb(208, 209, 209);
+  height: 50vh;
+  border-radius: 10px;
+  padding: 10px;
+}
+.mycommentitem {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 8px;
+  border: 1px solid gray;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+.mycommentwriting {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+
+  border: 1px solid black;
+}
+
+/* 나의글 존재여부 */
+
+.mypost {
+  display: none;
+}
+
+.mycomment {
+  display: none;
+}
+/* ---------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------- */
+/* 1:1 문의 */
+.inquirytopm {
+  display: none;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .di {
+    display: none;
+  }
+  .inquirytop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    /* text-align, line-height 다 안됐는데 align-item으로 함 */
+    align-items: center;
+    border: 1px solid black;
+  }
+  .back {
+    width: 30px;
+    height: 30px;
+    background-image: url('./img/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    line-height: 30px;
+    /* display: none; */
+  }
+  .inquiry {
+    border: 1px solid black;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .mobiledone {
+    background-color: #e5e4e4;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+.inputcontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boxarrange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tnbox,
+.inquirybox,
+.donebox {
+  width: 90%;
+}
+.inquirytitlename {
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #e5e4e4;
+}
+.inquirytitlename:hover {
+  background-color: aliceblue;
+}
+#textarea {
+  width: 90%;
+  height: 40vh;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #e5e4e4;
+}
+#textarea:hover {
+  background-color: aliceblue;
+}
+/* ---------------------------------------------------------------------- */
+
+/* 파일첨부 버튼 수정 */
+/* 원래모양 없애기 */
+.filebox input[type='file'] {
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+/* 내가 지정할 모양 */
+.fbwhole {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+.filebox {
+  border: 1px dashed gray;
+  border-radius: 6px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.filebox label {
+  cursor: pointer;
+  display: inline-block;
+}
+input #file {
+  width: 100px;
+  height: 100px;
+}
+
+.filebox label img {
+  background-image: url('./img/plus.png');
+  width: 20px;
+  height: 20px;
+}
+.showpetimg {
+  height: 100px;
+  display: flex;
+}
+#file {
+  display: none;
+  /* visiblity는 보이지 않을뿐 존재하는 상태 */
+}
+
+.done {
+  background-color: #e5e4e4;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.done:hover {
+  background-color: aliceblue;
+}
+/* ---------------------------------------------------------------------- */
+/* 1:1 문의 존재 여부 */
+.inquirysection {
+  display: none;
+}
+/* ---------------------------------------------------------------------- */
+/* 내 정보 관리 */
+/* 비밀번호 변경 */
+.pwchange {
+  width: 480px;
+}
+.pwinfo {
+  font-size: 18px;
+}
+.changenewpw {
+  margin-top: 30px;
+  text-align: center;
+}
+.newpwtext,
+.newpwchecktext {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.newpwinput input,
+.newpwcheckinput input {
+  width: 480px;
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+.newpw {
+  width: 480px;
+  margin-bottom: 20px;
+}
+.newpwcheck {
+  width: 480px;
+  margin-bottom: 30px;
+}
+.pwbutton :hover {
+  background-color: red;
+  cursor: pointer;
+}
+.pwbutton {
+  width: 480px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+/* ---------------------------------------------------------------------- */
+/* 내 정보 관리 존재여부 */
+.pwchange {
+  display: none;
+}
+/* ---------------------------------------------------------------------- */
+/* 알림 설정 */
+.toggles {
+  /* 그냥 flex로 했더니 토글 있는 줄 전체를 클릭해도 온오프가됨 */
+  display: inline-flex;
+  align-items: center;
+  /* gap: */
+  cursor: pointer;
+}
+/* [ ] 는 css속성선택자를 뜻함 */
+/* [ ] 는 css속성선택자를 뜻함 */
+[type='checkbox'] {
+  /*  
+    appearance: none;은 폼 요소(예: 버튼, 체크박스, 라디오 버튼 등)의
+    기본 브라우저 스타일을 제거합니다. 
+     */
+  appearance: none;
+  /* 
+    1. 요소를 원래 위치에서 상대적으로 이동하고 싶을 때.
+    2. 절대 위치 속성(absolute)을 사용한 하위 요소를 배치할 때, 상위 요소에 대해 상대적인 위치를 제공할 때.
+    3. CSS 애니메이션 및 변환을 적용하고자 할 때 상대적인 위치를 기준으로 이동시키기 위해.
+    */
+  position: relative;
+  border: max(2px, 0.1rem) solid gray;
+  border-radius: 1.25rem;
+  width: 2.25rem;
+  height: 1.25rem;
+}
+[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+[type='checkbox']:checked {
+  background-color: tomato;
+  border-color: tomato;
+}
+
+[type='checkbox']:checked::before {
+  background-color: white;
+  left: 1rem;
+}
+
+[type='checkbox']:focus-visible {
+  outline-offset: max(2px, 0.1rem);
+  outline: max(2px, 0.1rem) solid tomato;
+}
+
+[type='checkbox']:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2rem) lightgray;
+}
+/* ---------------------------------------------------------------------- */
+/* 알람 설정 존재 여부 */
+.alarmsetting {
+  display: none;
+}
+/* ---------------------------------------------------------------------- */
+/* 반려동물 정보 입력 */
+/* media query for web */
+@media screen and (min-width: 480px) {
+  /* form area */
+  table,
+  form {
+    width: 100%;
+    margin: 40px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .mustInput, */
+  .petInput {
+    border: 1px solid #e5e4e4;
+    border-radius: 8px;
+    width: 80%;
+    padding: 30px 0 50px;
+  }
+  td {
+    padding-bottom: 10px;
+  }
+  td[scope='row'] {
+    text-align: right;
+  }
+  .anibox label {
+    line-height: 40px;
+    cursor: pointer;
+  }
+  .anibox input {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+    padding: 6px;
+  }
+  .aniinput,
+  .anibirth {
+    width: 300px;
+    padding: 8px;
+  }
+  /* #password1,
+    #password2 {
+      width: 300px;
+      padding: 8px;
+      border: 2px solid #ff8f8f;
+      border-radius: 12px;
+      height: 40px;
+    } */
+  /* #idCheckMsg,
+    #pwCheckMsg {
+      padding-left: 14px;
+    } */
+
+  .anibox input[placeholder] {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .anibox [type='checkbox'] {
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    accent-color: #ff8f8f;
+    /* 체크박스 컬러 변경 */
+  }
+
+  /* pet input area */
+
+  #petType {
+    display: flex;
+    margin: 28px 0 4px;
+  }
+  .anibox .radio {
+    box-sizing: border-box;
+    display: flex;
+  }
+  .anibox input[type='radio'] {
+    appearance: none; /* 디폴트 디자인 없애기*/
+    accent-color: #ff8f8f;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccfdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  .anibox input[type='radio']::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px white;
+  }
+  .anibox input[type='radio']:checked {
+    background: #ff8f8f;
+    border-color: #ff8f8f;
+  }
+
+  div.petPhoto {
+    width: 50px;
+    background-color: #e5e4e4;
+    border: 2px solid #e5e4e4;
+    border-radius: 8px;
+    text-align: center;
+  }
+  div.petPhoto:hover {
+    border: 2px solid #ff8f8f;
+  }
+  div.petPhoto:active {
+    font-weight: 700;
+  }
+  #chooseFile {
+    display: none;
+    /* visiblity는 보이지 않을뿐 존재하는 상태 */
+  }
+  .img {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
+  #petGender {
+    display: flex;
+    margin: 4px 32px;
+    align-items: center;
+    line-height: 40px;
+  }
+  select {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 4px;
+  }
+
+  /* web btn style */
+  #registerBtn {
+    width: 300px;
+    height: 70px;
+    line-height: 70px;
+    background-color: #ff8f8f;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 40px auto;
+  }
+  #registerBtn:hover {
+    color: black;
+  }
+  #registerBtn:active {
+    color: black;
+    font-weight: 700;
+  }
+}
+
+/* mediaquery for mobile main */
+@media screen and (max-width: 480px) {
+  /* form area */
+  table,
+  form {
+    width: 100%;
+    margin: 20px 0 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .petInput {
+    border: 1px solid #e5e4e4;
+    border-radius: 8px;
+    width: 95%;
+    padding: 30px 0 50px;
+  }
+
+  td {
+    padding-bottom: 10px;
+  }
+  td[scope='row'] {
+    text-align: right;
+  }
+
+  .anibox label {
+    line-height: 40px;
+    cursor: pointer;
+  }
+  .anibox input {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+    padding: 6px;
+  }
+  .aniinput,
+  .anibirth {
+    width: 200px;
+    padding: 8px;
+  }
+  /* 
+    #password1,
+    #password2 {
+      border: 2px solid #ff8f8f;
+      border-radius: 12px;
+      height: 40px;
+      width: 200px;
+      padding: 8px;
+    }
+    #idCheckMsg,
+    #pwCheckMsg {
+      font-size: 14px;
+    } */
+
+  .anibox input[placeholder] {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .anibox input[type='button'] {
+    border: none;
+    width: 60px;
+    height: 36px;
+    margin-left: 10px;
+    display: flex;
+    float: right;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .anibox [type='checkbox'] {
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    accent-color: #ff8f8f;
+    /* 체크박스 컬러 변경 */
+  }
+
+  /* pet input area */
+  #petType {
+    display: flex;
+    padding: 16px 0 4px;
+  }
+  .radio {
+    box-sizing: border-box;
+    display: flex;
+  }
+  .anibox input[type='radio'] {
+    appearance: none; /* 디폴트 디자인 없애기*/
+    accent-color: #ff8f8f;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccfdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  .anibox input[type='radio']::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px white;
+  }
+  .anibox input[type='radio']:checked {
+    background: #ff8f8f;
+    border-color: #ff8f8f;
+  }
+
+  /* pet photo */
+  div.petPhoto {
+    width: 50px;
+    background-color: #e5e4e4;
+    border: 2px solid #e5e4e4;
+    border-radius: 8px;
+    text-align: center;
+  }
+  div.petPhoto:hover {
+    border: 2px solid #ff8f8f;
+  }
+  div.petPhoto:active {
+    font-weight: 700;
+  }
+  #chooseFile {
+    display: none;
+    /* visiblity는 보이지 않을뿐 존재하는 상태 */
+  }
+  .anibox .img {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
+  #petGender {
+    display: flex;
+    margin: 4px 32px;
+    align-items: center;
+    line-height: 40px;
+  }
+  select {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 6px;
+  }
+
+  /* mobile btn style */
+  #registerBtn {
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #ff8f8f;
+    color: white;
+    border: 0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 50px auto;
+  }
+  #registerBtn:hover {
+    color: black;
+  }
+  #registerBtn:active {
+    color: black;
+    font-weight: 700;
+  }
+}
