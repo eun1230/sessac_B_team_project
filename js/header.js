@@ -7,7 +7,8 @@ menuItems.forEach((item) => {
     // 현재 요소의 부모 요소에 해당하는 hover-img 클래스를 가진 요소 선택 후 innerHTML 변경
     item.parentElement.querySelector(
       '.hover-img'
-    ).innerHTML = `<img src='./img/logo_2.png' />`;
+    ).innerHTML = `<img src='../img/logo_2.png' />`;
+
   });
 
   item.addEventListener('mouseleave', () => {
@@ -39,6 +40,11 @@ const header = `
         <li class="m-li">
           <a href="./map.html">MAP</a>
         </li>
+
+        <li class="m-li">
+        <a href="./walk.html">산책하기</a>
+      </li>
+
       </ul>
     </div>
   </div>
@@ -122,7 +128,8 @@ function displayProfileImage(profileImageUrl) {
 
   // 이미지 URL을 설정하여 프로필 이미지 표시
   profileImageElement.src = profileImageUrl;
-  profileImageElement.style.display = 'inline'; 
+  profileImageElement.style.display = 'inline';
+
 }
 // 프로필 이미지를 클릭했을 때 마이페이지로 이동하는 이벤트 핸들러 추가
 document.addEventListener('click', (event) => {
