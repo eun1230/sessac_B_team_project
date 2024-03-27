@@ -11,7 +11,7 @@ body {
   width: 100%;
   word-break: keep-all;
   background-image: url('../img/main-frame.png');
-  background-size: auto;
+  background-size: cover;
 }
 .footer {
   font-family: 'GmarketSansMedium';
