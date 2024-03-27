@@ -255,7 +255,6 @@ function handleListItemClick(places, index) {
   // console.log('확인용 로그 : ', places);
   infoContainer.classList.add('info-detail');
   document.querySelector('.info-detail').innerHTML = '';
-  alert('aa');
 
   // 상세 정보 HTML 구성
   let detailHTML = `
