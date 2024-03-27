@@ -39,6 +39,7 @@ const header = `
         <li class="m-li">
           <a href="./map.html">MAP</a>
         </li>
+
         <li class="m-li">
         <a href="./walk.html">산책하기</a>
       </li>

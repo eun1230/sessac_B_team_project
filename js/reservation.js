@@ -98,6 +98,6 @@ function reserve() {
     localStorage.setItem('selectedTime', selectedTimeText);
     // 예약 완료 메시지 출력 또는 예약 페이지로 이동
     alert('예약이 완료되었습니다!');
-    window.location.href = './test.html';
+    window.location.href = './mypage.html';
   }
 }
