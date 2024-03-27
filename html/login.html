@@ -138,11 +138,13 @@
               // 네이버 로그인 버튼 노출 영역
               var naver_id_login = new naver_id_login(
                 'saaT76tZOwq0SbuIJmRO',
-                'http://127.0.0.1:5500/html/naver_login.html'
+                'https://lumipet.netlify.app/html/login'
               );
               let state = naver_id_login.getUniqState();
               naver_id_login.setButton('green', 1, 40);
-              naver_id_login.setDomain('http://127.0.0.1:5500/html/login.html');
+              naver_id_login.setDomain(
+                'https://lumipet.netlify.app/html/login'
+              );
               naver_id_login.setState(state);
               naver_id_login.setPopup(); //로그인 화면이랑 콜백을 팝업으로 띄우는 코드
               naver_id_login.init_naver_id_login();
@@ -153,7 +155,7 @@
 
               var naver_id_login = new naver_id_login(
                 'saaT76tZOwq0SbuIJmRO',
-                'http://127.0.0.1:5500/html/naver_login.html'
+                'https://lumipet.netlify.app/html/login'
               );
 
               // 접근 토큰 값 출력
