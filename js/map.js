@@ -255,6 +255,7 @@ function handleListItemClick(places, index) {
   // console.log('확인용 로그 : ', places);
   infoContainer.classList.add('info-detail');
   document.querySelector('.info-detail').innerHTML = '';
+  alert('aa');
 
   // 상세 정보 HTML 구성
   let detailHTML = `
@@ -267,8 +268,9 @@ function handleListItemClick(places, index) {
     </p>
     <img id='pl-img' src=${Data[index].image} />
     <br />
-    <span>도로명</span>
+    
     <p id='road-name'>
+    <span>도로명</span>
       <br />${places.road_address_name}
     </p> 
     <p id='jibun-name'>
@@ -311,8 +313,12 @@ function handleListItemClick(places, index) {
       <input type="button" value="상세보기" class="btn gotoDetailBtn" onclick=gotoDetail()>
       <input type="button" value="예약" id="${places.id}" class="btn reservationBtn">
     </form>`;
+
   // 상세 정보를 infoContainer에 추가
   document.querySelector('.info-detail').innerHTML = detailHTML;
+  document
+    .querySelector('.info-detail')
+    .setAttribute('style', 'display: block');
 
   document.querySelector('.info-detail-2').innerHTML = '';
   let detailHTML2 = `
@@ -379,6 +385,10 @@ function handleListItemClick(places, index) {
   </div>
 `;
   document.querySelector('.info-detail-2').innerHTML = detailHTML2;
+
+  document
+    .querySelector('.info-detail-2')
+    .setAttribute('style', 'display: block');
 
   document.querySelector('.reservationBtn').addEventListener('click', () => {
     // 필요한 데이터 가져오기
@@ -472,10 +482,11 @@ function getListItem(index, places) {
 
   el.innerHTML = itemStr;
   el.className = 'item';
-
-  el.addEventListener('click', function () {
-    handleListItemClick(places, index);
-  });
+  if (el) {
+    el.addEventListener('click', function () {
+      handleListItemClick(places, index);
+    });
+  }
 
   return el;
 }
