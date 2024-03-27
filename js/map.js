@@ -1,4 +1,4 @@
-// 마커를 담을 배열입니다
+// 마커를 담을 배열
 let markers = [];
 
 let mapContainer;
@@ -8,6 +8,10 @@ let map;
 let latitude;
 let longitude;
 let markerPosition;
+
+// 북마크 상태를 추적하는 변수
+let bookmarkStatus = false; // 초기값은 off로 설정
+
 const infoContainer = document.querySelector('.info-container');
 const getKeyword = document.querySelectorAll('.map-header-btn');
 
@@ -31,7 +35,7 @@ function success({ coords }) {
   map = new kakao.maps.Map(mapContainer, mapOption);
   // 현재위치 마커를 생성
   var currentMarker = new kakao.maps.MarkerImage(
-    './../img/map/c-marker.png',
+    '../img/map/c-marker.png',
     new kakao.maps.Size(33, 35),
     {
       offset: new kakao.maps.Point(16, 34),
@@ -58,13 +62,15 @@ function success({ coords }) {
     content: iwContent,
   });
 
-  // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+  // 마커 위에 인포윈도우를 표시합니다.
+  // 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
   infowindow.open(map, marker);
   // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
   var mapTypeControl = new kakao.maps.MapTypeControl();
 
   // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-  // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+  // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데
+  // TOPRIGHT는 오른쪽 위를 의미합니다
   map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
   // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
@@ -74,6 +80,7 @@ function success({ coords }) {
 
 function getUserLocation() {
   console.log('현재 위치 받아오기 getUserLocation() ');
+  // 내위치 못 받아올때
   if (!navigator.geolocation) {
     mapContainer = document.getElementById('map');
     mapOption = {
@@ -111,6 +118,7 @@ document.querySelectorAll('.map-header-btn').forEach((button) => {
     searchByKeyword(keyword); // 키워드로 검색하는 함수 호출
   });
 });
+// 검색 결과를 저장할 배열
 
 // 검색 함수
 function searchByKeyword(keyword) {
@@ -130,13 +138,14 @@ function searchPlaces() {
     alert('키워드를 입력해주세요!');
     return false;
   }
+  // 내위치기준으로 나오게 하기 위한 추가 : 거리순으로 정렬, 반경 radius 10000
   let options = {
     location: markerPosition,
     radius: 10000,
     sort: kakao.maps.services.SortBy.DISTANCE,
   };
   // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-  ps.keywordSearch(keyword, placesSearchCB,options);
+  ps.keywordSearch(keyword, placesSearchCB, options);
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -169,7 +178,7 @@ function displayPlaces(places) {
   }
   let sw = new kakao.maps.LatLng(latitude, longitude),
     ne = new kakao.maps.LatLng(latitude, longitude);
-  console.log('영역', sw, ne);
+  // console.log('영역', sw, ne);
   let listEl = document.getElementById('placesList'),
     menuEl = document.getElementById('menu_wrap'),
     fragment = document.createDocumentFragment(),
@@ -192,7 +201,7 @@ function displayPlaces(places) {
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
     // LatLngBounds 객체에 좌표를 추가합니다
     // bounds.extend(placePosition);
-    console.log('마커정보 : ', marker);
+    // console.log('마커정보 : ', marker);
 
     // 마커와 검색결과 항목에 mouseover 했을때
     // 해당 장소에 인포윈도우에 장소명을 표시합니다
@@ -228,7 +237,7 @@ function displayPlaces(places) {
 }
 
 let Data = [];
-// 지도 정보 목데이터 가져오기
+// 지도 정보 가져오기(목데이터)
 fetch('../html/map.json')
   .then((response) => {
     // alert('a');
@@ -243,22 +252,23 @@ fetch('../html/map.json')
   .catch((error) => console.log('error : ', error));
 
 function handleListItemClick(places, index) {
+  // console.log('확인용 로그 : ', places);
   infoContainer.classList.add('info-detail');
   document.querySelector('.info-detail').innerHTML = '';
 
   // 상세 정보 HTML 구성
   let detailHTML = `
     <div class='info-start'>
-      <img src="./../img/map/icon-back.png"class="back" onclick="back()" />
+      <img src="../img/map/icon-back.png"class="back" onclick="back()" />
       <p id='place-category'> ${places.category_name}</p>
     </div>
-    <p onclick=gotoDetail() id='place-name'>${places.place_name}
-      <img class='bookmark'  src='./../img/map/bookmark_off.png' />
+    <p id='place-name'>${places.place_name}
+      <img class='bookmark'  src='../img/map/bookmark_off.png' />
     </p>
-    <img  onclick=gotoDetail() id='pl-img' src=${Data[index].image} />
+    <img id='pl-img' src=${Data[index].image} />
     <br />
+    <span>도로명</span>
     <p id='road-name'>
-      <span>도로명</span>
       <br />${places.road_address_name}
     </p> 
     <p id='jibun-name'>
@@ -293,7 +303,7 @@ function handleListItemClick(places, index) {
       </p>
       <p id='pl-review'>${Data[index].review2}</p>
       <p id='pl-review'>${Data[index].review3}</p>
-      <span>..더보기</span>
+      <span id="m_remore">..더보기</span>
     </div>
     <hr/>
     <br />
@@ -301,7 +311,6 @@ function handleListItemClick(places, index) {
       <input type="button" value="상세보기" class="btn gotoDetailBtn" onclick=gotoDetail()>
       <input type="button" value="예약" id="${places.id}" class="btn reservationBtn">
     </form>`;
-
   // 상세 정보를 infoContainer에 추가
   document.querySelector('.info-detail').innerHTML = detailHTML;
 
@@ -310,12 +319,12 @@ function handleListItemClick(places, index) {
   <div class="info-container2">
   <div class="info-detail-2">
     <div class='info-start2'>
-      <img src="./../img/map/icon-back.png" class="back2" onclick="back()" />
+      <img src="../img/map/icon-back.png" class="back2" onclick="back()" />
       <p id='place-category2'> ${places.category_name}</p>
     </div>
     <div class='title'>
       <div id='place-name2'>${places.place_name}</div>
-      <img class='bookmark2' src='./../img/map/bookmark_off.png' />
+      <img class='bookmark2' src='../img/map/bookmark_off.png' />
     </div>
     <div class='dt-box'>
       <div class='dt-left'>
@@ -323,8 +332,8 @@ function handleListItemClick(places, index) {
           <img onclick=gotoDetail() id='pl-img2' src=${Data[index].image} />
         </div>
         <br />
+        <span>도로명</span>
           <p id='road-name2'>
-            <span>도로명</span>
             ${places.road_address_name}
           </p>
           <p id='jibun-name2'>
@@ -371,38 +380,51 @@ function handleListItemClick(places, index) {
 `;
   document.querySelector('.info-detail-2').innerHTML = detailHTML2;
 
-  document.querySelector('.reservationBtn').addEventListener('click',()=>{
-    window.href='../html/reservation.html';
-  })
-  console.log("ㅇㅇㅇㅇ" ,window.location.search); //쿼리스트링 중 search만
+  document.querySelector('.reservationBtn').addEventListener('click', () => {
+    // 필요한 데이터 가져오기
+    const placeName = document.getElementById('place-name').innerText.trim();
 
+    const imageSrc = document.getElementById('pl-img').getAttribute('src');
+    const roadAddress = document.getElementById('road-name').innerText.trim();
+    console.log(placeName, imageSrc, roadAddress);
+    // 데이터를 로컬스토리지에 저장
+    localStorage.setItem('placeName', placeName);
+    localStorage.setItem('imageSrc', imageSrc);
+    localStorage.setItem('roadAddress', roadAddress);
 
-  // 즐겨찾기 아이콘 클릭 이벤트 처리
+    // 예약 페이지로 이동
+    window.location.href = '../html/reservation.html';
+  });
+
+  document.querySelector('.reservationBtn2').addEventListener('click', () => {
+    window.location.href = '../html/reservation.html';
+  });
+  // info-detail 영역의 북마크 아이콘 클릭 이벤트 추가
+  document.querySelector('.bookmark').addEventListener('click', toggleBookmark);
+
+  // info-detail-2 영역의 북마크 아이콘 클릭 이벤트 추가
+  document
+    .querySelector('.bookmark2')
+    .addEventListener('click', toggleBookmark);
+}
+
+// 북마크 아이콘 클릭 이벤트 처리 함수
+function toggleBookmark() {
   const bookmarkImg = document.querySelector('.bookmark');
   const bookmarkImg2 = document.querySelector('.bookmark2');
 
-  const bookmarkSrc = bookmarkImg.getAttribute('src');
-  const bookmarkSrc2 = bookmarkImg2.getAttribute('src');
+  const bookmarkSrc = bookmarkStatus
+    ? '../img/map/bookmark_off.png'
+    : '../img/map/bookmark_on.png';
 
-  bookmarkImg.addEventListener('click', () => {
-    if (bookmarkSrc === './../img/map/bookmark_off.png') {
-      bookmarkImg.setAttribute('src', './../img/map/bookmark_on.png');
-    } else {
-      bookmarkImg.setAttribute('src', './../img/map/bookmark_off.png');
-    }
-  });
-  bookmarkImg2.addEventListener('click', () => {
-    if (bookmarkSrc2 === './../img/map/bookmark_off.png') {
-      bookmarkImg2.setAttribute('src', './../img/map/bookmark_on.png');
-    } else {
-      bookmarkImg2.setAttribute('src', './../img/map/bookmark_off.png');
-    }
-  });
+  bookmarkImg.setAttribute('src', bookmarkSrc);
+  bookmarkImg2.setAttribute('src', bookmarkSrc);
+
+  bookmarkStatus = !bookmarkStatus; // 상태를 토글
 }
 
 function gotoDetail() {
   console.log('상세정보');
-  // document.querySelector('#map').setAttribute('style', 'left:1000px;');
   document
     .querySelector('.info-detail-2')
     .setAttribute('style', 'display:block');
@@ -452,7 +474,7 @@ function getListItem(index, places) {
   el.className = 'item';
 
   el.addEventListener('click', function () {
-    handleListItemClick(places, index); // 수정된 부분
+    handleListItemClick(places, index);
   });
 
   return el;
@@ -460,7 +482,7 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-  var imageSrc = './../img/map/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+  var imageSrc = '../img/map/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
     imageSize = new kakao.maps.Size(22, 33), // 마커 이미지의 크기
     imgOptions = {
       spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기

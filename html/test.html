@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch</title>
+<style>
+  #stopwatch-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  #display {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+<div id="stopwatch-container">
+  <div id="display">00:00:00</div>
+  <button onclick="startStop()">시작 출발</button>
+  <button onclick="pauseResume()">일시정지</button>
+</div>
+<script>
+  let timerInterval;
+  let startTime;
+  let elapsedTime = 0;
+  let isRunning = false;
+  let isPaused = false;
+
+  function startStop() {
+    if (!isRunning) {
+      startTime = Date.now() - elapsedTime;
+      timerInterval = setInterval(updateTime, 10);
+      isRunning = true;
+    } else {
+      clearInterval(timerInterval);
+      isRunning = false;
+    }
+  }
+
+  function pauseResume() {
+    if (isRunning && !isPaused) {
+      clearInterval(timerInterval);
+      isPaused = true;
+    } else if (isRunning && isPaused) {
+      startTime = Date.now() - elapsedTime;
+      timerInterval = setInterval(updateTime, 10);
+      isPaused = false;
+    }
+  }
+
+  function reset() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    isPaused = false;
+    elapsedTime = 0;
+    document.getElementById('display').innerHTML = formatTime(elapsedTime);
+  }
+
+  function updateTime() {
+    elapsedTime = Date.now() - startTime;
+    document.getElementById('display').innerHTML = formatTime(elapsedTime);
+  }
+
+  function formatTime(time) {
+    let hours = Math.floor(time / 3600000);
+    let minutes = Math.floor((time % 3600000) / 60000);
+    let seconds = Math.floor((time % 60000) / 1000);
+    let milliseconds = Math.floor((time % 1000) / 10);
+    return (
+      (hours < 10 ? '0' : '') + hours + ':' +
+      (minutes < 10 ? '0' : '') + minutes + ':' +
+      (seconds < 10 ? '0' : '') + seconds + ':' +
+      (milliseconds < 10 ? '0' : '') + milliseconds
+    );
+  }
+</script>
+</body>
+</html>

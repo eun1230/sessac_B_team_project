@@ -5,88 +5,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LUMIPET | 예약하기</title>
+  <link rel="icon" type="image/png" href="./logo_2.png" />
+  <!-- bootstrap cdn -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <script src="/js/reservation.js"></script>
-  <link rel="icon" type="image/png" href="./../img/logo_2.png" />
-  <link rel="stylesheet" href="/css/reservation.css" />
-  <link rel="stylesheet" href="/css/header.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/reservation.css" />
+  <!-- 자바스크립트 -->
+  <script defer src="../js/reservation.js"></script>
+  <script defer src="../js/header.js"></script>
+  <script defer src="../js/footer.js"></script>
+
 
 </head>
 
 <body>
   <header>
-    <div class="header-container">
-      <!-- nav메뉴 -->
-      <!-- 모바일 햄버거 -->
-      <div class="m-nav hamb">
-        <img src="./img/hamb.png" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-          aria-controls="offcanvasExample">
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-          aria-labelledby="offcanvasExampleLabel">
-          <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul id="m-ul">
-              <li class="m-li">
-                <a href="./html/about.html">ABOUT</a>
-              </li>
-              <li class="m-li">
-                <a href="./html/communityMain">COMMUNITY</a>
-              </li>
-              <li class="m-li">
-                <a href="./html/map.html">MAP</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="nav-left">
-        <ul id="leftToRight">
-          <li class="nav-li">
-            <div class="hover-img">
-            </div>
-            <a href="./html/about.html">ABOUT</a>
-          </li>
-          <li class="nav-li">
-            <div class="hover-img"></div>
-            <a href="./html/communityMain">COMMUNITY</a>
-          </li>
-          <li class="nav-li">
-            <div class="hover-img"></div>
-            <a href="./html/map.html">MAP</a>
-          </li>
-        </ul>
-      </div>
-      <!-- 가운데 로고 -->
-      <div class="nav-center">
-        <a href='./index.html'><img class="logo" src="../img/logo.png" /></a>
-      </div>
-      <!-- 로그인/마이페이지 -->
-      <div class="nav-right">
-        <div style="width:20px; height:20px;">
-        </div>
-        <a href="./html/login.html" class="loginOnOff">LOGIN </a>
-      </div>
-      <div class="m-nav login">
-        <span>LOGIN</span>
-        <!— <img src="../img/logo_foot.png" /> —>
-      </div>
-    </div>
   </header>
 
   <!-- body -->
   <div class="body wrapper">
-    <div class="container">
+    <div class="container1">
       <h3>예약하기</h3>
     </div>
 
-    <div class="container">
-      <div class="animal">
+    <div class="container-hospital">
+      <div class="hospital">
         <span><img src="/img/cat.png" id="cat"></span>
         <span class="animal-content">
           <h3>동물 이름</h3>
@@ -97,22 +45,14 @@
     </div>
 
     <div class="container-row">
-
-      <a class="btn" href="#" role="button">동물 추가</a>
+      <!-- <button class="btn2" type='button'>동물 추가</button> -->
     </div>
 
     <div class="container-hospital">
-      <div class="hospital">
-        <span><img src="/img/hospital.png" id="hospital"></span>
-        <span class="hospital-content">
-          <h3>병원 이름</h3>
-          <p>병원 주소</p>
-          <p>병원 운영 시간</p>
-        </span>
-      </div>
+
     </div>
 
-    <div class="container">
+    <div class="container1">
       <h3>예약할 날짜를 선택해주세요.</h3>
       <div class="calendar-container">
         <div class="calendar-title">
@@ -137,47 +77,47 @@
               <td></td>
               <td></td>
               <td></td>
-              <td>1</td>
-              <td>2</td>
+              <td class="selectable">1</td>
+              <td id="not1">2</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td id="select">8</td>
-              <td>9</td>
+              <td id="not1">3</td>
+              <td class="selectable">4</td>
+              <td class="selectable">5</td>
+              <td class="selectable">6</td>
+              <td class="selectable">7</td>
+              <td class="selectable">8</td>
+              <td id="not1">9</td>
             </tr>
             <tr>
-              <td>10</td>
-              <td>11</td>
-              <td>12</td>
-              <td>13</td>
-              <td>14</td>
-              <td>15</td>
-              <td>16</td>
+              <td id="not1">10</td>
+              <td class="selectable">11</td>
+              <td class="selectable">12</td>
+              <td class="selectable">13</td>
+              <td class="selectable">14</td>
+              <td class="selectable">15</td>
+              <td id="not1">16</td>
             </tr>
             <tr>
-              <td>17</td>
-              <td>18</td>
-              <td>19</td>
-              <td>20</td>
-              <td>21</td>
-              <td>22</td>
-              <td>23</td>
+              <td id="not1">17</td>
+              <td class="selectable">18</td>
+              <td class="selectable">19</td>
+              <td class="selectable">20</td>
+              <td class="selectable">21</td>
+              <td class="selectable">22</td>
+              <td id="not1">23</td>
             </tr>
             <tr>
-              <td>24</td>
-              <td>25</td>
-              <td>26</td>
-              <td>27</td>
-              <td>28</td>
-              <td>29</td>
-              <td>30</td>
+              <td id="not1">24</td>
+              <td class="selectable">25</td>
+              <td class="selectable">26</td>
+              <td class="selectable">27</td>
+              <td class="selectable">28</td>
+              <td class="selectable">29</td>
+              <td id="not1">30</td>
             </tr>
             <tr>
-              <td>31</td>
+              <td id="not1">31</td>
               <td></td>
               <td></td>
               <td></td>
@@ -185,11 +125,12 @@
               <td></td>
               <td></td>
             </tr>
+
           </tbody>
         </table>
       </div>
     </div>
-    <div class="container">
+    <div class="container1">
       <h3>예약할 시간을 선택해주세요.</h3>
       <div class="time-slot-container">
         <div class="time-slot">오전 9:00</div>
@@ -201,9 +142,9 @@
       </div>
     </div>
 
-    <div class="container">
-      <h3>진료 항목 선택</h3>
-      <select name="appointmentType" id="appointmentType">
+    <div class="container-row3">
+      <h3 class="inlined">진료 항목 선택</h3>
+      <select class="select inlined" name="appointmentType" id="appointmentType">
         <option value="1">종합검진</option>
         <option value="2">영상의학과</option>
         <option value="3">심장센터</option>
@@ -219,21 +160,21 @@
         <option value="13">한방치료</option>
         <option value="14">특수동물</option>
       </select>
+    </div>
 
-      <br />
-
-      <label for="content">
-        <h3>수의사에게 요청 사항 있으면 작성해주세요</h3>
+    <div class="container-row3">
+      <label class="inlined" for="content">
+        <h3>요청 사항 있으면 작성해주세요</h3>
       </label>
       <input type="content" id="content" placeholder="내용을 입력해주세요" />
     </div>
 
-    <div class="container">
-      <h3 style="color: #ff8f8f">
+    <div class="container1">
+      <h3 class="inlinex" style="color: #ff8f8f">
         예약 당일, 병원에 방문하여 "루미펫으로 왔어요" 라고 말씀해주세요.
       </h3>
     </div>
-    <div class="container">
+    <div class="container1">
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -244,7 +185,7 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <br />예약: 가능한 미리 예약을 해서 대기 시간을 최소화하세요.
+              <br />예약: 가능한 미리 예약 해서 대기 시간을 최소화하세요. 의사의 지시에 따라 약물 투여,요구사항 준수하세요.
               <br />응급 상황: 긴급한 상황이라면 즉시 병원을 방문하거나 응급 번호에 전화하세요.
               <br />동반물품: 반려동물의 의료 기록, 보험 정보 및 음식 등 필요한 물품을 가져가세요.
               <br />안전: 반려동물을 안전하게 차량에 고정시키고, 출입문이나 창문을 열어 둔 채로 남겨두지 마세요.
@@ -255,57 +196,13 @@
       </div>
     </div>
 
-    <div class="container-row">
-      <a class="btn" href="#" role="button">이전</a>
-      <a class="btn" href="#" role="button" onclick="clickEvent();">예약하기</a>
+    <div class="container-row2">
+      <a class="btn" href="../html/map.html" role="button">이전</a>
+      <a class="btn" href="#" role="button" onclick="reserve()">예약하기</a>
     </div>
   </div>
 
-  <!-- footer -->
-  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-    <div class="col mb-3">
-      <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-        <img src="./../img/logoFooter.png" width="80px" height="60px" />
-      </a>
-      <p class="text-muted">© 2024</p>
-      <p class="text-muted">LUMIPET. ALL RIGHT</p>
-      <p class="text-muted">RESERVED</p>
-    </div>
-    <div class="col mb-3"></div>
-    <div class="col mb-3">
-      <ul class="nav flex-column" style="margin-top: 40px">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">이용약관</a></li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">개인정보처리방침</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">위치기반서비스 이용약관</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col mb-3">
-      <ul class="nav flex-column" style="margin-top: 40px">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">1800-1234</a></li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">운영시간 9:00~18:00</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">점심 12:00~13:00</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">(주말,공휴일 휴무)</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col mb-3">
-      <ul class="nav flex-column" style="margin-top: 40px">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">공지사항</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQ</a></li>
-      </ul>
-    </div>
-  </footer>
 </body>
+<div class="container footer"></div>
 
 </html>

@@ -2,7 +2,7 @@ const footer = `
 <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
 <div class="col mb-3">
   <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-    <img src="./../img/logoFooter.png" width="80px" height="60px">
+    <img src="../img/logoFooter.png" width="80px" height="60px">
   </a>
   <p class="text-muted">© 2024</p>
   <p class="text-muted">LUMIPET. ALL RIGHT</p>
@@ -35,3 +35,4 @@ const footer = `
 </div>
 </footer>`;
 document.querySelector('.container.footer').innerHTML=footer;
+

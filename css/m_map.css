@@ -2,7 +2,17 @@
   main {
     width: 480px;
     overflow: hidden;
-    height: 1500px;
+    height: 1300px;
+  }
+  body {
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/main-frame.png');
+    background-size: cover;
+  }
+  header {
+    display: block;
   }
 
   #map {
@@ -19,14 +29,13 @@
 
   .info-detail {
     overflow: scroll;
-    height: 520px;
+    height: 700px;
     position: absolute;
     z-index: 999;
     top: 400px;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.905);
+    background-color: rgb(255, 255, 255);
     width: 480px;
-    height: 670px;
     border-radius: 15px;
   }
 
@@ -34,36 +43,38 @@
     display: flex;
     flex-direction: row;
     width: 480px;
-    height: 50px;
+    overflow: scroll;
+    height: 80px;
     position: absolute;
-    z-index: 3;
+    top: 500px;
+    z-index: 2;
     margin: 0;
-    /* background-color: rgb(232, 244, 244); */
   }
 
   .m_map_header ul {
     display: flex;
     flex-direction: row;
-    overflow: scroll;
-    height: 60px;
     margin-top: 10px;
+    padding-left: 20px;
   }
   .m_map_header li {
     padding-top: 10px;
     list-style: none;
-    margin-right: 10px;
+    margin-right: 6px;
   }
   .m_map_header a {
+    margin: auto;
     text-decoration: none;
     color: black;
-    padding-left: 15px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+    padding-top: 16px;
+    padding-right: 15px;
+    /* padding-bottom: 5px; */
     cursor: pointer;
   }
   .m_map_header ul a:hover {
     color: #ff8f8f;
   }
+
   .m_map_header input {
     width: 75px;
     height: 35px;
@@ -73,6 +84,7 @@
     background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
+
   .m_map_header input:hover {
     border: 1px solid #fcd9d9;
     background-color: rgb(251, 229, 229);
@@ -107,9 +119,6 @@
   .info-detail-2 {
     display: none;
   }
-  .btn.gotoDetailBtn {
-    display: none;
-  }
 
   #pl-img {
     margin-left: 25%;
@@ -123,7 +132,6 @@
     font-size: medium;
     margin-bottom: 10px;
   }
-
   .info-detail .bookmark {
     left: 400px;
   }
@@ -131,19 +139,9 @@
   .info-detail #pl-review {
     width: 430px;
   }
-
-  .info-container2.info-detail-2 {
-    position: absolute;
-    top: 420px;
-    left: 0;
-    width: 400px;
-    height: 600px;
-    overflow: scroll;
-    background-color: #fff5f5ee;
-    border-radius: 10px;
-    z-index: 999;
+  .info-detail .gotoDetailBtn {
+    display: none;
   }
-
   .footer {
     display: none;
   }

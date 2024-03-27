@@ -1,25 +1,8 @@
-/* @font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-* {
-  font-family: "GmarketSansMedium";
-} */
-
 /* MAIN BODY /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 body {
-  background-image: url(/img/main-frame.png);
+  background-image: url(../img/main-frame.png);
   background-size: cover;
 }
-
-/* p {
-  margin: 0;
-  font-weight: 400;
-  font-size: 12px;
-} */
 
 h3 {
   margin: 0;
@@ -30,7 +13,7 @@ h3 {
 /* body and container ------------------------------------------------------------------------------------------------------------ */
 
 .body {
-  max-width: 800px;
+  max-width: 780px;
   margin-inline: auto;
   display: flex;
   justify-content: center;
@@ -39,15 +22,28 @@ h3 {
   margin: auto;
 }
 
-.container {
+.container1 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.inlined {
+  display: inline;
+}
+
+.container-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   margin: 10px;
   padding: 0;
 }
-.container-row {
+
+.container-row2 {
   width: 100%;
   display: flex;
   align-items: center;
@@ -56,6 +52,22 @@ h3 {
   margin: 10px;
   padding: 0;
 }
+.container-row3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 10px;
+  padding: 0;
+}
+
+.select {
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
 .container:nth-of-type(1) {
   margin-top: 30px;
 }
@@ -65,9 +77,13 @@ h3 {
   gap: 2rem;
 }
 
+.container1 h3 {
+  margin-top: 30px;
+}
+
 /* animal section------------------------------------------------------------------------------------------------------------ */
 #appointmentType {
-  max-width: 800px;
+  max-width: 100%;
   border-radius: 5px;
   margin-bottom: 30px;
 }
@@ -79,8 +95,6 @@ h3 {
 }
 
 .animal {
-  width: 100%;
-  min-height: 110px;
   border: solid 1px;
   border-color: #cacaca;
   border-radius: 10px;
@@ -89,6 +103,7 @@ h3 {
   align-items: center;
   justify-content: start;
   flex-direction: row;
+  max-width: 780px;
 }
 
 #cat {
@@ -142,19 +157,35 @@ h3 {
 
 /* button------------------------------------------------------------------------------------------------------------ */
 
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 35px;
+  border: solid 1px;
+  background-color: white;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: -10px;
+}
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 48%;
   height: 50px;
-  border: solid 2px;
+  border: solid 1px;
   background-color: white;
-  border: 2px solid rgb(147, 147, 147);
+  border: 1px solid rgb(176, 176, 176);
   border-radius: 10px;
   font-weight: 600;
   font-size: 18px;
   margin-top: -10px;
+  flex-direction: column;
 }
 
 .btn:hover {
@@ -164,8 +195,6 @@ h3 {
 .btn:active {
   font-weight: 700;
 }
-
-/* Btn 동물대산 -------------------- */
 
 /* calendar------------------------------------------------------------------------------------------------------------ */
 #calendar {
@@ -188,14 +217,19 @@ h3 {
   color: rgb(69, 68, 68);
 }
 
+#calendar #not1:hover {
+  color: #000000;
+}
+
 #calendar td:hover {
   color: #ff8f8f;
   font-weight: 700;
 }
 
+
 .calendar-container {
   margin: 20px;
-  width: 100%;
+  min-width: 780px;
   height: 300px;
   border: solid 1px;
   border-radius: 10px;
@@ -216,7 +250,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 10px;
 }
 
 .time-slot {
@@ -242,7 +276,7 @@ h3 {
   margin-bottom: 40px;
 }
 
-/* 진료 함목 선택 & 요청 사항 ---------------------------------------------------------------------------------------------------- */
+/* 진료 함목 선택 & 유의 사항 ---------------------------------------------------------------------------------------------------- */
 
 .body-hospital-2 {
   justify-content: flex-start;
@@ -261,6 +295,13 @@ h3 {
 #content {
   border: solid 1px;
   color: #3c3c3c;
+  width: 63%;
+}
+
+#content {
+  position: relative;
+  top: 15px;
+  left: 15px;
 }
 
 #content:hover {
@@ -268,14 +309,23 @@ h3 {
   font-weight: 100;
 }
 
+.inlinex {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 /* Media Query ------------------------------------------------------ */
 
 @media screen and (max-width: 480px) {
-  .container {
+  .container1 {
     width: 390px;
   }
 
   .container-row {
+    width: 390px;
+  }
+
+  .container-row2 {
     width: 390px;
   }
 
@@ -287,4 +337,32 @@ h3 {
     height: 200px;
     width: 200px;
   }
+
+  .calendar-container {
+    min-width: 380px;
+  }
+
+  #content {
+    border: solid 1px;
+    color: #3c3c3c;
+    width: 25%;
+    position: relative;
+    top: 15px;
+    left: 15px;
+  }
+
+  .inlined {
+    margin-left: 40px;
+  }
+
+  .inlinex {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .btn2 {
+    width: 40%;
+  }
 }
+
+/*  */
