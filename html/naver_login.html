@@ -1,4 +1,4 @@
-<!-- 네이버 로그인 완료되면 뜨는 팝업창 -->
+<!-- 네이버 로그인 완료되면 뜨는 콜백으로 팝업창 커스텀 -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -58,8 +58,9 @@
       const naverBtn = document.querySelector('#naverReg');
       naverBtn.addEventListener('click', goIndex);
       function goIndex() {
-        self.close(); // 팝업창 닫기
-        opener.location.href = '../index.html'; // 부모창에서 이동하기
+        self.close(); // 팝업창 자동으로 닫기
+        opener.location.href = '../index.html';
+        // 부모창에서 메인으로 이동하기
       }
     </script>
   </head>
