@@ -6,7 +6,7 @@ function login() {
   let id = document.querySelector('#userId');
   let pw = document.querySelector('#password');
 
-  // 테스트용 아이디, 비번
+  // 테스트용 아이디와 비번
   let userId = 'lumipet';
   let userPw = 'lumipet1!';
 
