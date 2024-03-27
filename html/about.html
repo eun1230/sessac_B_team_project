@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMIPET | 로그인</title>
+    <title>LUMIPET | ABOUT</title>
     <link rel="icon" type="image/png" href="../logo_2.png" />
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/about.css" />
     <link rel="stylesheet" href="../css/header_for_login.css" />
-    <script defer src="../js/login.js"></script>
     <script defer src="../js/header.js"></script>
     <script defer src="../js/footer.js"></script>
 
@@ -27,19 +26,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-
-    <!-- 네이버 로그인을 위한 코드 -->
-    <script
-      type="text/javascript"
-      src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-      charset="utf-8"
-    ></script>
-    <script
-      type="text/javascript"
-      src="http://code.jquery.com/jquery-1.11.3.min.js"
-    ></script>
+    <link rel="icon" type="image/png" href="../img/logo_2.png" />
   </head>
-
   <body>
     <div class="container-fluid">
       <header>
@@ -121,61 +109,27 @@
       </header>
 
       <main>
-        <form id="inputArea">
-          <div id="main-title">로그인</div>
-          <label><input type="email" id="userId" placeholder="아이디" /></label>
-          <label
-            ><input type="password" id="password" placeholder="비밀번호"
-          /></label>
-          <div id="loginBtn" onclick="login()">Login</div>
-        </form>
-
-        <div id="moveToRegister">
-          <div id="subTitle">가입하기</div>
-          <div id="registerArea">
-            <div id="naver_id_login" class="naver-btn"></div>
-            <script type="text/javascript" charset="utf-8">
-              // 네이버 로그인 버튼 노출 영역
-              var naver_id_login = new naver_id_login(
-                'saaT76tZOwq0SbuIJmRO',
-                'https://lumipet.netlify.app/html/naver_login.html'
-              );
-              let state = naver_id_login.getUniqState();
-              naver_id_login.setButton('green', 1, 40);
-              naver_id_login.setDomain(
-                'https://lumipet.netlify.app/html/login'
-              );
-              naver_id_login.setState(state);
-              naver_id_login.setPopup(); //로그인 화면이랑 콜백을 팝업으로 띄우는 코드
-              naver_id_login.init_naver_id_login();
-            </script>
-
-            <script type="text/javascript" charset="utf-8">
-              // callback 됐을 때
-
-              var naver_id_login = new naver_id_login(
-                'saaT76tZOwq0SbuIJmRO',
-                'https://lumipet.netlify.app/html/naver_login.html'
-              );
-
-              // 접근 토큰 값 출력
-              alert(naver_id_login.oauthParams.access_token);
-              // 네이버 사용자 프로필 조회
-              naver_id_login.get_naver_userprofile('naverSignInCallback()');
-
-              // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-              function naverSignInCallback() {
-                alert(naver_id_login.getProfileData('email'));
-                alert(naver_id_login.getProfileData('nickname'));
-                alert(naver_id_login.getProfileData('age'));
-              }
-            </script>
-
-            <div id="emailRegiBtn" onclick="emailReg()">
-              <i class="bi bi-envelope"></i>
-            </div>
-          </div>
+        <div id="main-title">ABOUT US</div>
+        <div><img src="../img/logo.png" alt="logo" id="about" /></div>
+        <div id="introduce">
+          우리가 하는 모든 일은<br />
+          우리 아이들의 행복한 순간을<br />
+          만들어 낸다고 믿습니다.
         </div>
+        <div id="forPet">
+          '루미펫' 은 사랑하는 우리 아이들을 위해, 실제 반려동물을 키우는
+          팀원들이 모여서 만든 브랜드입니다. 또 하나의 가족인 반려동물이
+          반려인에게 얼마나 소중한지 누구보다 잘 이해하기 때문에, 항상 어떻게
+          하면 반려동물이 더 건강하고 행복한 삶을 누릴 수 있을지 고민하고,
+          반려인에게 편리한 서비스를 제공할 수 있을지 연구합니다.
+          <br />앞으로도 저희는 1500만 반려인의 목소리를 듣고, 모두의 행복을
+          위해 노력할 것입니다.
+        </div>
+        <div id="last-ment">
+          내 펫과 함께 할 모든 공간,<br />
+          찾기부터 예약까지 한 번에!
+        </div>
+        <div id="brandname">LUMIPET</div>
       </main>
 
       <div class="container footer"></div>
