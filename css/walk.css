@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'GmarketSansMedium';
+}
+/* 
+  .topbutton {
+    margin: 5px 0;
+    height: 60px;
+    padding: 0 10px; */
+/* 
+    weather 버튼만 안보였는데 그이유는 div라서 한줄 다차지해
+    밑에 있어서 맵에 가려짐 ->  display flex 해줌
+    */
+/* 양끝에 붙도록 */
+/* z-index: 1; */
+/* display: flex;
+    justify-content: space-between;
+    position: relative;
+  } */
+.topbutton {
+  position: relative;
+}
+.back {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  left: 0;
+  z-index: 15;
+}
+#weatherbutton {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  z-index: 14;
+}
+
+.walkinfo {
+  /* flex랑 flex속성은 적용할 대상의 부모요소에 */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 0;
+  /* 내부 텍스트 요소 중앙정렬 */
+  text-align: center;
+}
+.number {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.walkbutton {
+  display: flex;
+  justify-content: space-evenly;
+  /* 시작일때는 center였다가 누르고나서는 space-evenly */
+  /* border: 1px solid black; */
+  height: 50px;
+  margin: auto 0;
+}
+.ing {
+  /* background-image: url('./img/pause.png'); */
+  /* size 안써주니 안나왔음 */
+  /* background-size: contain;
+    background-repeat: no-repeat; */
+  /* display none 이였다가 누르면 나타나도록 */
+  cursor: pointer;
+  display: none;
+}
+.walkstart {
+  /* size 안써주니 안나왔음 */
+  /* background-image: url('./img/play.png');
+    background-size: contain;
+    background-repeat: no-repeat; */
+  /* display none 이였다가 누르면 나타나도록 */
+  cursor: pointer;
+}
+.walkfinish {
+  /* background-image: url('./img/ing.png'); */
+  /* size 안써주니 안나왔음 */
+  /* background-size: contain;
+    background-repeat: no-repeat; */
+  /* display none 이였다가 누르면 나타나도록 */
+  cursor: pointer;
+  display: none;
+
+  text-align: center;
+}
+.walkstart:hover {
+  background-color: aliceblue;
+}
+
+/* 조건 2개 쓸 때, and로 */
+@media (max-width: 480px) {
+  section {
+    display: block;
+  }
+}
