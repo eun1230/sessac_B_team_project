@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LUMIPET | 마이페이지</title>
     <!-- .. : 현재 폴더에서 빠져나가기 -->
-    <link rel="stylesheet" href="./mypage.css" />
+    <link rel="stylesheet" href="../css/my.css" />
+    <link rel="stylesheet" href="../css/header.css" />
     <!-- <link rel="icon" type="image/png" href="../img/logo_transparent.png" /> -->
-    <script defer src="./mypage.js"></script>
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../js/my.js"></script>
+    <script defer src="../js/header.js"></script>
+    <script defer src="../js/footer.js"></script>
   </head>
   <body>
     <header></header>
@@ -33,12 +48,7 @@
             </div> -->
               <div class="lumi_collect">
                 <div class="lumiQ">루미를 더 받고 싶어요🌟</div>
-                <div
-                  class="lumiA"
-                  onclick="location.href='https://www.naver.com'"
-                >
-                  모으러 가기
-                </div>
+                <div class="lumiA" onclick="location.href='#'">모으러 가기</div>
               </div>
             </div>
             <!-- 마이페이지네브바 -->
@@ -49,7 +59,7 @@
                   <div onclick="dishos()">예약 내역</div>
                   <div class="navdown">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px; margin-right: 10px"
                     />
                   </div>
@@ -67,7 +77,7 @@
                   <div onclick="dispos()">커뮤니티</div>
                   <div class="navdown">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px; margin-right: 10px"
                     />
                   </div>
@@ -85,7 +95,7 @@
                   <div>북마크</div>
                   <div class="navdown">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px; margin-right: 10px"
                     />
                   </div>
@@ -99,7 +109,7 @@
                   <div onclick="disinq()">1:1 문의</div>
                   <div class="navdown vh">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px"
                     />
                   </div>
@@ -111,7 +121,7 @@
                   <div onclick="disani()">내 정보 관리</div>
                   <div class="navdown">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px; margin-right: 10px"
                     />
                   </div>
@@ -129,7 +139,7 @@
                   <div onclick="disala()">알림설정</div>
                   <div class="navdown vh">
                     <img
-                      src="./img/down.png"
+                      src="../img/down.png"
                       style="width: 20px; height: 20px"
                     />
                   </div>
@@ -157,10 +167,7 @@
                       <div class="reservname">강동동물병원</div>
                       <div class="reservdate">2024.03.10 12:00</div>
                     </div>
-                    <div
-                      class="changebutton"
-                      onclick="location.href='https://en.dict.naver.com/#/main'"
-                    >
+                    <div class="changebutton" onclick="location.href= '#'">
                       변경
                     </div>
                   </div>
@@ -182,7 +189,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                      onclick="location.href='../html/reservation.html'"
                     >
                       변경
                     </div>
@@ -205,7 +212,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                      onclick="location.href='../html/reservation.html'"
                     >
                       변경
                     </div>
@@ -217,7 +224,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='https://en.dict.naver.com/#/main'"
+                      onclick="location.href='../html/reservation.html'"
                     >
                       변경
                     </div>
@@ -238,7 +245,7 @@
                     <div class="heartbox">
                       <img
                         class="heart"
-                        src="./img/h_on.png"
+                        src="../img/h_on.png"
                         alt="좋아요 수"
                         style="width: 30px; height: 30px"
                       />
@@ -294,7 +301,7 @@
                   <div class="filebox">
                     <form method="post" enctype="multipart/form-data">
                       <label for="file"
-                        ><img src="./img/plus.png" alt=""
+                        ><img src="../img/plus.png" alt=""
                       /></label>
                       <br />
                       <input
@@ -461,6 +468,6 @@
         </section>
       </section>
     </main>
-    <footer></footer>
+    <div class="container footer"></div>
   </body>
 </html>
