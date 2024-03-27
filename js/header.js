@@ -8,7 +8,6 @@ menuItems.forEach((item) => {
     item.parentElement.querySelector(
       '.hover-img'
     ).innerHTML = `<img src='../img/logo_2.png' />`;
-
   });
 
   item.addEventListener('mouseleave', () => {
@@ -44,7 +43,6 @@ const header = `
         <li class="m-li">
         <a href="./walk.html">산책하기</a>
       </li>
-
       </ul>
     </div>
   </div>
@@ -129,7 +127,6 @@ function displayProfileImage(profileImageUrl) {
   // 이미지 URL을 설정하여 프로필 이미지 표시
   profileImageElement.src = profileImageUrl;
   profileImageElement.style.display = 'inline';
-
 }
 // 프로필 이미지를 클릭했을 때 마이페이지로 이동하는 이벤트 핸들러 추가
 document.addEventListener('click', (event) => {
