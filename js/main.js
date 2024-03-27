@@ -21,125 +21,163 @@
 //   showSlide(currentSlide);
 //   setInterval(nextSlide, 2000);
 // });
-let img1 = document.querySelector('.img1');
-let img2 = document.querySelector('.img2');
-let img3 = document.querySelector('.img3');
 
-let mag1 = document.querySelector('.mag-1');
-let mag2 = document.querySelector('.mag-2');
-let mag3 = document.querySelector('.mag-3');
+function toggleLike(index) {
+  const heartIcon = document.querySelector(`#heart-icon-${index}`);
+  const likeCount = document.querySelector(`#like-count-${index}`);
+  const currentLike = parseInt(likeCount.textContent);
 
-img1.addEventListener('click', function () {
-  imgSrc = img1.getAttribute('src');
-  document.querySelector('main').setAttribute('style', 'display:none;');
-  document.querySelector('.mag-content').setAttribute('style', 'display:none;');
-  document.querySelector(
-    '.event'
-  ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
-});
-img2.addEventListener('click', function () {
-  imgSrc = img2.getAttribute('src');
-  document.querySelector('main').setAttribute('style', 'display:none;');
-  document.querySelector('.mag-content').setAttribute('style', 'display:none;');
-  document.querySelector(
-    '.event'
-  ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
-});
-
-img3.addEventListener('click', function () {
-  imgSrc = img3.getAttribute('src');
-  document.querySelector('main').setAttribute('style', 'display:none;');
-  document.querySelector('.mag-content').setAttribute('style', 'display:none;');
-  document.querySelector(
-    '.event'
-  ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
-});
-
-// document.querySelector('.wrap3').innerHTML=``;
-mag1.addEventListener('click', function () {
-  document.querySelector('main').setAttribute('style', 'display:none;');
-  document.querySelector('.event').setAttribute('style', 'display:none;');
-  document.querySelector('.mag-content').innerHTML = `
-  <div style="width:100vw;">
-  <div style="width:1070px;margin:auto;">
-  <img width="1070px" height="800px"
-    src="https://mellowmate.co.kr/web/upload/NNEditor/20231117/mellow_vol8_cat_E18482E185A2E1848CE185B5E18486E185A9E186A8E1848BE185A5E186B81.png"
-    >
-  <h2>GREETING</h2>
-  <p style='text-align:center;'>
-    ‘검은 고양이 눈 감은 듯’이라는 속담이 있다. <br>
-    옛날 옛적, 희미한 달빛에만 의지해야 했던 깜깜한 밤, 어둠 속에 숨은 검은 고양이는 눈에 잘 띄지 않았다. 
-    <br/>
-    <br/>
-    두 눈을 감으면 어디까지 얼굴이고 어디까지
-    몸통인지 분간하기 어려웠다.<br/>
-    사람들은 눈앞의 상황을 이해하기 어려울 때 상상력을 발휘하기 시작한다. <br/>
-    그렇게 검은 고양이들은 밤을 호령하는 마녀의 하수인이자, 마법 세계와 현실 세계 중간에 있는, 신비한
-    존재가 되었다.<br/>
-    <br/>
-    그런데 우리는 신비함을 오래 견디지 못하는 것 같다. <br/>
-    신비함은 ‘이해할 수 없음’ ‘익숙하지 않음’ ‘낯섦’을 뜻하며 그런 것들은 항상 미움을 받아왔다. <br/>
-    규정하기 어려운 존재에 미워하는 마음을 더하자
-    지옥이 펼쳐졌다. </br>
-    이번 호를 만들면서 얼마나 많은 고양이들이 검은색 옷을 입었다는 이유만으로 죽음에 내몰렸는지 알게 되었다.<br/> 
-    어쩌면 무엇이든 분명하게 만들려는 마음이 폭력일지도 모른다.<br/>
-    검은 고양이는 당연하게도 다른 고양이들과 똑같다. 
-    </br> </br>
-    솜바지를 입고, 새벽에 와다다를 하며, 츄르에 눈을 뒤집고, 나를 업신여긴다.<br/>
-     하지만 아직도 검은색 옷을 입은 아이들은 가족을 만날 확률이 더 낮다.<br/>
-    이제 눈 감은 검은 고양이의 모호함을 버텨야 할 때가 아닐까? 그리고 조금 더 자세히 들여다봐야 한다.<br/> 
-    분간하기 어려운 얼굴 안에 숨어있는 분홍 코와 호박색 눈의 반짝임을 찾아내자.
-  <br/><br />
-    편집장 박조은
-  </p>
-  <img width="1070px" height="800px"
-    src="https://mellowmate.co.kr/web/upload/NNEditor/20231117/mellow_vol8_cat_E18482E185A2E1848CE185B5E18486E185A9E186A8E1848BE185A5E186B82.png" />
-</div>
-</div>`;
-});
-
-let Data = [];
-
-// 지도 정보 목데이터 가져오기
-fetch('../html/mainCommunity.json')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log('제이슨파일 가져옴 ', data);
-    Data = data;
-    console.log('fetch에서 data', Data);
-    loadBest(); // 데이터가 로드된 후에 loadBest() 호출
-  })
-  .catch((error) => console.log('error : ', error));
-
-function loadBest() {
-  for (let i = 0; i < 4; i++) {
-    let code = `
-  <div class="card" style="width: 16rem; cursor:pointer">
-  <img src="./img/c-2.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <div class="cnt" style="display:flex; margin-left:155px; flex-direcetion:row;">
-      <span style='font-size:15px;' id="cnt-heart">${Data[i].heart_cnt}</span>
-      <img style='margin-left:10px;margin-bottom:10px;width:20px;height:auto;cursor:pointer' src="./img/h.png" />
-    </div>
-    <p class="card-text">
-      <span class='c-span' style="color:black;">
-      ${Data[i].title} </span>
-      ${Data[i].content} </p>
-  </div>`;
-
-    document.querySelector('.wrap3').innerHTML += code;
+  // 이미 좋아요를 누른 경우
+  if (heartIcon.src.includes('h-on.png')) {
+    // 이미지 파일명을 h-on.png로 수정
+    heartIcon.src = './img/h.png';
+    likeCount.textContent = currentLike - 1;
+  } else {
+    // 좋아요를 처음 누른 경우
+    heartIcon.src = './img/h-on.png'; // 이미지 파일명을 h-on.png로 수정
+    likeCount.textContent = currentLike + 1;
   }
-  localStorage.setItem('Data', JSON.stringify(Data));
-
-  const { setItem, getItem, removeItem, clear, length, key } = localStorage;
-
-  const cardInfoArr = Data;
-  localStorage.setItem('cardInfoArr', JSON.stringify(cardInfoArr));
 }
 
-const { setItem, getItem, removeItem, clear, length, key } = localStorage;
-const userInfo = {
-  'petName':'happy','pw':'1234'};
-  localStorage.setItem('userInfo', JSON.stringify(userInfo));
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // 커뮤니티 best 가져오기
+    let communityData = await fetch('../html/community.json').then((response) =>
+      response.json()
+    );
+    console.log('커뮤니티 데이터 가져옴:', communityData);
+    loadBest(communityData);
+    loadReview(communityData);
+    localStorage.setItem('communityData', JSON.stringify(communityData));
+
+    // 이벤트(3개의 캐러셀) 클릭 시 보여질 예시 화면
+    let img1 = document.querySelector('.img1');
+    let img2 = document.querySelector('.img2');
+    let img3 = document.querySelector('.img3');
+
+    img1.addEventListener('click', function () {
+      document.querySelector('main').setAttribute('style', 'display:none;');
+      document
+        .querySelector('.mag-content')
+        .setAttribute('style', 'display:none;');
+      document.querySelector(
+        '.event'
+      ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
+    });
+    img2.addEventListener('click', function () {
+      imgSrc = img2.getAttribute('src');
+      document.querySelector('main').setAttribute('style', 'display:none;');
+      document
+        .querySelector('.mag-content')
+        .setAttribute('style', 'display:none;');
+      document.querySelector(
+        '.event'
+      ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
+    });
+    img3.addEventListener('click', function () {
+      imgSrc = img3.getAttribute('src');
+      document.querySelector('main').setAttribute('style', 'display:none;');
+      document
+        .querySelector('.mag-content')
+        .setAttribute('style', 'display:none;');
+      document.querySelector(
+        '.event'
+      ).innerHTML = `<img src="${imgSrc}" width='1070px' height:'1000px' />`;
+    });
+  } catch (error) {
+    console.error('에러:', error);
+  }
+});
+
+function loadBest(data) {
+  const wrap3 = document.querySelector('.wrap3');
+  if (!wrap3) return; // wrap3 요소가 없으면 함수 종료
+
+  for (let i = 0; i < 8; i++) {
+    let code = `<div class="card-bb" style="width: 16rem; cursor:pointer; position: relative;">
+      <div class="image-container">
+        <img src=${data[i].image} class="card-img-top" alt="...">
+      </div>
+      <div class="heart-icon" style="position: absolute; bottom: 65px; right: 10px;">
+        <img id="heart-icon-${i}" style='width: 20px; height: auto; cursor: pointer;' src="./img/h.png" onclick="toggleLike(${i})" />
+        <span id="like-count-${i}" style='font-size: 12px; color: gray;'>${data[i].like}</span>
+      </div>
+      <div class="card-b">
+        <p class="card-b-text">
+          <span class='c-span' style="color:black;">
+            <!-- 좋아요 관련 처리를 위한 빈 span -->
+          </span><br>
+          ${data[i].content}
+        </p>
+      </div>
+    </div>`;
+    wrap3.innerHTML += code;
+  }
+
+    // card-bb를 클릭하는 이벤트 리스너 추가
+    const cardElements = document.querySelectorAll('.card-bb ');
+    cardElements.forEach((cardBb, index) => {
+      cardBb.addEventListener('click', () => {
+        // 클릭한 카드에 대한 정보
+        const cardInfo = {
+          id: communityData[index].id,
+          date: communityData[index].date,
+          write: communityData[index].write,
+          title: communityData[index].title,
+          category: communityData[index].category,
+          like:communityData[index].like,
+          image: communityData[index].image,
+          content: communityData[index].content,
+          re1: communityData[index].re1,
+          re2: communityData[index].re2,
+          re3: communityData[index].re3,
+          // 필요한 정보가 더 있다면 추가해주세요
+        };
+        // 로컬 스토리지에 정보 저장
+        localStorage.setItem('selectedCard', JSON.stringify(cardInfo));
+        // 디테일 페이지로 이동
+        window.location.href = '../html/communityDetail.html'; // 디테일 페이지 URL로 변경해주세요
+      });
+    });
+}
+
+function loadReview(data) {
+  const wrap5 = document.querySelector('.wrap5');
+  if (!wrap5) return; // wrap5 요소가 없으면 함수 종료
+  for (let i = 16; i < 28; i++) {
+    let hoogi = `<div class="card text-bg-dark">
+      <img src=${data[i].image} class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title">${data[i].title}</h6>
+        <p class ="card-text">${data[i].addr}</p>
+        <p class="card-text">${data[i].content}</p> </div>
+    </div>`;
+    wrap5.innerHTML += hoogi;
+  }
+
+  const cardElement2 = document.querySelectorAll('.text-bg-dark');
+  cardElement2.forEach((hoogi, index) => {
+    hoogi.addEventListener('click', () => {
+      // 클릭한 카드에 대한 정보
+      const hoogiInfo = {
+        id: communityData[index].id,
+        date: communityData[index].date,
+        write: communityData[index].write,
+        title: communityData[index].title,
+        category: communityData[index].category,
+        like:communityData[index].like,
+        addr: communityData[index].addr,
+        image: communityData[index].image,
+        content: communityData[index].content,
+        re1: communityData[index].re1,
+        re2: communityData[index].re2,
+        re3: communityData[index].re3,
+        // 필요한 정보가 더 있다면 추가해주세요
+      };
+      // 로컬 스토리지에 정보 저장
+      localStorage.setItem('selectedCard', JSON.stringify(hoogiInfo));
+      // 디테일 페이지로 이동
+      window.location.href = '../html/communityDetail.html'; // 디테일 페이지 URL로 변경해주세요
+    });
+  });
+}
