@@ -9,46 +9,37 @@
 * {
   font-family: 'GmarketSansMedium';
 }
-
-.topbutton {
-  margin: 5px 0;
-  height: 30px;
-  padding: 0 10px;
-  /* 
+/* 
+  .topbutton {
+    margin: 5px 0;
+    height: 60px;
+    padding: 0 10px; */
+/* 
     weather 버튼만 안보였는데 그이유는 div라서 한줄 다차지해
     밑에 있어서 맵에 가려짐 ->  display flex 해줌
-  */
-  display: flex;
-  /* 양끝에 붙도록 */
-  justify-content: space-between;
-  z-index: 1;
+    */
+/* 양끝에 붙도록 */
+/* z-index: 1; */
+/* display: flex;
+    justify-content: space-between;
+    position: relative;
+  } */
+.topbutton {
+  position: relative;
 }
 .back {
-  background-image: url('./img/back.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
+  position: absolute;
   cursor: pointer;
+  top: 10px;
+  left: 0;
+  z-index: 15;
 }
-.weatherbutton {
-  background-image: url('./img/weather.png');
-  background-size: 30px;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
+#weatherbutton {
+  position: absolute;
   cursor: pointer;
+  right: 0;
+  z-index: 14;
 }
-/* 
-  .mapprofile {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
-  } */
-/* #map {
-    width: 100%;
-    height: 600px;
-  } */
 
 .walkinfo {
   /* flex랑 flex속성은 적용할 대상의 부모요소에 */
@@ -65,29 +56,39 @@
 
 .walkbutton {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   /* 시작일때는 center였다가 누르고나서는 space-evenly */
   /* border: 1px solid black; */
   height: 50px;
   margin: auto 0;
 }
 .ing {
-  width: 30px;
-  background-image: url('./img/pause.png');
+  /* background-image: url('./img/pause.png'); */
   /* size 안써주니 안나왔음 */
-  background-size: contain;
-  background-repeat: no-repeat;
+  /* background-size: contain;
+    background-repeat: no-repeat; */
   /* display none 이였다가 누르면 나타나도록 */
+  cursor: pointer;
   display: none;
 }
 .walkstart {
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: #ff8f8f;
-  border-radius: 10px;
+  /* size 안써주니 안나왔음 */
+  /* background-image: url('./img/play.png');
+    background-size: contain;
+    background-repeat: no-repeat; */
+  /* display none 이였다가 누르면 나타나도록 */
   cursor: pointer;
+}
+.walkfinish {
+  /* background-image: url('./img/ing.png'); */
+  /* size 안써주니 안나왔음 */
+  /* background-size: contain;
+    background-repeat: no-repeat; */
+  /* display none 이였다가 누르면 나타나도록 */
+  cursor: pointer;
+  display: none;
+
+  text-align: center;
 }
 .walkstart:hover {
   background-color: aliceblue;
@@ -95,10 +96,7 @@
 
 /* 조건 2개 쓸 때, and로 */
 @media (max-width: 480px) {
-  #map,
-  .topbutton,
-  .walkinfo,
-  .walkbutton {
-    display: none;
+  section {
+    display: block;
   }
 }
