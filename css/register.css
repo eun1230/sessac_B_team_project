@@ -12,74 +12,16 @@ body {
   width: 100%;
   word-break: keep-all;
   font-family: 'GmarketSansMedium';
+  background-image: url('../img/main-frame.png');
+  background-size: cover;
 }
 
 .footer {
   font-family: 'GmarketSansMedium';
 }
 
-/* media query for web*/
+/* media query for web */
 @media screen and (min-width: 480px) {
-  #small-head > * {
-    display: none;
-  }
-
-  /* web ver. nav design */
-  #web-head {
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 70px;
-  }
-  #logo {
-    margin-left: 30px;
-    display: flex;
-  }
-  .web-menu {
-    padding: 0;
-    margin-right: 60px;
-    margin-left: 100px;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-  .web-menu > li,
-  a {
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    border-bottom: 2px solid transparent;
-  }
-  .web-menu li {
-    margin-left: 30px;
-  }
-  .web-menu a:hover {
-    color: #ff8f8f;
-  }
-  .web-menu li::after {
-    position: relative;
-    content: '';
-    display: block;
-    border-bottom: 2px solid #ff8f8f;
-    transition: width 250ms ease-out;
-    left: auto;
-    right: 0;
-    width: 0;
-    /* 클릭하면 언더라인 고정되게, nth-child */
-  }
-  .web-menu li:hover::after {
-    width: 100%;
-    left: 0;
-    right: auto;
-  }
-
-  /* main content */
   main {
     width: 100%;
     display: flex;
@@ -92,7 +34,7 @@ body {
   #mainTitle {
     font-size: 36px;
     font-weight: 700;
-    margin: 80px 1px 40px;
+    margin: 140px 1px 40px;
   }
 
   /* form area */
@@ -107,17 +49,17 @@ body {
     justify-content: center;
   }
   .mustInput,
-  .secondInput,
   .petInput {
-    border: 1px solid lightgray;
+    border: 1px solid #e5e4e4;
     border-radius: 8px;
     width: 80%;
     padding: 30px 0 50px;
   }
 
   td.title {
+    /* sub title */
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0;
     padding: 12px 0 24px;
     text-align: center;
@@ -128,10 +70,11 @@ body {
   }
   td[scope='row'] {
     text-align: right;
-    line-height: 40px;
   }
+
   label {
     line-height: 40px;
+    cursor: pointer;
   }
   input {
     border: 2px solid #ff8f8f;
@@ -139,30 +82,30 @@ body {
     height: 40px;
     padding: 6px;
   }
-
   [type='text'],
   [type='date'],
-  [type='password'],
   [type='email'] {
     width: 300px;
     padding: 8px;
   }
-  [placeholder] {
+  #password1,
+  #password2 {
+    width: 300px;
+    padding: 8px;
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+  }
+  #idCheckMsg,
+  #pwCheckMsg {
+    padding-left: 14px;
+  }
+
+  input[placeholder] {
     font-size: 14px;
     line-height: 40px;
   }
-  input[type='button'] {
-    border: none;
-    width: 60px;
-    height: 36px;
-    margin-left: 10px;
-    display: flex;
-    float: right;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-  label > input[type='checkbox'] {
+  [type='checkbox'] {
     display: flex;
     float: left;
     align-items: center;
@@ -171,26 +114,7 @@ body {
     /* 체크박스 컬러 변경 */
   }
 
-  /* 우편번호로 주소 찾기 영역 */
-  #sample6_address,
-  #sample6_detailAddress,
-  #sample6_extraAddress {
-    display: flex;
-    flex-direction: column;
-    margin: 5px 1px;
-  }
-
   /* pet input area */
-  .petTypeBtn img {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    border: 2px solid #ff8f8f;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-  }
   .petInfoEvent {
     width: 100vw;
     height: 38px;
@@ -201,10 +125,61 @@ body {
     padding: 8px 30px;
     text-align: center;
   }
+
   #petType {
     display: flex;
     margin: 28px 0 4px;
   }
+  .radio {
+    box-sizing: border-box;
+    display: flex;
+  }
+  input[type='radio'] {
+    appearance: none; /* 디폴트 디자인 없애기*/
+    accent-color: #ff8f8f;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccfdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  input[type='radio']::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px white;
+  }
+  input[type='radio']:checked {
+    background: #ff8f8f;
+    border-color: #ff8f8f;
+  }
+
+  div.petPhoto {
+    width: 50px;
+    background-color: #e5e4e4;
+    border: 2px solid #e5e4e4;
+    border-radius: 8px;
+    text-align: center;
+  }
+  div.petPhoto:hover {
+    border: 2px solid #ff8f8f;
+  }
+  div.petPhoto:active {
+    font-weight: 700;
+  }
+  #chooseFile {
+    display: none;
+    /* visiblity는 보이지 않을뿐 존재하는 상태 */
+  }
+  .img {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
   #petGender {
     display: flex;
     margin: 4px 32px;
@@ -233,31 +208,28 @@ body {
   #registerBtn {
     width: 300px;
     height: 70px;
+    line-height: 70px;
     background-color: #ff8f8f;
     color: white;
     border: 0;
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.1s;
     margin: 40px auto;
+  }
+  #registerBtn:hover {
+    color: black;
+  }
+  #registerBtn:active {
+    color: black;
+    font-weight: 700;
   }
 }
 
-/* mediaquery for mobile */
+/* mediaquery for mobile main */
 @media screen and (max-width: 480px) {
-  #web-head {
-    display: none;
-  }
-
-  /* mobile header design */
-
-  /* main content */
   main {
     width: 100%;
     display: flex;
@@ -285,17 +257,17 @@ body {
     justify-content: center;
   }
   .mustInput,
-  .secondInput,
   .petInput {
-    border: 1px solid lightgray;
+    border: 1px solid #e5e4e4;
     border-radius: 8px;
     width: 95%;
     padding: 30px 0 50px;
   }
 
   td.title {
+    /* sub title */
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0;
     padding: 12px 0 18px;
     text-align: center;
@@ -306,10 +278,11 @@ body {
   }
   td[scope='row'] {
     text-align: right;
-    line-height: 40px;
   }
+
   label {
     line-height: 40px;
+    cursor: pointer;
   }
   input {
     border: 2px solid #ff8f8f;
@@ -317,15 +290,28 @@ body {
     height: 40px;
     padding: 6px;
   }
-
   [type='text'],
   [type='date'],
   [type='password'],
   [type='email'] {
-    width: 250px;
+    width: 200px;
     padding: 8px;
   }
-  [placeholder] {
+
+  #password1,
+  #password2 {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+    width: 200px;
+    padding: 8px;
+  }
+  #idCheckMsg,
+  #pwCheckMsg {
+    font-size: 14px;
+  }
+
+  input[placeholder] {
     font-size: 14px;
     line-height: 40px;
   }
@@ -340,7 +326,7 @@ body {
     align-items: center;
     justify-content: center;
   }
-  label > input[type='checkbox'] {
+  [type='checkbox'] {
     display: flex;
     float: left;
     align-items: center;
@@ -349,26 +335,39 @@ body {
     /* 체크박스 컬러 변경 */
   }
 
-  /* 우편번호로 주소 찾기 영역 */
-  #sample6_address,
-  #sample6_detailAddress,
-  #sample6_extraAddress {
+  /* pet input area */
+  #petType {
     display: flex;
-    flex-direction: column;
-    margin: 5px 1px;
+    padding: 16px 0 4px;
+  }
+  .radio {
+    box-sizing: border-box;
+    display: flex;
+  }
+  input[type='radio'] {
+    appearance: none; /* 디폴트 디자인 없애기*/
+    accent-color: #ff8f8f;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccfdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  input[type='radio']::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px white;
+  }
+  input[type='radio']:checked {
+    background: #ff8f8f;
+    border-color: #ff8f8f;
   }
 
-  /* pet input area */
-  .petTypeBtn img {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    border: 2px solid #ff8f8f;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-  }
   .petInfoEvent {
     width: 100vw;
     height: 38px;
@@ -379,10 +378,30 @@ body {
     padding: 8px 30px;
     text-align: center;
   }
-  #petType {
-    display: flex;
-    margin: 12px 0 1px;
+
+  /* pet photo */
+  div.petPhoto {
+    width: 50px;
+    background-color: #e5e4e4;
+    border: 2px solid #e5e4e4;
+    border-radius: 8px;
+    text-align: center;
   }
+  div.petPhoto:hover {
+    border: 2px solid #ff8f8f;
+  }
+  div.petPhoto:active {
+    font-weight: 700;
+  }
+  #chooseFile {
+    display: none;
+    /* visiblity는 보이지 않을뿐 존재하는 상태 */
+  }
+  .img {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
   #petGender {
     display: flex;
     margin: 4px 32px;
@@ -409,20 +428,24 @@ body {
 
   /* mobile btn style */
   #registerBtn {
-    width: 200px;
+    width: 250px;
     height: 60px;
+    line-height: 60px;
     background-color: #ff8f8f;
     color: white;
     border: 0;
     border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     font-size: 18px;
     font-weight: 500;
-    text-decoration: none;
     cursor: pointer;
-    transition: 0.1s;
     margin: 50px auto;
+  }
+  #registerBtn:hover {
+    color: black;
+  }
+  #registerBtn:active {
+    color: black;
+    font-weight: 700;
   }
 }
