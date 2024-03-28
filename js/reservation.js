@@ -1,9 +1,14 @@
+let petName;
 document.addEventListener('DOMContentLoaded', function () {
   // 로컬스토리지에서 데이터 가져오기
   const placeName = localStorage.getItem('placeName');
   const imageSrc = localStorage.getItem('imageSrc');
   const roadAddress = localStorage.getItem('roadAddress');
   console.log(placeName, imageSrc, roadAddress);
+
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  console.log(userInfo);
+  petName = userInfo.petName;
 
   let code = `<div class="hospital">
   <span>
@@ -97,7 +102,7 @@ function reserve() {
     localStorage.setItem('selectedDate', selectedDateText);
     localStorage.setItem('selectedTime', selectedTimeText);
     // 예약 완료 메시지 출력 또는 예약 페이지로 이동
-    alert('예약이 완료되었습니다!');
+    alert(`${petName}, 예약이 완료되었습니다!`);
     window.location.href = './my.html';
   }
 }

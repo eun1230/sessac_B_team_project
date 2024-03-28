@@ -112,7 +112,7 @@ function regOk() {
   }
 }
 
-/* 여기서 입력한 값이 마이페이지에서 보이게 보내기 */
+/* 여기서 입력한 값이 마이페이지에서 보이게 보내기 -> 입력한 value값들을 저장하기 */
 const { setItem, getItem, removeItem, clear, length, key } = localStorage;
 const userInfo = {
   id: 'lumipet',

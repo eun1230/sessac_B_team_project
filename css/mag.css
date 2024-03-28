@@ -18,6 +18,20 @@ body {
   background-image: url('./../img/main-frame.png');
   background-size: cover;
 }
+.backKey {
+  display: flex;
+  margin: 30px 10px 40px 10px;
+  padding-left: 170px;
+  width: 70%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.backKey svg {
+  font-size: 30px;
+  margin-right: auto;
+}
+
 .magInfo {
   width: 1070px;
   margin: auto;
@@ -34,4 +48,3 @@ body {
 #mag-img2 {
   width: 1070px;
 }
-

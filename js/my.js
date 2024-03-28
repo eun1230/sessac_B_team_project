@@ -184,7 +184,7 @@ let code = `<div class="reservitem">
   <div class="reservname">${placeName}</div>
   <div class="reservdate">${month}월 ${date}일 ${time}</div>
 </div>
-<div class="changebutton" onclick="location.href= '../html/resevation.html'">
+<div class="changebutton" onclick="location.href= '../html/reservation.html'">
   변경
 </div>
 </div>`;
@@ -195,4 +195,5 @@ function logOut() {
   window.addEventListener('unload', function (event) {
     localStorage.clear(); // 페이지가 언로드될 때 로컬 스토리지 데이터를 모두 삭제
   });
+  location.href = '../index.html';
 }

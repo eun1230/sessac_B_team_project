@@ -30,8 +30,6 @@ function login() {
     } else if (pw.value !== userPw) {
       alert('비밀번호를 확인해주세요.');
     } else if (pw.value === userPw) {
-      
-
       // 로그인 상태와 프로필 이미지 URL을 로컬 스토리지에 저장
       localStorage.setItem('isLoggedIn', 'true');
 

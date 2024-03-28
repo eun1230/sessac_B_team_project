@@ -226,6 +226,9 @@ h2 {
   padding-left: 10px;
   margin-bottom: 200px;
 }
+.more-2{
+position:absolute;
+}
 
 .wrap5 > .card {
   width: 250px;

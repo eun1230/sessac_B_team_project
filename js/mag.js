@@ -70,3 +70,8 @@ magDetail.innerHTML = `
  <p> ${mag.author} </p>
     </div>
   `;
+  
+// 뒤로가기 함수
+function goBack() {
+  window.history.back();
+}
