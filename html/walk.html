@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WALK | 산책하기</title>
+    <link rel="icon" type="image/png" href="../logo_2.png" />
     <!-- bootstrap cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -18,85 +19,94 @@
     ></script>
     <link rel="stylesheet" href="../css/walk.css" />
     <script defer type="text/javascript" src="../js/walk.js"></script>
-    <script
+    <link rel="stylesheet" href="../css/weather.css">
+    <script defer src="../js/weather.js"></script>
+    <!-- <script defer
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f9a117af6f7f12d32c09417a2fdd205"
-    ></script>
+    ></script> -->
   </head>
   <body>
     <header></header>
     <main>
       <!-- 상단 버튼 -->
       <!-- 맵 -->
-      <section>
-        <div class="topbutton">
-          <div class="back" , onclick="location.href='../html/main.html';">
-            <img src="../img/back.png" alt="" style="width: 40px" />
-          </div>
-          <div id="weatherbutton">
-            <img src="../img/weather.png" alt="" style="width: 60px" />
-          </div>
-          <div id="modalcontainer" class="hidden">
-            <div id="modalcontent">
-              <div class="wl">
-                <div class="monthdate"></div>
-                <div><img class="icon" /></div>
-                <div class="description"></div>
-              </div>
-              <div class="wr">
-                <div class="place"></div>
-                <div class="tem">
-                  <div class="temperature"></div>
-                  <div class="maxmin">
-                    <div class="mintemp"></div>
-                    <div class="maxtemp"></div>
+      <main>
+        <!-- 상단 버튼 -->
+        <!-- 맵 -->
+        <section>
+          <div class="topbutton">
+            <div class="back" , onclick="location.href='../html/index.html';">
+              <img src="../img/back.png" alt="" style="width: 40px" />
+            </div>
+            <div id="weatherbutton">
+              <img src="../img/weather.png" alt="" style="width: 60px" />
+            </div>
+            <div id="modalcontainer" class="hidden">
+              <div id="modalcontent">
+                <div class="wl">
+                  <div class="monthdate"></div>
+                  <div><img class="icon" /></div>
+                  <div class="description"></div>
+                </div>
+                <div class="wr">
+                  <div class="place"></div>
+                  <div class="tem">
+                    <div class="temperature"></div>
+                    <div class="maxmin">
+                      <div class="mintemp"></div>
+                      <div class="maxtemp"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div id="modalclosebutton">
+                <img src="../img/x.png" alt="닫기" style="width: 40px" />
+              </div>
             </div>
-            <div id="modalclosebutton">
-              <img src="../img/x.png" alt="닫기" style="width: 40px" />
+          </div>
+          <!-- <div class="mapprofile"></div> -->
+          <!-- 높이 지정해주지 않으면 영영 안나타남 -->
+          <!-- <div id="map"></div> -->
+          <!-- 지도를 표시할 div 입니다 -->
+  
+          <div id="map" style="width: 100%; height: 500px"></div>
+          <!-- !!!!!!!여기 api수정 -->
+         <script
+          type="text/javascript"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f9a117af6f7f12d32c09417a2fdd205"
+        ></script>
+        </section>
+        <!-- 산책 수치 -->
+        <section>
+          <div class="walkinfo">
+            <div class="distance">
+              <div class="number"><span id="distance"></span></div>
+              <div class="text">거리(km)</div>
+            </div>
+            <div class="walkpoint">
+              <div class="number"><span id="pointDisplay"></span></div>
+              <div class="text">루미</div>
+            </div>
+            <div class="hour">
+              <div class="number">
+                <span id="hours"></span> : <span id="minutes"></span>
+              </div>
+              <div class="text">시간:분</div>
             </div>
           </div>
-        </div>
-        <!-- <div class="mapprofile"></div> -->
-        <!-- 높이 지정해주지 않으면 영영 안나타남 -->
-        <!-- <div id="map"></div> -->
-        <!-- 지도를 표시할 div 입니다 -->
-
-        <div id="map" style="width: 100%; height: 500px"></div>
-        <!-- !!!!!!!여기 api수정 -->
-      </section>
-      <!-- 산책 수치 -->
-      <section>
-        <div class="walkinfo">
-          <div class="distance">
-            <div class="number"><span id="distance"></span></div>
-            <div class="text">거리(km)</div>
-          </div>
-          <div class="walkpoint">
-            <div class="number"><span id="pointDisplay"></span></div>
-            <div class="text">루미</div>
-          </div>
-          <div class="hour">
-            <div class="number">
-              <span id="hours"></span> : <span id="minutes"></span>
+          <div class="walkbutton">
+            <div class="ing">
+              <img src="../img/pause.png" alt="멈춤" style="width: 50px" />
             </div>
-            <div class="text">시간:분</div>
+            <div class="walkstart">
+              <img src="../img/play.png" alt="시작" style="width: 50px" />
+            </div>
+            <div class="walkfinish">
+              <img src="../img/ing.png" alt="일시정지" style="width: 50px" />
+            </div>
           </div>
-        </div>
-        <div class="walkbutton">
-          <div class="ing">
-            <img src="../img/pause.png" alt="멈춤" style="width: 50px" />
-          </div>
-          <div class="walkstart">
-            <img src="../img/play.png" alt="시작" style="width: 50px" />
-          </div>
-          <div class="walkfinish">
-            <img src="../img/ing.png" alt="일시정지" style="width: 50px" />
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
   </body>
 </html>

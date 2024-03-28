@@ -30,10 +30,11 @@ function loadFile(input) {
   newImg.src = URL.createObjectURL(file);
 
   // 새로 저장될 이미지의 크기
-  newImg.style.width = '200px';
-  newImg.style.height = '200px';
+  newImg.style.width = '100px';
+  newImg.style.height = '100px';
   newImg.style.objectFit = 'contain';
-  newImg.style.margin = '10px';
+  newImg.style.marginleft = '20px';
+  newImg.style.marginbottom = '20px';
 
   // 이미지가 뒤에 추가되도록
   let container = document.querySelector('.showpetimg');
@@ -140,3 +141,52 @@ function disala() {
   document.querySelector('.pwchange').style.display = 'none';
   document.querySelector('.alarmsetting').style.display = 'block';
 }
+// 북마크
+function loadBest(data) {
+  const wrap3 = document.querySelector('.mybookmark');
+  if (!wrap3) return; // wrap3 요소가 없으면 함수 종료
+
+  for (let i = 0; i < 8; i++) {
+    let code = `<div class="card-bb" style="width: 16rem; cursor:pointer; position: relative;">
+      <div class="image-container">
+        <img src=${data[i].image} class="card-img-top" alt="...">
+      </div>
+      <div class="heart-icon" style="position: absolute; bottom: 65px; right: 10px;">
+        <img id="heart-icon-${i}" style='width: 20px; height: auto; cursor: pointer;' src="./img/h.png" onclick="toggleLike(${i})" />
+        <span id="like-count-${i}" style='font-size: 12px; color: gray;'>${data[i].like}</span>
+      </div>
+      <div class="card-b">
+        <p class="card-b-text">
+          <span class='c-span' style="color:black;">
+            <!-- 좋아요 관련 처리를 위한 빈 span -->
+          </span><br>
+          ${data[i].content}
+        </p>
+      </div>
+    </div>`;
+    wrap3.innerHTML += code;
+  }
+}
+
+// localStorage에서 가져오는 방법
+const placeName = localStorage.getItem('placeName');
+const date = localStorage.getItem('selectedDate');
+const time = localStorage.getItem('selectedTime');
+console.log(placeName, date, time);
+
+let now = new Date(); // 현재 날짜 및 시간
+let month = now.getMonth() + 1; // 월
+console.log(month);
+
+// 변수는 ${}식으로 받아옴
+let code = `<div class="reservitem">
+<div class="reservinfo">
+  <div class="reservname">${placeName}</div>
+  <div class="reservdate">${month}월 ${date}일 ${time}</div>
+</div>
+<div class="changebutton" onclick="location.href= '../html/resevation.html'">
+  변경
+</div>
+</div>`;
+
+document.querySelector('.hospitalreserv').innerHTML = code;

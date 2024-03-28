@@ -19,18 +19,18 @@ weatherButton.addEventListener('click', () => {
 // const success = (position) => {
 //   console.log(position);
 // };
-const success = (position) => {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+success = (position) => {
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
 
   getWeather(latitude, longitude);
   // 함수명은 getWeather이며 latitude, longitude 두개의 매개변수가 전달
 };
-const fail = () => {
+fail = () => {
   alert('좌표를 받아올 수 없음');
 };
 
-const getWeather = (lat, lon) => {
+getWeather = (lat, lon) => {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`
   )
@@ -59,11 +59,11 @@ const getWeather = (lat, lon) => {
       iconSection.setAttribute('src', iconURL);
       //   HTML쓸 때는 ''안에 쓰고 변수만 그대로
       minSection.innerHTML =
-        '<img src="./img/low.png" style="width: 30px">' +
+        '<img src="../img/low.png" style="width: 30px">' +
         temperatureMin +
         ' °C';
       maxSection.innerHTML =
-        '<img src="./img/HIGH.png" style="width: 30px">' +
+        '<img src="../img/HIGH.png" style="width: 30px">' +
         temperatureMax +
         ' °C';
     });
