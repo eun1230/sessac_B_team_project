@@ -11,6 +11,9 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
     format('woff');
 }
+.event {
+  width: 1070px;
+}
 
 body {
   margin: 0;
@@ -139,6 +142,7 @@ h2 {
   flex-direction: row;
   width: 1070px;
   margin: auto;
+  margin-top: 20px;
   border-radius: 27px;
   overflow: hidden;
   margin-bottom: 100px;
@@ -183,7 +187,9 @@ h2 {
 }
 .card-bb:hover {
   filter: brightness(80%);
+  transform: scale(1.02); /* 호버시 약간 확대 */
 }
+
 .image-container {
   width: 100%;
   height: 0;
@@ -203,69 +209,22 @@ h2 {
 }
 
 .card-b-text {
+  background-color: #ffffff00;
   text-align: center;
   padding: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   color: gray;
-  font-size: 15px;
-}
-
-.b * {
-  border-radius: 15px;
-  overflow: hidden;
-}
-.b-box1 {
-  width: 568px;
-  height: 500px;
-  background-image: url('../img/mainImg/d-5.png');
-  background-size: cover;
-  margin-right: 10px;
-  border-radius: 15px;
-}
-.b-box2 {
-  width: 257px;
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-}
-.b-box2 > .in-b1 {
-  background-image: url('../img/mainImg/d-3.png');
-  background-size: cover;
-  background-position: center;
-  height: 65%;
-  margin-bottom: 10px;
-}
-.b-box2 > .in-b2 {
-  background-image: url('../img/mainImg/d-2.png');
-  background-size: contain;
-  height: 35%;
-}
-.b-box3 {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-}
-
-.b-box3 > .in-b3 {
-  background-image: url('../img/mainImg/d-1.png');
-  background-size: cover;
-  background-position: center;
-  height: 35%;
-  margin-bottom: 10px;
-}
-.b-box3 > .in-b4 {
-  background-image: url('../img/mainImg/d-4.png');
-  background-size: contain;
-  height: 65%;
+  font-size: 13px;
 }
 
 .wrap5 {
   width: 1070px;
   padding-left: 10px;
+  margin-bottom: 200px;
 }
 
 .wrap5 > .card {
@@ -295,7 +254,7 @@ h2 {
 }
 
 .card.text-bg-dark .card-img {
-  transition: transform 1.3s ease;
+  transition: transform 1s ease;
 }
 
 .card.text-bg-dark:hover .card-img {
@@ -308,7 +267,35 @@ h2 {
 
   /* 흰색으로 변경 */
 }
+
+.gif img {
+  position: absolute;
+  top: 230px;
+  left: 235px;
+  z-index: 999;
+}
+.gif2 {
+  position: absolute;
+  top: 900px;
+  left: 930px;
+  z-index: 999;
+}
+.gif3 {
+  position: absolute;
+  top: 2340px;
+  left: 340px;
+  z-index: 999;
+}
+@media screen and (max-height: 500px) {
+  .wrap.wrap2 {
+    margin-top: 0;
+  }
+}
+
 @media screen and (max-width: 479px) {
+  .gif .gif2 .gif3 img {
+    display: none;
+  }
   /* 수정 */
   .wrap {
     width: 460px;

@@ -23,9 +23,10 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="../js/my.js"></script>
-    <script defer src="../js/header.js"></script>
+    <script defer src="../js/loginHeader.js"></script>
     <script defer src="../js/footer.js"></script>
   </head>
+
   <body>
     <header></header>
     <main>
@@ -147,13 +148,6 @@
                   </div>
                 </div>
               </div>
-              <div class="mypagenav_acc">
-                <div class="panel_head" onclick="logout()">
-                  <div class="vh"></div>
-                  <div class="logout" onclick="logout()">로그아웃</div>
-                  <div class="navdown vh">
-                </div>
-              </div>
             </div>
           </div>
         </aside>
@@ -198,7 +192,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='../html/reservation.html'"
+                      onclick="location.href='./reservation.html'"
                     >
                       변경
                     </div>
@@ -221,7 +215,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='../html/reservation.html'"
+                      onclick="location.href='./reservation.html'"
                     >
                       변경
                     </div>
@@ -233,7 +227,7 @@
                     </div>
                     <div
                       class="changebutton"
-                      onclick="location.href='../html/reservation.html'"
+                      onclick="location.href='./reservation.html'"
                     >
                       변경
                     </div>
@@ -293,7 +287,9 @@
             <div class="mybookmark"></div>
             <div class="inquirysection" onclick="disinq()">
               <div class="inquirytop">
-                <div class="di"><h2>1:1 문의</h2></div>
+                <div class="di">
+                  <h2>1:1 문의</h2>
+                </div>
                 <h3>사진 및 동영상 첨부하기</h3>
               </div>
               <div class="boxarrange">
@@ -433,7 +429,7 @@
                     <div class="newpwcheckinput">
                       <input
                         type="text"
-                        placeholder="비밀번호를 다시 한번 입력해주세요."
+                        placeholder="비밃번호를 다시 한번 입력해주세요."
                       />
                     </div>
                   </div>
