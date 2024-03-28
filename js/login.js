@@ -2,6 +2,7 @@
 (아이디+비번 확인하고, 둘 다 맞으면 이동) */
 const loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click', login);
+
 function login() {
   let id = document.querySelector('#userId');
   let pw = document.querySelector('#password');
@@ -29,7 +30,15 @@ function login() {
     } else if (pw.value !== userPw) {
       alert('비밀번호를 확인해주세요.');
     } else if (pw.value === userPw) {
+      
+
+      // 로그인 상태와 프로필 이미지 URL을 로컬 스토리지에 저장
+      localStorage.setItem('isLoggedIn', 'true');
+
+      // 로그인이 완료되었을 때 프로필 이미지 URL을 받아와서 헤더에 반영
+      // 예시: replaceLoginWithProfile('프로필이미지URL');
       document.location.href = '../index.html';
+
       // 아이디, 비번 모두 확인되면 메인 페이지로
     }
   }

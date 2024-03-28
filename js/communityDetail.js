@@ -61,7 +61,33 @@ function loadCommunityData(data) {
         <button class="upload">등록</button>
       </div>
       <div class="commentBox">
-        <div class="commentContainer"></div>
+        <div class="commentContainer">
+        
+         <div class="commentMini">
+              <div>
+                <img src="../img/community/떠나.png" alt="프로필" />
+              </div>
+              <div>
+                <p>컨티타</p>
+              </div>
+            </div>
+            <div class="commentText"><p>${post.re1}</p></div>
+        </div>  
+         
+        <div class="commentMini">
+              <div>
+                <img src="../img/community/간식.png" alt="프로필" />
+              </div>
+              <div>
+                <p>seven27</p>
+              </div>
+            </div>
+            <div class="commentText"><p>${post.re2}</p></div>
+        </div>  
+        
+        </div> 
+      </div> 
+  </div>
       </div>
     </div>`;
 
