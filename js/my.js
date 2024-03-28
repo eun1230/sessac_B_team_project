@@ -190,3 +190,9 @@ let code = `<div class="reservitem">
 </div>`;
 
 document.querySelector('.hospitalreserv').innerHTML = code;
+
+function logOut() {
+  window.addEventListener('unload', function (event) {
+    localStorage.clear(); // 페이지가 언로드될 때 로컬 스토리지 데이터를 모두 삭제
+  });
+}
