@@ -1,19 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url(../img/main-frame.png);
-  background-size: cover;
-}
-
-.container-fluid {
+.com-box {
   max-width: 1070px;
+  margin: auto;
+  min-height: 400px; /* 적절한 높이로 설정하세요 */
 }
-
-main {
-  margin: 0;
-  padding: 0;
-}
-
 .mainTitle {
   text-align: center;
   margin: 40px 0 40px 0;
@@ -61,7 +50,7 @@ main {
 .searchBar {
   width: 100%;
   height: 60px;
-  border: 3px pink solid;
+  border: 3px rgb(243, 169, 169) solid;
   border-radius: 30px;
   padding-left: 60px;
   font-size: 20px;
@@ -72,21 +61,25 @@ main {
 }
 
 .content {
-  margin-bottom: 10px;
   display: flex;
+  flex-direction: row;
+  width: 1070px;
+  margin-bottom: 10px;
   justify-content: center;
+  /* margin-left: 20px; */
 }
 
 .content-box {
-  width: 150px;
-  height: 100px;
+  width: 130px;
+  height: 55px;
   line-height: 50px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
-  margin: 20px;
-  background-color: #ff8f8f;
-  color: white;
+  margin-right: 20px;
+  background-color: #ffc1c1a2;
+  color: rgb(77, 77, 77);
+  /* border: 3px rgb(243, 169, 169) solid; */
 }
 
 .content-box-btn {
@@ -95,10 +88,13 @@ main {
 }
 
 .content-box:hover {
-  background-color: #ff6b6b;
+  background-color: #ff6b6ba1;
 }
 
 .communityBox {
+  margin-top: 50px;
+  margin-bottom: 250px;
+
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -112,30 +108,30 @@ main {
   position: relative;
 }
 
-.community h3 {
-  margin: 20px;
-  font-size: 35px;
+.topBox {
+  width: 1070px;
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+.topBox h4 {
+  /* margin: 20px; */
+  /* font-size: 35px; */
   padding-top: 5px;
   padding-left: 10px;
 }
-
-.topBox {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .topBox p {
-  line-height: 90px;
   cursor: pointer;
+  padding-right: 30px;
+  padding-top: 10px;
 }
 
 .commentBox {
-  width: 98%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  margin-left: 30px;
-  background-color: aliceblue;
+  /* margin-left: 30px; */
+  background-color: rgba(255, 255, 255, 0.854);
   border-radius: 20px;
   position: relative;
 }

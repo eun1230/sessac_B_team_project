@@ -1,78 +1,125 @@
-let Data = [];
+document.addEventListener('DOMContentLoaded', async () => {
+  let Data = [];
+  let currentPage = 1;
+  const commentsPerPage = 5;
 
-// 지도 정보 목데이터 가져오기
-fetch('../html/community.json')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log('제이슨파일 가져옴 ', data);
+  try {
+    const response = await fetch('../html/community.json');
+    if (!response.ok) {
+      throw new Error('Failed to fetch community data');
+    }
+    const data = await response.json();
     Data = data;
-    console.log('fetch에서 data', Data);
-    loadBest(); // 데이터가 로드된 후에 loadBest() 호출
-  })
-  .catch((error) => console.log('error : ', error));
-
-function loadBest() {
-  for (let i = 0; i < Data.length; i++) {
-    let code = `
-  <div class="card" style="width: 16rem; cursor:pointer">
-  <img src=${Data[i].picture} class="card-img-top" alt="사진">
-<br/>
-  <div class="card-body">
-    <p class="card-text">
-      <span class='c-span' style="color:black;">
-      ${Data[i].name} </span>
-      <br />
-      ${Data[i].comment} </p>
-  </div>
-  <div class="cnt" style="display:flex; margin-left:150px; flex-direcetion:row;">
-  <span style='font-size:15px;' id="cnt-heart">
-  ${Data[i].like}
-  </span>
-  <img 
-  style='margin-left:10px;margin-bottom:10px;width:20px;height:20px;cursor:pointer' 
-  src=${Data[i].heart} alt=' />
-  </div>`;
-    document.querySelector('.category').innerHTML += code;
+    loadCommunityData(Data, currentPage);
+  } catch (error) {
+    console.error('Error fetching community data:', error);
   }
-}
 
-// 이미지 클릭 이벤트 처리
-document.querySelectorAll('.category').forEach((card, index) => {
-  card.addEventListener('click', () => {
-    // 선택한 이미지의 ID를 가져옴
-    let selectedId = Data[index].id;
-    // 해당 ID에 해당하는 이미지로 이동
-    window.location.href = `http://127.0.0.1:5500/html/communityDetail.html?id=${selectedId}`;
-    // 여기서 'http://example.com/image'는 이미지가 표시되는 페이지 URL입니다.
-    // 선택한 이미지의 ID를 쿼리 매개변수로 전달하여 해당 이미지를 표시하도록 할 수 있습니다.
+  function loadCommunityData(data, page) {
+    const startIndex = (page - 1) * commentsPerPage;
+    const endIndex = Math.min(startIndex + commentsPerPage, data.length);
+
+    const searchKeyword = document.querySelector('.searchBar').value.trim();
+    const filteredData = filterDataByKeyword(data, searchKeyword);
+
+    const numOfFilteredData = filteredData.length;
+
+    let commentHTML = '';
+    filteredData.slice(startIndex, endIndex).forEach((post, index) => {
+      commentHTML += `
+        <div class="commentBox" style="cursor:pointer" data-id="${post.id}">
+          <div class="commentMini">
+            <div>
+              <img src=${post.image} alt="프로필" />
+            </div>
+            <div>
+              <p>${post.write}</p>
+            </div>
+          </div>
+          <div class="commentText">
+            <p>${post.title}</p>
+            <p>${post.content}</p>
+          </div>
+          <div class="likeBox">
+            <img class="heart" src="../img/h.png" alt="" />
+            <p>${post.like}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    if (numOfFilteredData === 0) {
+      commentHTML = '<p>검색 결과가 없습니다.</p>';
+    }
+
+    document.querySelector('.community').innerHTML = commentHTML;
+
+    renderPagination(numOfFilteredData);
+  }
+
+  function renderPagination(numOfFilteredData) {
+    const numOfPages = Math.ceil(numOfFilteredData / commentsPerPage);
+    let pagingHTML = '<div class="nextPageBox">';
+    for (let i = 1; i <= numOfPages; i++) {
+      pagingHTML += `<p class="nextPage">${i}</p>`;
+    }
+    pagingHTML += '</div>';
+
+    const nextPageBox = document.querySelector('.nextPageBox');
+    if (nextPageBox) {
+      nextPageBox.innerHTML = pagingHTML;
+    } else {
+      const container = document.querySelector('.community');
+      const newNextPageBox = document.createElement('div');
+      newNextPageBox.classList.add('nextPageBox');
+      newNextPageBox.innerHTML = pagingHTML;
+      container.appendChild(newNextPageBox);
+    }
+  }
+
+  document.querySelector('.community').addEventListener('click', (event) => {
+    if (event.target.classList.contains('nextPage')) {
+      currentPage = parseInt(event.target.textContent);
+      loadCommunityData(Data, currentPage);
+    } else if (event.target.closest('.commentBox')) {
+      const postId = event.target.closest('.commentBox').dataset.id;
+      window.location.href = `../html/communityDetail.html?id=${postId}`;
+    }
   });
+
+  // 검색어 입력 시 자동으로 검색
+  document
+    .querySelector('.searchBox .searchBar')
+    .addEventListener('input', () => {
+      loadCommunityData(Data, 1);
+    });
+
+  // 검색 버튼 클릭 이벤트 리스너 추가
+  document
+    .querySelector('.searchBox .searchBtn')
+    .addEventListener('click', () => {
+      loadCommunityData(Data, 1);
+    });
+
+  // 키워드 버튼 클릭 이벤트 리스너 추가
+  document.querySelectorAll('.content-box').forEach((button) => {
+    button.addEventListener('click', () => {
+      const keyword = button.textContent.substring(1); // 버튼 텍스트에서 #을 제외한 키워드 추출
+      document.querySelector('.searchBar').value = keyword; // 검색 바에 키워드 설정
+      loadCommunityData(Data, 1); // 필터링된 데이터로 글 목록 갱신 및 첫 페이지로 설정
+    });
+  });
+
+  // 검색어로 데이터 필터링하는 함수
+  function filterDataByKeyword(data, keyword) {
+    return data.filter((post) => {
+      // 제목, 내용, 작성자, 주소 중 하나라도 검색어가 포함되어 있는지 확인
+      return (
+        post.write.includes(keyword) ||
+        post.content.includes(keyword) ||
+        post.addr.includes(keyword) ||
+        post.title.includes(keyword)
+      );
+    });
+  }
 });
-
-// // 검색 결과를 표시하는 함수
-// function searchContent(keyword) {
-//   const filtered = Data.filter((Data) => {
-//     return product.name.includes(keyword);
-//   });
-//   console.log(filtered);
-//   displayProducts(filtered);
-// }
-
-//검색하기 기능
-const searchBtn = document.querySelector('.searchBtn');
-
-// searchBtn.addEventListener('click', () => {
-//
-// });
-
-searchBtn.addEventListener('click', () => {
-  const keyword = document.querySelector('#search-input').value;
-  // searchContent(keyword);
-  console.log(keyword,'검색하기버튼');
-});
-
-// 카테고리 별 버튼 눌렀을 때 sub로 이동하기 & 각 게시글은 디테일페이지로 이동하기
-// 
-
-

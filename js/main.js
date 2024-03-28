@@ -92,13 +92,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-function showDetail(index, communityData) {
+function showDetail(index) {
   const selectedCard = communityData[index];
-  // 로컬 스토리지에 정보 저장
-  localStorage.setItem('selectedCard', JSON.stringify(selectedCard));
-  // 디테일 페이지로 이동
-  window.location.href = `../html/communityDetail.html`; // 디테일 페이지 URL로 변경해주세요
+  const postId = selectedCard.id;
+  // 카드 ID를 매개변수로 사용하여 URL 구성
+  const detailURL = `../html/communityDetail.html?id=${postId}`;
+  // 디테일 페이지 URL로 이동
+  window.location.href = detailURL;
 }
+
 
 // 이미지 클릭 이벤트 등록
 const img1 = document.querySelector('.img1');
