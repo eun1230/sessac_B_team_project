@@ -151,7 +151,6 @@ main {
 /* --------------------------------------------------------- */
 /* 마이페이지 오른쪽 파트 */
 .rightpart {
-  margin-top: 50px;
   width: 70%;
 }
 /* 마이페이지 항목 펼쳐지는 부분 */
@@ -438,7 +437,7 @@ article {
 .boxarrange {
   display: flex;
   flex-direction: column;
-  align-items: end;
+
   margin: 0 auto;
   margin-top: 30px;
 }
@@ -448,7 +447,7 @@ article {
   width: 90%;
 }
 .inquirytitlename {
-  width: 90%;
+  width: 110%;
   height: 40px;
   border-radius: 8px;
   background-color: #f7f7f7;
@@ -456,7 +455,7 @@ article {
 }
 
 #textarea {
-  width: 90%;
+  width: 110%;
   height: 200px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -522,6 +521,7 @@ input #file {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 .done:hover {
   font-weight: 600;
@@ -543,7 +543,9 @@ input #file {
 }
 .changenewpw {
   margin-top: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .newpwtext,
 .newpwchecktext {
@@ -553,7 +555,7 @@ input #file {
 }
 .newpwinput input,
 .newpwcheckinput input {
-  width: 480px;
+  width: 130%;
   height: 60px;
   border-radius: 10px;
   background-color: #f7f7f7;
@@ -572,14 +574,17 @@ input #file {
   cursor: pointer;
 }
 .pwbutton {
-  width: 480px;
-  height: 60px;
-  line-height: 60px;
+  background-color: #f7f7f7;
+  border: 1px solid lightgray;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
   text-align: center;
-  border-radius: 10px;
   background-color: #f7f7f7;
   border: 1px solid lightgray;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 .pwbutton:hover {
   font-weight: 600;
@@ -656,8 +661,8 @@ input #file {
   margin-top: 20px;
 }
 .setting {
-  margin: 3px 0;
-  padding: 10px;
+  margin: 10px 0;
+  /* padding: 10px; */
   width: 300px;
   /* background-color: #f7f7f7;
   border: 2px solid lightgray; */
@@ -673,7 +678,7 @@ input #file {
 
   section.mywhole {
     width: 400px;
-    margin: 0;
+    margin: -40px;
     padding: 0;
     justify-content: flex-start;
   }
@@ -803,32 +808,30 @@ input #file {
     font-size: 15px;
   }
   .postitemtitle {
-    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
   }
 
   .posttitle {
-    margin-top: 10px;
     font-size: 15px;
-    margin-left: -20px;
-    margin-top: 0px;
   }
 
   .postitem {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    width: 60%;
   }
-
   .postdate {
     font-size: 15px;
-    margin-left: -30px;
-    margin-top: 30px;
-    width: 100px;
   }
   .postcomment {
     font-size: 15px;
-    margin-left: -100px;
-    margin-top: -20px;
+    /* margin-left: -100px;
+    margin-top: -20px; */
   }
-  .heart {
+  .heartbox {
     display: none;
   }
 
@@ -900,13 +903,19 @@ input #file {
     font-size: 14px;
   }
   .inquirytitlename {
-    width: 140px;
+    width: 180px;
   }
   #textarea {
-    width: 154px;
+    width: 180px;
     height: 200px;
   }
-
+  .boxarrange label img {
+    width: 60px;
+    height: 60px;
+  }
+  .boxarrange ::placeholder {
+    font-size: 12px;
+  }
   .filebox form {
     border: 2px dashed #e5e4e4;
     border-radius: 30px;
@@ -923,6 +932,9 @@ input #file {
   /* 내 정보 관리 - 반려동물 정보 변경 */
 
   /* 비밀번호 변경 */
+  .pwchange {
+    width: 100%;
+  }
   .pwchange h2 {
     font-size: 20px;
   }
@@ -932,6 +944,9 @@ input #file {
   .pwinfo {
     font-size: 12px;
   }
+  .changenewpw {
+    width: 100%;
+  }
   .newpwtext {
     font-size: 18px;
   }
@@ -939,12 +954,12 @@ input #file {
     font-size: 18px;
   }
   .newpwinput input {
-    width: 190px;
+    width: 160px;
     height: 20px;
     font-size: 10px;
   }
   .newpwcheckinput input {
-    width: 190px;
+    width: 160px;
     height: 20px;
     font-size: 10px;
   }
@@ -952,7 +967,7 @@ input #file {
     width: 100px;
   }
   .pwbutton {
-    width: 208px;
+    width: 160px;
     font-size: 15px;
   }
   .newpwcheck {
@@ -977,7 +992,6 @@ input #file {
   table,
   .anibox form {
     width: 100%;
-    margin: 40px 0;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1122,7 +1136,7 @@ input #file {
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    margin: 40px auto;
+    margin: 0 auto 30px auto;
   }
   #registerBtn:hover {
     background-color: #ffa8a8;
@@ -1150,7 +1164,7 @@ input #file {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
   }
 
   .petInput {
@@ -1163,7 +1177,7 @@ input #file {
     padding-bottom: 10px;
   }
   td[scope='row'] {
-    text-align: right;
+    text-align: left;
   }
 
   .anibox label {
@@ -1180,6 +1194,9 @@ input #file {
   .anibirth {
     width: 100px;
     padding: 8px;
+  }
+  .anibox * {
+    font-size: 10px;
   }
   /* 
   #password1,
@@ -1216,6 +1233,7 @@ input #file {
     align-items: center;
     justify-content: center;
     accent-color: #ff8f8f;
+    margin-top: 10px;
     /* 체크박스 컬러 변경 */
   }
 
@@ -1277,6 +1295,7 @@ input #file {
 
   #petGender {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: flex-start;
   }
@@ -1284,7 +1303,7 @@ input #file {
   select {
     border: 2px solid #ff8f8f;
     border-radius: 12px;
-    width: 120px;
+    width: 140px;
     height: 30px;
     line-height: 40px;
     padding: 6px;
