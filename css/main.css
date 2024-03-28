@@ -139,6 +139,7 @@ h2 {
   flex-direction: row;
   width: 1070px;
   margin: auto;
+  margin-top: 20px;
   border-radius: 27px;
   overflow: hidden;
   margin-bottom: 100px;
@@ -268,6 +269,7 @@ h2 {
 .wrap5 {
   width: 1070px;
   padding-left: 10px;
+  margin-bottom: 200px;
 }
 
 .wrap5 > .card {
@@ -319,9 +321,20 @@ h2 {
 }
 .gif2 {
   position: absolute;
-  top: 915px;
+  top: 900px;
   left: 930px;
   z-index: 999;
+}
+.gif3 {
+  position: absolute;
+  top: 2340px;
+  left: 340px;
+  z-index: 999;
+}
+@media screen and (max-height: 500px) {
+  .wrap.wrap2 {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 479px) {

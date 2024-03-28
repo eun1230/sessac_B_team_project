@@ -34,7 +34,7 @@ const header = `
           <a href="./about.html">ABOUT</a>
         </li>
         <li class="m-li">
-          <a href="./communityMain.html">COMMUNITY</a>
+          <a href="./communitySub.html">COMMUNITY</a>
         </li>
         <li class="m-li">
           <a href="./map.html">MAP</a>
@@ -56,7 +56,7 @@ const header = `
     </li>
     <li class="nav-li">
       <div class="hover-img"></div>
-      <a href="./communityMain.html">COMMUNITY</a>
+      <a href="./communitySub.html">COMMUNITY</a>
     </li>
     <li class="nav-li">
       <div class="hover-img"></div>
@@ -84,7 +84,7 @@ document.querySelector('header').innerHTML = header;
 
 // 로그인이 완료되면 프로필 이미지를 가져와서 헤더의 "LOGIN" 링크를 대체하는 함수
 function replaceLoginWithProfile(profileImageUrl) {
-  console.log(profileImageUrl);
+  // console.log(profileImageUrl);
   const loginLink = document.querySelector('.nav-right .loginOnOff');
   if (loginLink) {
     // "LOGIN" 링크 대신 프로필 이미지로 변경
