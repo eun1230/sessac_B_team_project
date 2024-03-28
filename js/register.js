@@ -105,7 +105,7 @@ function regOk() {
     alert('비밀번호를 입력해주세요.');
   } else if (userPw2 == '') {
     alert('비밀번호가 확인되지 않았습니다.');
-  } else if (isChecked) {
+  } else if (!isChecked) {
     alert('약관에 모두 동의해주세요.');
   } else if (!alert('가입이 완료되었습니다!')) {
     document.location.href = '../index.html';
