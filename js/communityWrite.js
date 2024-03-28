@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   registerBtn.addEventListener('click', function () {
     // 경고창 표시
     alert('게시글이 작성되었습니다.');
-    window.location.href='../html/CommunityMain.html'
+    window.location.href='../html/CommunitySub.html'
   });
 });
 

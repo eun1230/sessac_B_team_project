@@ -58,10 +58,23 @@ if (navigator.geolocation) {
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
   // 마커를 생성합니다
+  let currentMarker = new kakao.maps.MarkerImage(
+    '../img/map/c-marker.png',
+    new kakao.maps.Size(33, 35),
+    {
+      offset: new kakao.maps.Point(16, 34),
+      alt: '마커 이미지',
+      shape: 'poly',
+      coords: '1,20,1,9,5,2,10,0,21,0,27,3,30,9,30,20,17,33,14,33',
+    }
+  );
+
   marker = new kakao.maps.Marker({
     map: map,
+    image: currentMarker,
     position: locPosition,
   });
+  marker.setMap(map);
 
   (iwContent = message), // 인포윈도우에 표시할 내용
     (iwRemoveable = true); // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
@@ -83,6 +96,37 @@ function displayMarker(locPosition, message) {
   // 37.5597007, 127.170877;
   // 37.5596547, 127.1696005;
   // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
+  let endPoint = new kakao.maps.LatLng(37.5596547, 127.1696005);
+  let endMarker = new kakao.maps.MarkerImage(
+    '../img/map/e-marker.png',
+    new kakao.maps.Size(33, 35),
+    {
+      offset: new kakao.maps.Point(16, 34),
+      alt: '마커 이미지',
+      shape: 'poly',
+      coords: '1,20,1,9,5,2,10,0,21,0,27,3,30,9,30,20,17,33,14,33',
+    }
+  );
+
+  marker = new kakao.maps.Marker({
+    map: map,
+    image: endMarker,
+    position: endPoint,
+  });
+  marker.setMap(map);
+
+  (iwContent = '도착위치'), // 인포윈도우에 표시할 내용
+    (iwRemoveable = true); // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
+
+  // 인포윈도우를 생성합니다
+  infowindow = new kakao.maps.InfoWindow({
+    content: iwContent,
+    removable: iwRemoveable,
+  });
+
+  // 인포윈도우를 마커위에 표시합니다
+  // 지도 상에 특정한 위치나 요소에 연다 .앞에는 열고자하는 객체
+  infowindow.open(map, marker);
   let linePath = [
     locPosition,
     new kakao.maps.LatLng(37.5572406, 127.1713051),
@@ -101,6 +145,7 @@ function displayMarker(locPosition, message) {
 
   // 지도에 선을 표시합니다
   polyline.setMap(map);
+
   // ================================================================
   // 두 지점 간의 거리를 계산하는 함수
   function calculateDistance(lat1, lon1, lat2, lon2) {
