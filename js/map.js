@@ -34,7 +34,7 @@ function success({ coords }) {
 
   map = new kakao.maps.Map(mapContainer, mapOption);
   // 현재위치 마커를 생성
-  var currentMarker = new kakao.maps.MarkerImage(
+  let currentMarker = new kakao.maps.MarkerImage(
     '../img/map/c-marker.png',
     new kakao.maps.Size(33, 35),
     {
@@ -52,12 +52,12 @@ function success({ coords }) {
 
   // 마커가 지도 위에 표시되도록 설정합니다
   marker.setMap(map);
-  var iwContent = '<div style="padding:3px;">당신의 현재 위치입니다!<br></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+  let iwContent = '<div style="padding:3px;">당신의 현재 위치입니다!<br></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwPosition = new kakao.maps.LatLng(latitude, longitude);
   //인포윈도우 표시 위치입니다
 
   // 인포윈도우를 생성합니다
-  var infowindow = new kakao.maps.InfoWindow({
+  let infowindow = new kakao.maps.InfoWindow({
     position: iwPosition,
     content: iwContent,
   });
@@ -66,7 +66,7 @@ function success({ coords }) {
   // 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
   infowindow.open(map, marker);
   // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-  var mapTypeControl = new kakao.maps.MapTypeControl();
+  let mapTypeControl = new kakao.maps.MapTypeControl();
 
   // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
   // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데
@@ -74,7 +74,7 @@ function success({ coords }) {
   map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
   // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-  var zoomControl = new kakao.maps.ZoomControl();
+  let zoomControl = new kakao.maps.ZoomControl();
   map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 }
 
@@ -392,14 +392,29 @@ function handleListItemClick(places, index) {
   document.querySelector('.reservationBtn').addEventListener('click', () => {
     // 필요한 데이터 가져오기
     const placeName = document.getElementById('place-name').innerText.trim();
-
     const imageSrc = document.getElementById('pl-img').getAttribute('src');
     const roadAddress = document.getElementById('road-name').innerText.trim();
+
     console.log(placeName, imageSrc, roadAddress);
     // 데이터를 로컬스토리지에 저장
     localStorage.setItem('placeName', placeName);
     localStorage.setItem('imageSrc', imageSrc);
     localStorage.setItem('roadAddress', roadAddress);
+
+    // 예약 페이지로 이동
+    window.location.href = '../html/reservation.html';
+  });
+  document.querySelector('.reservationBtn2').addEventListener('click', () => {
+    // 필요한 데이터 가져오기
+    const placeName2 = document.getElementById('place-name2').innerText.trim();
+
+    const imageSrc2 = document.getElementById('pl-img2').getAttribute('src');
+    const roadAddress2 = document.getElementById('road-name2').innerText.trim();
+    console.log(placeName2, imageSrc2, roadAddress2);
+    // 데이터를 로컬스토리지에 저장
+    localStorage.setItem('placeName', placeName2);
+    localStorage.setItem('imageSrc', imageSrc2);
+    localStorage.setItem('roadAddress', roadAddress2);
 
     // 예약 페이지로 이동
     window.location.href = '../html/reservation.html';
@@ -492,7 +507,7 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-  var imageSrc = '../img/map/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+  let imageSrc = '../img/map/marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
     imageSize = new kakao.maps.Size(33, 33), // 마커 이미지의 크기
     imgOptions = {
       spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
@@ -521,7 +536,7 @@ function removeMarker() {
 
 // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
 function displayPagination(pagination) {
-  var paginationEl = document.getElementById('pagination'),
+  let paginationEl = document.getElementById('pagination'),
     fragment = document.createDocumentFragment(),
     i;
 
@@ -531,7 +546,7 @@ function displayPagination(pagination) {
   }
 
   for (i = 1; i <= pagination.last; i++) {
-    var el = document.createElement('a');
+    let el = document.createElement('a');
     el.href = '#';
     el.innerHTML = i;
 
@@ -553,7 +568,7 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title) {
-  var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+  let content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
   infowindow.setContent(content);
   infowindow.open(map, marker);
 }

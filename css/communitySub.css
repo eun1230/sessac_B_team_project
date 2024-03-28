@@ -10,7 +10,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1070px;
+  width: 100vw;
   margin: auto;
 }
 .container-fluid {
@@ -19,7 +19,14 @@ main {
 .mainTitle {
   margin-top: 70px;
 }
+.bg-pink {
+  width: 1920px;
+  background-color: #ffd7d76f;
+}
 .c-nav {
+  line-height: 50px;
+  width: 1070px;
+  margin: auto;
   display: flex;
   flex-direction: row;
 }
@@ -28,13 +35,14 @@ main {
   flex-direction: row;
 }
 .c-nav ul li {
-  margin-right: 60px;
+  margin-right: 76px;
   list-style: none;
   cursor: pointer;
 }
 
 li:hover {
-  color: #ff6b6b;
+  color: #000000;
+  font-weight: bolder;
 }
 .cards {
   width: 1070px;

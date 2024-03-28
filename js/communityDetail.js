@@ -39,8 +39,8 @@ function loadCommunityData(data) {
       <p>작성자 : ${post.write}</p>
       <div class="dataMiniBox">
         <p>작성일 : ${post.date}</p>
-        <p>좋아요 👍 ${post.like}</p>
-      </div>
+        <p class='likeup' onclick="toggleLike(${post.id})">좋아요<img id="heart-icon-${post.id}" src=${post.heart} width="20px" height="20px" onclick="toggleLike(${post.id})"/><span id="like-count-${post.id}">${post.like}</span></p>
+</div>
     </div>
     <div class="mainDiv">
       <h4 class="titleThema">${post.title}</h4>
@@ -62,27 +62,28 @@ function loadCommunityData(data) {
       </div>
       <div class="commentBox">
         <div class="commentContainer">
-        
-         <div class="commentMini">
+
+          <div class="commentMini">
               <div>
                 <img src="../img/community/떠나.png" alt="프로필" />
               </div>
               <div>
                 <p>컨티타</p>
               </div>
-            </div>
-            <div class="commentText"><p>${post.re1}</p></div>
-        </div>  
-         
+          </div>
+          <div class="commentText"><p>${post.re1}</p>
+          </div>
+
         <div class="commentMini">
-              <div>
+            <div>
                 <img src="../img/community/간식.png" alt="프로필" />
-              </div>
-              <div>
-                <p>seven27</p>
-              </div>
             </div>
-            <div class="commentText"><p>${post.re2}</p></div>
+            <div>
+                <p>seven27</p>
+            </div>
+        </div>
+        <div class="commentText"><p>${post.re2}</p>
+        </div>
         </div>  
         
         </div> 
@@ -114,15 +115,29 @@ function loadCommunityData(data) {
           <p>${commentContent}</p>
         </div>`;
         commentContainer.append(newComment);
-        commentInput.value = ''; // Clear input field after adding comment
+        commentInput.value = '';
       }
     });
   } else {
-    console.log('Post data not found');
+    console.log('게시글 정보 불러오기 실패');
   }
 }
 
 // 뒤로가기 함수
 function goBack() {
   window.history.back();
+}
+
+function toggleLike(index) {
+  const heartIcon = document.querySelector(`#heart-icon-${index}`);
+  const likeCount = document.querySelector(`#like-count-${index}`);
+  const currentLike = parseInt(likeCount.textContent);
+
+  if (heartIcon.src.includes('h-on.png')) {
+    heartIcon.src = '../img/h.png';
+    likeCount.textContent = currentLike - 1;
+  } else {
+    heartIcon.src = '../img/h-on.png';
+    likeCount.textContent = currentLike + 1;
+  }
 }

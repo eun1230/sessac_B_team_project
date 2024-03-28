@@ -1,5 +1,18 @@
 // 페이지 로드 시 실행되는 함수
 document.addEventListener('DOMContentLoaded', () => {
+  /* 여기서 입력한 값이 마이페이지에서 보이게 보내기 */
+  const { setItem, getItem, removeItem, clear, length, key } = localStorage;
+  const userInfo = {
+    id: 'lumipet',
+    pw: 'lumipet1!',
+    petType: 'dog',
+    petName: '흰둥이',
+    petBirth: '2023.12.27',
+    petGender: 'boy',
+    spay: 'ok', // 중성화 여부
+  };
+  localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
   let header;
   // 로그인 상태를 확인
   const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -90,17 +103,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="offcanvas-body">
           <ul id="m-ul">
             <li class="m-li">
-              <a href="./html/about.html">ABOUT</a>
+              <a href="./about.html">ABOUT</a>
             </li>
             <li class="m-li">
-              <a href="./html/communitySub.html">COMMUNITY</a>
+              <a href="./communitySub.html">COMMUNITY</a>
             </li>
             <li class="m-li">
-              <a href="./html/map.html">MAP</a>
+              <a href="./map.html">MAP</a>
             </li>
     
             <li class="m-li">
-            <a href="./html/walk.html">산책하기</a>
+            <a href="./walk.html">산책하기</a>
           </li>
           </ul>
         </div>
@@ -111,15 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <li class="nav-li">
           <div class="hover-img">
           </div>
-          <a href="./html/about.html">ABOUT</a>
+          <a href="./about.html">ABOUT</a>
         </li>
         <li class="nav-li">
           <div class="hover-img"></div>
-          <a href="./html/communitySub.html">COMMUNITY</a>
+          <a href="./communitySub.html">COMMUNITY</a>
         </li>
         <li class="nav-li">
           <div class="hover-img"></div>
-          <a href="./html/map.html">MAP</a>
+          <a href="./map.html">MAP</a>
         </li>
       </ul>
     </div>
@@ -132,8 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="nav-right">
       <div style="width:20px; height:20px;">
       </div>
-      <a href='./html/my.html'>
-      <a href="./html/login.html" class="loginOnOff">LOGIN </a>
+      <a href='./my.html'>
+      <a href="./login.html" class="loginOnOff">LOGIN </a>
       </a>
     </div>
     <div class="m-nav login">

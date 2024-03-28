@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       `;
     }
 
-    // 생성된 카드들을 해당 카테고리의 하위 요소에 추가
+    // 생성된 카드 추가
     const cardsContainer = document.querySelector('.cards');
     if (cardsContainer) {
       cardsContainer.innerHTML = commentHTML;
