@@ -438,7 +438,9 @@ article {
 .boxarrange {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 .tnbox,
 .inquirybox,
@@ -807,7 +809,8 @@ input #file {
   .posttitle {
     margin-top: 10px;
     font-size: 15px;
-    margin-left: -10px;
+    margin-left: -20px;
+    margin-top: 0px;
   }
 
   .postitem {
@@ -816,13 +819,17 @@ input #file {
 
   .postdate {
     font-size: 15px;
-    margin-left: -80px;
-    margin-top: 10px;
+    margin-left: -30px;
+    margin-top: 30px;
+    width: 100px;
   }
   .postcomment {
     font-size: 15px;
-    margin-left: -80px;
-    margin-top: -50px;
+    margin-left: -100px;
+    margin-top: -20px;
+  }
+  .heart {
+    display: none;
   }
 
   .mypostitem {
@@ -832,7 +839,8 @@ input #file {
   }
   .myposttitle {
     font-size: 10px;
-    margin-left: 17px;
+    margin-left: -10px;
+    position: absolute;
   }
   .mypostinfo {
     display: inline-block;
@@ -843,14 +851,14 @@ input #file {
     flex-direction: column;
     width: 100px;
     position: absolute;
-    margin-top: -60px;
-    margin-left: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
   }
   .mypostcomment {
-    font-size: 10px;
-    position: absolute;
-    margin-left: 130px;
-    margin-top: -40px;
+    display: none;
+  }
+  .hearttotal {
+    display: none;
   }
 
   /* community - 내 댓글 */
@@ -965,6 +973,7 @@ input #file {
 /* media query for web */
 @media screen and (min-width: 480px) {
   /* form area */
+
   table,
   .anibox form {
     width: 100%;
@@ -1127,6 +1136,12 @@ input #file {
 /* mediaquery for mobile main */
 @media screen and (max-width: 480px) {
   /* form area */
+  .anichange h2 {
+    font-size: 20px;
+  }
+  .anichange h3 {
+    font-size: 15px;
+  }
   table,
   form {
     width: 100%;
@@ -1163,7 +1178,7 @@ input #file {
   }
   .aniinput,
   .anibirth {
-    width: 200px;
+    width: 100px;
     padding: 8px;
   }
   /* 
@@ -1181,7 +1196,7 @@ input #file {
   } */
 
   .anibox input[placeholder] {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 40px;
   }
   .anibox input[type='button'] {
@@ -1262,33 +1277,33 @@ input #file {
 
   #petGender {
     display: flex;
-    margin: 4px 32px;
-    align-items: center;
-    line-height: 40px;
+    width: 100%;
+    justify-content: flex-start;
   }
+
   select {
     border: 2px solid #ff8f8f;
     border-radius: 12px;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     line-height: 40px;
     padding: 6px;
   }
 
   /* mobile btn style */
   #registerBtn {
-    width: 250px;
-    height: 60px;
-    line-height: 60px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
     background-color: #ff8f8f;
     color: white;
     border: 0;
     border-radius: 12px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    margin: 50px auto;
+    margin: -50px auto;
   }
   #registerBtn:hover {
     color: black;
