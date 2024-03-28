@@ -101,11 +101,11 @@ function showDetail(index) {
   window.location.href = detailURL;
 }
 
-
 // 이미지 클릭 이벤트 등록
 const img1 = document.querySelector('.img1');
 const img2 = document.querySelector('.img2');
 const img3 = document.querySelector('.img3');
+const img4 = document.querySelector('.img4');
 
 img1.addEventListener('click', function () {
   const imgSrc = img1.getAttribute('src');
@@ -121,13 +121,17 @@ img3.addEventListener('click', function () {
   const imgSrc = img3.getAttribute('src');
   showImage(imgSrc);
 });
+img3.addEventListener('click', function () {
+  const imgSrc = img4.getAttribute('src');
+  showImage(imgSrc);
+});
 
 function showImage(imgSrc) {
   // 메인과 mag-content 숨기기
   document.querySelector('main').setAttribute('style', 'display:none;');
-  document.querySelector('.mag-content').setAttribute('style', 'display:none;');
+  // document.querySelector('.mag-content').setAttribute('style', 'display:none;');
   // 이벤트 영역에 이미지 표시
   document.querySelector(
     '.event'
-  ).innerHTML = `<img src="${imgSrc}" width='1070px' height='1000px' />`;
+  ).innerHTML = `<img src="${imgSrc}" width='800px' height='1000px' style='margin-left:135px;'/>`;
 }

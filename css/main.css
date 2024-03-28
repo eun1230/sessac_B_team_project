@@ -11,6 +11,9 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
     format('woff');
 }
+.event {
+  width: 1070px;
+}
 
 body {
   margin: 0;
@@ -217,54 +220,6 @@ h2 {
   color: gray;
   font-size: 13px;
 }
-.b * {
-  border-radius: 15px;
-  overflow: hidden;
-}
-.b-box1 {
-  width: 568px;
-  height: 500px;
-  background-image: url('../img/mainImg/d-5.png');
-  background-size: cover;
-  margin-right: 10px;
-  border-radius: 15px;
-}
-.b-box2 {
-  width: 257px;
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-}
-.b-box2 > .in-b1 {
-  background-image: url('../img/mainImg/d-3.png');
-  background-size: cover;
-  background-position: center;
-  height: 65%;
-  margin-bottom: 10px;
-}
-.b-box2 > .in-b2 {
-  background-image: url('../img/mainImg/d-2.png');
-  background-size: contain;
-  height: 35%;
-}
-.b-box3 {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-}
-
-.b-box3 > .in-b3 {
-  background-image: url('../img/mainImg/d-1.png');
-  background-size: cover;
-  background-position: center;
-  height: 35%;
-  margin-bottom: 10px;
-}
-.b-box3 > .in-b4 {
-  background-image: url('../img/mainImg/d-4.png');
-  background-size: contain;
-  height: 65%;
-}
 
 .wrap5 {
   width: 1070px;
@@ -299,7 +254,7 @@ h2 {
 }
 
 .card.text-bg-dark .card-img {
-  transition: transform 1.3s ease;
+  transition: transform 1s ease;
 }
 
 .card.text-bg-dark:hover .card-img {
