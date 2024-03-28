@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUMIPET | 마이페이지</title>
+
+    <link rel="icon" type="image/png" href="../logo_2.png" />
     <!-- .. : 현재 폴더에서 빠져나가기 -->
     <link rel="stylesheet" href="../css/my.css" />
     <link rel="stylesheet" href="../css/header.css" />
@@ -34,7 +36,7 @@
           <div class="asidenav">
             <div class="profileinfo">
               <div class="profilephoto"></div>
-              <div class="profilename">제리</div>
+              <div class="profilename">흰둥이</div>
             </div>
             <!-- 루미 -->
             <div class="lumi">
@@ -54,7 +56,7 @@
             <!-- 마이페이지네브바 -->
             <div class="mypage_nav">
               <div class="mypagenav_acc active">
-                <div class="panel_head">
+                <div class="panel_head" onclick="dishos()">
                   <div class="vh" style="margin-left: 10px"></div>
                   <div onclick="dishos()">예약 내역</div>
                   <div class="navdown">
@@ -72,7 +74,7 @@
                 <div class="panel_body thisone" onclick="dissal()">미용실</div>
               </div>
               <div class="mypagenav_acc">
-                <div class="panel_head">
+                <div class="panel_head" onclick="dispos()">
                   <div class="vh" style="margin-left: 10px"></div>
                   <div onclick="dispos()">커뮤니티</div>
                   <div class="navdown">
@@ -104,7 +106,7 @@
                 <div class="panel_body thisone">플레이스</div>
               </div>
               <div class="mypagenav_acc">
-                <div class="panel_head">
+                <div class="panel_head" onclick="disinq()">
                   <div class="vh"></div>
                   <div onclick="disinq()">1:1 문의</div>
                   <div class="navdown vh">
@@ -116,7 +118,7 @@
                 </div>
               </div>
               <div class="mypagenav_acc">
-                <div class="panel_head">
+                <div class="panel_head" onclick="disani()">
                   <div class="vh" style="margin-left: 10px"></div>
                   <div onclick="disani()">내 정보 관리</div>
                   <div class="navdown">
@@ -134,7 +136,7 @@
                 </div>
               </div>
               <div class="mypagenav_acc">
-                <div class="panel_head">
+                <div class="panel_head" onclick="disala()">
                   <div class="vh"></div>
                   <div onclick="disala()">알림설정</div>
                   <div class="navdown vh">
@@ -162,7 +164,7 @@
                   <div class="cancel">취소된 예약</div>
                 </div>
                 <div class="hospitalreserv">
-                  <div class="reservitem">
+                  <!-- <div class="reservitem">
                     <div class="reservinfo">
                       <div class="reservname">강동동물병원</div>
                       <div class="reservdate">2024.03.10 12:00</div>
@@ -170,7 +172,7 @@
                     <div class="changebutton" onclick="location.href= '#'">
                       변경
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="myplace" onclick="disrepl()">
@@ -243,12 +245,7 @@
                     <div class="postdate">작성일</div>
                     <div class="postcomment">댓글</div>
                     <div class="heartbox">
-                      <img
-                        class="heart"
-                        src="../img/h_on.png"
-                        alt="좋아요 수"
-                        style="width: 30px; height: 30px"
-                      />
+                      <div class="heart"></div>
                     </div>
                   </div>
                 </div>
@@ -266,7 +263,7 @@
                     <div class="mypostinfo">
                       <div class="mypostdate">2024.03.10 12:00</div>
                       <div class="mypostcomment">2</div>
-                      <div class="hearttotal">2</div>
+                      <div class="hearttotal"></div>
                     </div>
                   </div>
                 </div>
@@ -286,12 +283,8 @@
                 </div>
               </div>
             </div>
+            <div class="mybookmark"></div>
             <div class="inquirysection" onclick="disinq()">
-              <div class="inquirytopm">
-                <div class="back"></div>
-                <div class="inquiry">1:1 문의</div>
-                <div class="mobiledone">확인</div>
-              </div>
               <div class="inquirytop">
                 <div class="di"><h2>1:1 문의</h2></div>
                 <h3>사진 및 동영상 첨부하기</h3>
@@ -300,9 +293,13 @@
                 <div class="fbwhole">
                   <div class="filebox">
                     <form method="post" enctype="multipart/form-data">
-                      <label for="file"
-                        ><img src="../img/plus.png" alt=""
-                      /></label>
+                      <label for="file">
+                        <img
+                          src="../img/logo_2.png"
+                          alt=""
+                          style="width: 90px; height: 90px; margin: auto 0"
+                        />
+                      </label>
                       <br />
                       <input
                         type="file"
@@ -438,31 +435,37 @@
               </div>
             </div>
             <div class="alarmsetting" onclick="disala()">
-              <div>
-                <div></div>
-                <div><h2>알림 설정</h2></div>
-                <div></div>
-              </div>
+              <h2>알림 설정</h2>
               <!-- <div>이벤트 및 공지사항 알림</div> -->
-              <label class="toggles">
-                <span>이벤트 및 공지사항 알림</span>&nbsp;&nbsp;
-                <input type="checkbox" role="switch" />
-              </label>
-              <br />
-              <label class="toggles">
-                <span>댓글 푸시 알림</span>&nbsp;&nbsp;
-                <input type="checkbox" role="switch" />
-              </label>
-              <br />
-              <label class="toggles">
-                <span>문의 푸시 알림</span>&nbsp;&nbsp;
-                <input type="checkbox" role="switch" />
-              </label>
-              <br />
-              <label class="toggles">
-                <span>서비스 기본 푸시 알림</span>&nbsp;&nbsp;
-                <input type="checkbox" role="switch" />
-              </label>
+              <div class="am">
+                <div class="setting">
+                  <label class="toggles">
+                    <span>이벤트 및 공지사항 알림</span>&nbsp;&nbsp;
+                    <input type="checkbox" role="switch" />
+                  </label>
+                </div>
+                <br />
+                <div class="setting">
+                  <label class="toggles">
+                    <span>댓글 푸시 알림</span>&nbsp;&nbsp;
+                    <input type="checkbox" role="switch" />
+                  </label>
+                </div>
+                <br />
+                <div class="setting">
+                  <label class="toggles">
+                    <span>문의 푸시 알림</span>&nbsp;&nbsp;
+                    <input type="checkbox" role="switch" />
+                  </label>
+                </div>
+                <br />
+                <div class="setting">
+                  <label class="toggles">
+                    <span>서비스 기본 푸시 알림</span>&nbsp;&nbsp;
+                    <input type="checkbox" role="switch" />
+                  </label>
+                </div>
+              </div>
             </div>
           </article>
         </section>

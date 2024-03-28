@@ -12,6 +12,11 @@
 body {
   margin: 0;
   padding: 20px;
+  background-image: url('../img/main-frame.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 main {
   margin-top: 100px;
@@ -24,7 +29,7 @@ main {
   /* position: relative; */
   display: flex;
   justify-content: center;
-  width: 1200px;
+  width: 1070px;
 }
 /* --------------------------------------------------------- */
 /* 마이페이지 왼쪽파트 */
@@ -38,7 +43,8 @@ main {
 /* --------------------------------------------------------- */
 /* 프로필 */
 .profilephoto {
-  background-color: lightgray;
+  background-image: url('../img/profilephoto.png');
+  background-size: cover;
   width: 160px;
   height: 160px;
   border-radius: 80px;
@@ -77,9 +83,9 @@ main {
   height: 40px;
   line-height: 40px;
 }
-.lumi_total:hover,
+
 .lumi_collect:hover {
-  background-color: aliceblue;
+  background-color: rgb(255, 248, 248);
 }
 .lumiQ {
   width: 70rem;
@@ -95,18 +101,6 @@ main {
   text-decoration: underline;
 }
 
-/* .mylumi {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    height: 50px;
-  } */
-
-/* .lumi_exchange {
-    width: 20vw;
-    text-align: center;
-    padding-top: 4px;
-  } */
 /* --------------------------------------------------------- */
 /* 마이페이지 네브바 */
 .mypage_nav {
@@ -151,7 +145,7 @@ main {
 }
 .panel_head:hover,
 .panel_body:hover {
-  background-color: aliceblue;
+  background-color: rgb(255, 248, 248);
   border-radius: 8px;
 }
 /* --------------------------------------------------------- */
@@ -168,6 +162,7 @@ article {
   border-radius: 8px;
   /* .reservation 이 아닌 article에 주니까 패딩 먹음 */
   padding: 16px;
+  overflow-y: scroll;
 }
 /* --------------------------------------------------------- */
 /* 예약 내역 */
@@ -181,6 +176,7 @@ article {
 .past,
 .cancel {
   background-color: #e5e4e4;
+  border: 1px solid lightgray;
   border-radius: 8px;
   padding: 8px;
   margin-right: 8px;
@@ -194,7 +190,7 @@ article {
 .hospitalreserv,
 .placereserv,
 .salonreserv {
-  background-color: rgb(219, 218, 218);
+  background-color: rgb(255, 248, 248);
   height: 50vh;
   border-radius: 8px;
   padding: 10px;
@@ -215,8 +211,7 @@ article {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: aliceblue;
-  /* border: 3px solid gray; */
+  background-color: rgb(222, 228, 233);
   border: 1px solid gray;
   border-radius: 6px;
   margin: 0 10px;
@@ -231,67 +226,29 @@ article {
   font-size: 14px;
 }
 
-@media (max-width: 480px) {
-  .mywhole {
-    margin: 0 auto;
-  }
-  .asidenav {
-    width: 100%;
-    text-align: center;
-  }
-  .profilephoto {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-  }
-  .rightpart {
-    display: none;
-  }
-  article {
-    width: 100%;
-    height: 100%;
-  }
-  .reservbutton {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  .now,
-  .past,
-  .cancel {
-    padding: 0 auto;
-    cursor: pointer;
-  }
-  .hospitalreserv,
-  .placereserv,
-  .salonreserv {
-    background-color: rgb(219, 218, 218);
-    height: 70vh;
-    border-radius: 8px;
-    padding: 8px;
-  }
-}
 /* 변경 버튼 */
 .changebutton {
   cursor: pointer;
   padding: 0 6px;
   border-radius: 20px;
-  background-color: #e5e4e4;
-  width: 40px;
+  background-color: rgb(222, 228, 233);
+  border: 1px solid gray;
+  width: 60px;
   height: 40px;
   margin: auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
 }
 .changebutton:hover {
-  background-color: #ff8f8f;
+  background-color: #ffa8a8;
 }
 /* 예약내역 존재여부 */
 /* .reservation을 다 해줬기 때문에 block을 해도 안나타났던것 */
 
 .myhospital {
-  display: none;
+  display: block;
 }
 
 .myplace {
@@ -308,56 +265,68 @@ article {
 .postitemtitle {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 50px;
   margin-bottom: 40px;
   font-weight: 600;
-  background-color: aliceblue;
+  background-color: #e5e4e4;
+  border: 1px solid lightgray;
   height: 50px;
   line-height: 50px;
   border-radius: 8px;
 }
+.heartbox {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.heart {
+  background-image: url('../img/h-on.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
 /* 작성일 & 댓글 */
 .postitem {
-  width: 40%;
+  width: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   /* border: 1px solid black; */
 }
-.heart {
-  margin-top: 20px;
+
+/* .hearttotal {
   margin-left: 40px;
-}
-.hearttotal {
-  margin-left: 40px;
-}
-.postcomment {
+} */
+/* .postcomment {
   margin-left: 120px;
-}
+} */
 
 /* 게시글항목 형태 */
 .postwriting {
-  background-color: rgb(219, 218, 218);
+  background-color: rgb(255, 248, 248);
   height: 50vh;
   border-radius: 20px;
   padding: 10px;
 }
 .mypostitem {
   display: flex;
-  background-color: aliceblue;
-  justify-content: space-around;
+  background-color: rgb(222, 228, 233);
+  border: 1px solid gray;
+  justify-content: space-between;
+  padding: 0 20px;
   width: 100%;
   height: 50px;
   line-height: 50px;
   margin-bottom: 8px;
-  border: 1px solid gray;
   border-radius: 8px;
 }
 .myposttitle {
   font-size: 14px;
 }
 .mypostinfo {
-  width: 30%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   /* border: 1px solid black; */
@@ -365,7 +334,7 @@ article {
 }
 
 .mypostcomment {
-  margin-left: 40px;
+  margin-right: 44px;
 }
 
 /* 내 댓글 */
@@ -374,13 +343,14 @@ article {
   justify-content: space-around;
   margin-bottom: 40px;
   font-weight: 600;
-  background-color: aliceblue;
+  background-color: #e5e4e4;
+  border: 1px solid lightgray;
   height: 50px;
   line-height: 50px;
   border-radius: 10px;
 }
 .commentwriting {
-  background-color: rgb(208, 209, 209);
+  background-color: rgb(255, 248, 248);
   height: 50vh;
   border-radius: 10px;
   padding: 10px;
@@ -392,16 +362,14 @@ article {
   height: 50px;
   line-height: 50px;
   margin-bottom: 8px;
+  background-color: rgb(222, 228, 233);
   border: 1px solid gray;
-  background-color: aliceblue;
   border-radius: 10px;
 }
 .mycommentwriting {
   width: 300px;
   display: flex;
   justify-content: space-around;
-
-  border: 1px solid black;
 }
 
 /* 나의글 존재여부 */
@@ -414,55 +382,62 @@ article {
   display: none;
 }
 /* ---------------------------------------------------------------------- */
+/* 북마크 */
+.wrap3 {
+  display: flex;
+  flex-direction: row;
+  width: 1070px;
+  margin: auto;
+  border-radius: 27px;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.card-bb {
+  margin-top: 10px;
+  margin-right: 11px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  transition: filter 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.397);
+  border: none;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.18); /* x-offset y-offset blur color */
+}
+.card-bb:hover {
+  filter: brightness(80%);
+}
+.image-container {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* 이미지의 위치를 상대적으로 설정하기 위해 */
+  top: 0;
+  left: 0;
+}
+.card .cnt {
+  padding-left: 13%;
+}
+
+.card-b-text {
+  text-align: center;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: gray;
+  font-size: 15px;
+}
 
 /* ---------------------------------------------------------------------- */
 /* 1:1 문의 */
-.inquirytopm {
-  display: none;
-  width: 100%;
-}
-@media (max-width: 480px) {
-  .di {
-    display: none;
-  }
-  .inquirytop {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 40px;
-    /* text-align, line-height 다 안됐는데 align-item으로 함 */
-    align-items: center;
-    border: 1px solid black;
-  }
-  .back {
-    width: 30px;
-    height: 30px;
-    background-image: url('./img/back.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    line-height: 30px;
-    /* display: none; */
-  }
-  .inquiry {
-    border: 1px solid black;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .mobiledone {
-    background-color: #e5e4e4;
-    width: 80px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 8px;
-    text-align: center;
-  }
-}
-.inputcontent {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .boxarrange {
   display: flex;
   flex-direction: column;
@@ -477,21 +452,19 @@ article {
   width: 90%;
   height: 40px;
   border-radius: 8px;
-  background-color: #e5e4e4;
+  background-color: #f7f7f7;
+  border: 2px solid lightgray;
 }
-.inquirytitlename:hover {
-  background-color: aliceblue;
-}
+
 #textarea {
   width: 90%;
-  height: 40vh;
+  height: 200px;
   border-radius: 8px;
   margin-bottom: 10px;
-  background-color: #e5e4e4;
+  background-color: #f7f7f7;
+  border: 2px solid lightgray;
 }
-#textarea:hover {
-  background-color: aliceblue;
-}
+
 /* ---------------------------------------------------------------------- */
 
 /* 파일첨부 버튼 수정 */
@@ -508,13 +481,15 @@ article {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
+  height: 100px;
+  margin-bottom: 10px;
 }
-.filebox {
-  border: 1px dashed gray;
-  border-radius: 6px;
+.filebox form {
+  border: 3px dashed #e5e4e4;
+  border-radius: 30px;
   width: 100px;
   height: 100px;
-  line-height: 100px;
+  line-height: 0px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -527,22 +502,19 @@ input #file {
   height: 100px;
 }
 
-.filebox label img {
-  background-image: url('./img/plus.png');
-  width: 20px;
-  height: 20px;
-}
 .showpetimg {
   height: 100px;
   display: flex;
 }
+
 #file {
   display: none;
   /* visiblity는 보이지 않을뿐 존재하는 상태 */
 }
 
 .done {
-  background-color: #e5e4e4;
+  background-color: #f7f7f7;
+  border: 1px solid lightgray;
   width: 80px;
   height: 40px;
   line-height: 40px;
@@ -553,7 +525,8 @@ input #file {
   justify-content: center;
 }
 .done:hover {
-  background-color: aliceblue;
+  font-weight: 600;
+  background-color: #ffa8a8;
 }
 /* ---------------------------------------------------------------------- */
 /* 1:1 문의 존재 여부 */
@@ -584,7 +557,8 @@ input #file {
   width: 480px;
   height: 60px;
   border-radius: 10px;
-  border: 2px solid gray;
+  background-color: #f7f7f7;
+  border: 2px solid lightgray;
 }
 .newpw {
   width: 480px;
@@ -604,7 +578,13 @@ input #file {
   line-height: 60px;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid gray;
+  background-color: #f7f7f7;
+  border: 1px solid lightgray;
+  cursor: pointer;
+}
+.pwbutton:hover {
+  font-weight: 600;
+  background-color: #ffa8a8;
 }
 /* ---------------------------------------------------------------------- */
 /* 내 정보 관리 존재여부 */
@@ -651,8 +631,8 @@ input #file {
   transition: left 250ms linear;
 }
 [type='checkbox']:checked {
-  background-color: tomato;
-  border-color: tomato;
+  background-color: #ff8f8f;
+  border-color: #ff8f8f;
 }
 
 [type='checkbox']:checked::before {
@@ -662,7 +642,7 @@ input #file {
 
 [type='checkbox']:focus-visible {
   outline-offset: max(2px, 0.1rem);
-  outline: max(2px, 0.1rem) solid tomato;
+  outline: max(2px, 0.1rem) solid #ff8f8f;
 }
 
 [type='checkbox']:enabled:hover {
@@ -673,13 +653,323 @@ input #file {
 .alarmsetting {
   display: none;
 }
+.am {
+  margin-top: 20px;
+}
+.setting {
+  margin: 3px 0;
+  padding: 10px;
+  width: 300px;
+  /* background-color: #f7f7f7;
+  border: 2px solid lightgray; */
+}
+/* ---------------------------------------------------------------------- */
+/* my page - mobile */
+@media screen and (max-width: 480px) {
+  /* 예약 내역 (병원)*/
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  section.mywhole {
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .asidenav {
+    display: flex;
+    width: 160px;
+    font-size: 13px;
+  }
+
+  .lumiQ {
+    font-size: 12px;
+  }
+  .lumiA {
+    display: none;
+  }
+
+  .profilephoto {
+    height: 60px;
+    width: 60px;
+  }
+
+  .profilename {
+    font-size: 24px;
+  }
+
+  .section.rightpart {
+    width: 100px;
+    position: relative;
+  }
+  article {
+    width: 270px;
+    overflow-x: hidden;
+  }
+  .rightpart {
+    display: flex;
+    width: 100%;
+    margin-top: -40px;
+    height: 700px;
+    overflow-x: hidden;
+  }
+
+  .myhospital h2 {
+    font-size: 20px;
+  }
+
+  .myhospital h3 {
+    font-size: 15px;
+  }
+
+  .reservbutton {
+    font-size: 10px;
+    display: flow-root;
+  }
+
+  .past {
+    margin-top: 10px;
+  }
+  .cancel {
+    margin-top: 10px;
+  }
+
+  .hospitalreserv {
+    height: 270px;
+  }
+
+  .reservitem {
+    height: 200px;
+  }
+
+  .reservinfo {
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: center;
+  }
+  .reservname {
+    font-size: 10px;
+    margin-left: -10px;
+    margin-top: 40px;
+  }
+
+  .reservdate {
+    font-size: 10px;
+    margin-top: -20px;
+  }
+
+  .changebutton {
+    font-size: 10px;
+    position: absolute;
+    margin-top: 120px;
+    width: 70px;
+    height: 20px;
+  }
+
+  /* 예약 내역 (장소)*/
+
+  .placereserv {
+    height: 270px;
+  }
+
+  .myplace h2 {
+    font-size: 20px;
+  }
+  .myplace h3 {
+    font-size: 15px;
+  }
+
+  /* 예약 내역 (미용)*/
+
+  .mysalon h2 {
+    font-size: 20px;
+  }
+  .mysalon h3 {
+    font-size: 15px;
+  }
+
+  /* community */
+
+  .postwriting {
+    height: 175px;
+  }
+
+  .mypost h2 {
+    font-size: 20px;
+  }
+  .mypost h3 {
+    font-size: 15px;
+  }
+  .postitemtitle {
+    height: 120px;
+  }
+
+  .posttitle {
+    margin-top: 10px;
+    font-size: 15px;
+    margin-left: -10px;
+  }
+
+  .postitem {
+    flex-direction: column;
+  }
+
+  .postdate {
+    font-size: 15px;
+    margin-left: -80px;
+    margin-top: 10px;
+  }
+  .postcomment {
+    font-size: 15px;
+    margin-left: -80px;
+    margin-top: -50px;
+  }
+
+  .mypostitem {
+    display: block;
+    flex-direction: row;
+    height: 80px;
+  }
+  .myposttitle {
+    font-size: 10px;
+    margin-left: 17px;
+  }
+  .mypostinfo {
+    display: inline-block;
+    flex-direction: row;
+  }
+  .mypostdate {
+    font-size: 10px;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 50px;
+  }
+  .mypostcomment {
+    font-size: 10px;
+    position: absolute;
+    margin-left: 130px;
+    margin-top: -40px;
+  }
+
+  /* community - 내 댓글 */
+
+  .mycomment h2 {
+    font-size: 20px;
+  }
+  .mycomment h3 {
+    font-size: 15px;
+  }
+  .commenttitle {
+    font-size: 15px;
+  }
+  .commentdate {
+    font-size: 15px;
+  }
+  .mycommentitem {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+  .commentwriting {
+    height: 300px;
+  }
+
+  /* 1:1 문의 */
+  .inquirysection h2 {
+    font-size: 20px;
+  }
+
+  .inquirysection h3 {
+    font-size: 15px;
+  }
+
+  .inquirytop {
+    font-size: 14px;
+  }
+  .inquirytitlename {
+    width: 140px;
+  }
+  #textarea {
+    width: 154px;
+    height: 200px;
+  }
+
+  .filebox form {
+    border: 2px dashed #e5e4e4;
+    border-radius: 30px;
+    width: 80px;
+    height: 80px;
+    line-height: 0px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .done {
+    width: 50px;
+  }
+
+  /* 내 정보 관리 - 반려동물 정보 변경 */
+
+  /* 비밀번호 변경 */
+  .pwchange h2 {
+    font-size: 20px;
+  }
+  .pwchange h3 {
+    font-size: 15px;
+  }
+  .pwinfo {
+    font-size: 12px;
+  }
+  .newpwtext {
+    font-size: 18px;
+  }
+  .newpwchecktext {
+    font-size: 18px;
+  }
+  .newpwinput input {
+    width: 190px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .newpwcheckinput input {
+    width: 190px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .newpw {
+    width: 100px;
+  }
+  .pwbutton {
+    width: 208px;
+    font-size: 15px;
+  }
+  .newpwcheck {
+    width: 208px;
+  }
+
+  /* 알림설정 */
+
+  .alarmsetting h2 {
+    font-size: 20px;
+  }
+  .toggles {
+    font-size: 11px;
+  }
+}
 /* ---------------------------------------------------------------------- */
 /* 반려동물 정보 입력 */
 /* media query for web */
 @media screen and (min-width: 480px) {
   /* form area */
   table,
-  form {
+  .anibox form {
     width: 100%;
     margin: 40px 0;
     position: relative;
@@ -690,7 +980,6 @@ input #file {
   }
   /* .mustInput, */
   .petInput {
-    border: 1px solid #e5e4e4;
     border-radius: 8px;
     width: 80%;
     padding: 30px 0 50px;
@@ -706,7 +995,8 @@ input #file {
     cursor: pointer;
   }
   .anibox input {
-    border: 2px solid #ff8f8f;
+    background-color: #f7f7f7;
+    border: 2px solid lightgray;
     border-radius: 12px;
     height: 40px;
     padding: 6px;
@@ -717,17 +1007,17 @@ input #file {
     padding: 8px;
   }
   /* #password1,
-    #password2 {
-      width: 300px;
-      padding: 8px;
-      border: 2px solid #ff8f8f;
-      border-radius: 12px;
-      height: 40px;
-    } */
+  #password2 {
+    width: 300px;
+    padding: 8px;
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+  } */
   /* #idCheckMsg,
-    #pwCheckMsg {
-      padding-left: 14px;
-    } */
+  #pwCheckMsg {
+    padding-left: 14px;
+  } */
 
   .anibox input[placeholder] {
     font-size: 14px;
@@ -805,7 +1095,8 @@ input #file {
     line-height: 40px;
   }
   select {
-    border: 2px solid #ff8f8f;
+    background-color: #f7f7f7;
+    border: 2px solid lightgray;
     border-radius: 12px;
     width: 100px;
     height: 40px;
@@ -818,9 +1109,8 @@ input #file {
     width: 300px;
     height: 70px;
     line-height: 70px;
-    background-color: #ff8f8f;
-    color: white;
-    border: 0;
+    background-color: #f7f7f7;
+    border: 1px solid lightgray;
     border-radius: 8px;
     text-align: center;
     font-size: 20px;
@@ -829,7 +1119,7 @@ input #file {
     margin: 40px auto;
   }
   #registerBtn:hover {
-    color: black;
+    background-color: #ffa8a8;
   }
   #registerBtn:active {
     color: black;
@@ -852,7 +1142,6 @@ input #file {
   }
 
   .petInput {
-    border: 1px solid #e5e4e4;
     border-radius: 8px;
     width: 95%;
     padding: 30px 0 50px;
@@ -872,7 +1161,7 @@ input #file {
   .anibox input {
     border: 2px solid #ff8f8f;
     border-radius: 12px;
-    height: 40px;
+    height: 20px;
     padding: 6px;
   }
   .aniinput,
@@ -881,18 +1170,18 @@ input #file {
     padding: 8px;
   }
   /* 
-    #password1,
-    #password2 {
-      border: 2px solid #ff8f8f;
-      border-radius: 12px;
-      height: 40px;
-      width: 200px;
-      padding: 8px;
-    }
-    #idCheckMsg,
-    #pwCheckMsg {
-      font-size: 14px;
-    } */
+  #password1,
+  #password2 {
+    border: 2px solid #ff8f8f;
+    border-radius: 12px;
+    height: 40px;
+    width: 200px;
+    padding: 8px;
+  }
+  #idCheckMsg,
+  #pwCheckMsg {
+    font-size: 14px;
+  } */
 
   .anibox input[placeholder] {
     font-size: 14px;
@@ -1011,4 +1300,8 @@ input #file {
     color: black;
     font-weight: 700;
   }
+}
+
+.anichange {
+  display: none;
 }

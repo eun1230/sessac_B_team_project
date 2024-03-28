@@ -9,8 +9,8 @@ if (navigator.geolocation) {
   // GeoLocation을 이용해서 현재 위치를 얻어옵니다
   // 현재위치를 성공적으로 가져오면 position 객체를 갖는 callback함수를 호출
   navigator.geolocation.getCurrentPosition(function (position) {
-    const lat = position.coords.latitude, // 현재 위치 위도
-      lon = position.coords.longitude; // 현재 위치 경도
+    (lat = position.coords.latitude), // 현재 위치 위도
+      (lon = position.coords.longitude); // 현재 위치 경도
     // 위에서 얻어온 위도와 경도를 사용하여 카카오맵의 LatLng 객체를 생성
     // locPosition과 message를 같이 정의
     // 이는 마커를 표시할 위치를 나타냄
@@ -58,16 +58,16 @@ if (navigator.geolocation) {
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
   // 마커를 생성합니다
-  const marker = new kakao.maps.Marker({
+  marker = new kakao.maps.Marker({
     map: map,
     position: locPosition,
   });
 
-  const iwContent = message, // 인포윈도우에 표시할 내용
-    iwRemoveable = true; // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
+  (iwContent = message), // 인포윈도우에 표시할 내용
+    (iwRemoveable = true); // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
 
   // 인포윈도우를 생성합니다
-  const infowindow = new kakao.maps.InfoWindow({
+  infowindow = new kakao.maps.InfoWindow({
     content: iwContent,
     removable: iwRemoveable,
   });
@@ -91,7 +91,7 @@ function displayMarker(locPosition, message) {
   ];
 
   // 지도에 표시할 선을 생성합니다
-  var polyline = new kakao.maps.Polyline({
+  let polyline = new kakao.maps.Polyline({
     path: linePath, // 선을 구성하는 좌표배열 입니다
     strokeWeight: 5, // 선의 두께 입니다
     strokeColor: '#ff8f8f', // 선의 색깔입니다
@@ -104,17 +104,17 @@ function displayMarker(locPosition, message) {
   // ================================================================
   // 두 지점 간의 거리를 계산하는 함수
   function calculateDistance(lat1, lon1, lat2, lon2) {
-    var R = 6371; // 지구의 반지름 (단위: km)
-    var dLat = deg2rad(lat2 - lat1);
-    var dLon = deg2rad(lon2 - lon1);
-    var a =
+    let R = 6371; // 지구의 반지름 (단위: km)
+    let dLat = deg2rad(lat2 - lat1);
+    let dLon = deg2rad(lon2 - lon1);
+    let a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(deg2rad(lat1)) *
         Math.cos(deg2rad(lat2)) *
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // 두 지점 사이의 거리 (단위: km)
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    let d = R * c; // 두 지점 사이의 거리 (단위: km)
     return d;
   }
 
@@ -148,7 +148,7 @@ function displayMarker(locPosition, message) {
   // 거리에 따른 예상 이동 시간을 계산하는 함수
   function calculateTravelTime(distance, averageSpeed) {
     // 거리를 평균 속도로 나누어 시간을 계산
-    var time = distance / averageSpeed;
+    let time = distance / averageSpeed;
     return time;
   }
 
