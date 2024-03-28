@@ -51,7 +51,6 @@
   }
   #modalcontent {
     position: absolute;
-    /* position: absolute; */
     display: flex;
     align-items: center;
     background-color: rgb(121, 190, 255);
@@ -60,14 +59,13 @@
     /* height: 300px; */
     padding: 15px;
     top: 50px;
-    left: 6px;
-
+    left: 8px;
     z-index: 13;
   }
   #modalclosebutton {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 3px;
+    left: 8px;
     cursor: pointer;
     /* z-index: 20; */
   }
