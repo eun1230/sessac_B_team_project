@@ -16,7 +16,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #ffffffeb;
+  background-color: #fff;
   width: 100vw;
   height: 150px;
 }
@@ -139,7 +139,7 @@ header a:hover {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #ffffffc4;
+    background-color: #fff;
     width: 100vw;
     height: 100px; /* 수정: 높이 조정 */
   }
