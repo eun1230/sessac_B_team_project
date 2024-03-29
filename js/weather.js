@@ -38,7 +38,6 @@ getWeather = (lat, lon) => {
       return response.json();
     })
     .then((json) => {
-      console.log('json', json);
       const temperature = json.main.temp;
       const temperatureMax = json.main.temp_max;
       const temperatureMin = json.main.temp_min;

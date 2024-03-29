@@ -4,10 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const placeName = localStorage.getItem('placeName');
   const imageSrc = localStorage.getItem('imageSrc');
   const roadAddress = localStorage.getItem('roadAddress');
-  console.log(placeName, imageSrc, roadAddress);
 
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-  console.log(userInfo);
   petName = userInfo.petName;
 
   let code = `<div class="hospital">

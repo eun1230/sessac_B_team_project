@@ -17,10 +17,8 @@ const getKeyword = document.querySelectorAll('.map-header-btn');
 
 //현재위치받아서 지도 생성
 function success({ coords }) {
-  console.log('맵 생성');
   latitude = coords.latitude; // 위도
   longitude = coords.longitude; // 경도
-  console.log(`위도: ${latitude}, 경도: ${longitude}`);
   markerPosition = new kakao.maps.LatLng(latitude, longitude);
 
   // 지도를 표시할 div
@@ -79,7 +77,6 @@ function success({ coords }) {
 }
 
 function getUserLocation() {
-  console.log('현재 위치 받아오기 getUserLocation() ');
   // 내위치 못 받아올때
   if (!navigator.geolocation) {
     mapContainer = document.getElementById('map');
@@ -156,7 +153,6 @@ function placesSearchCB(data, status, pagination) {
     // 정상적으로 검색이 완료됐으면
     // 검색 목록과 마커를 표출합니다
     displayPlaces(data);
-
     // 페이지 번호를 표출합니다
     displayPagination(pagination);
   } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
@@ -170,7 +166,6 @@ function placesSearchCB(data, status, pagination) {
 
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(places) {
-  console.log('displayPlaces() 실행');
   // map 객체가 정의되지 않았을 때 처리
   if (!map) {
     console.error('map 객체가 정의되지 않았습니다.');
@@ -240,19 +235,14 @@ let Data = [];
 // 지도 정보 가져오기(목데이터)
 fetch('../html/map.json')
   .then((response) => {
-    // alert('a');
-    console.log(response);
     return response.json();
   })
   .then((data) => {
-    console.log('제이슨파일 가져옴 ', data);
     Data = data;
-    console.log('fetch에서 data', Data);
   })
   .catch((error) => console.log('error : ', error));
 
 function handleListItemClick(places, index) {
-  // console.log('확인용 로그 : ', places);
   infoContainer.classList.add('info-detail');
   document.querySelector('.info-detail').innerHTML = '';
 
@@ -395,7 +385,6 @@ function handleListItemClick(places, index) {
     const imageSrc = document.getElementById('pl-img').getAttribute('src');
     const roadAddress = document.getElementById('road-name').innerText.trim();
 
-    console.log(placeName, imageSrc, roadAddress);
     // 데이터를 로컬스토리지에 저장
     localStorage.setItem('placeName', placeName);
     localStorage.setItem('imageSrc', imageSrc);
@@ -410,7 +399,6 @@ function handleListItemClick(places, index) {
 
     const imageSrc2 = document.getElementById('pl-img2').getAttribute('src');
     const roadAddress2 = document.getElementById('road-name2').innerText.trim();
-    console.log(placeName2, imageSrc2, roadAddress2);
     // 데이터를 로컬스토리지에 저장
     localStorage.setItem('placeName', placeName2);
     localStorage.setItem('imageSrc', imageSrc2);
