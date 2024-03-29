@@ -197,3 +197,11 @@ function logOut() {
   });
   location.href = '../index.html';
 }
+
+const userInfo = localStorage.getItem('userinfo');
+console.log(userInfo);
+
+// let code1 = `<div class="profilename">${userInfo}</div>`;
+
+// document.querySelector('.pnbox').innerText = code;
+document.querySelector('.profilename').innerText = userInfo;
