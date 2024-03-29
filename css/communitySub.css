@@ -21,6 +21,8 @@ main {
   margin-top: 70px;
 }
 .bg-pink {
+  height: 50px;
+  border-radius: 10px;
   width: 1200px;
   background-color: #ffd7d76f;
 }
@@ -140,7 +142,6 @@ button.btn.btn-primary:hover {
   background-color: aqua;
 }
 
-
 @media (max-width: 1200px) {
   .buttonBox {
     display: flex;
@@ -202,7 +203,7 @@ button.btn.btn-primary:hover {
 }
 
 /* community sub - mobile */
-@media screen and (max-width: 480px) { 
+@media screen and (max-width: 480px) {
   .c-nav {
     display: block;
     flex-direction: column;
@@ -214,10 +215,9 @@ button.btn.btn-primary:hover {
     align-items: center;
     font-size: 12px;
     margin-top: 38px;
-
   }
   .c-nav ul li {
-    margin-top: -30px; 
+    margin-top: -30px;
     margin-left: 40px;
   }
   .bg-pink {
@@ -247,5 +247,3 @@ button.btn.btn-primary:hover {
     flex-basis: calc(100% - 0px);
   }
 }
-
-
