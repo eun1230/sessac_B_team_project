@@ -87,7 +87,6 @@ function checkSelectAll() {
     selectAll.checked = false;
   }
 }
-
 /* 
 가입완료 버튼 클릭하면 안내 alert 등장
 alert에서 '확인' 클릭하면 메인으로 이동
@@ -96,8 +95,10 @@ function regOk() {
   let id = document.querySelector('#userId').value;
   let userPw1 = document.querySelector('#password1').value;
   let userPw2 = document.querySelector('#password2').value;
-  let agreebox = document.querySelectorAll('.terms');
-  isChecked = agreebox.checked;
+  // let agreebox = document.querySelectorAll('.terms');
+  // isChecked = agreebox.checked;
+  const isChecked = document.querySelectorAll('input[class=terms]:checked');
+  const cnt = isChecked.length;
 
   if (id == '') {
     alert('아이디를 입력해주세요.');
@@ -105,7 +106,9 @@ function regOk() {
     alert('비밀번호를 입력해주세요.');
   } else if (userPw2 == '') {
     alert('비밀번호가 확인되지 않았습니다.');
-  } else if (!isChecked) {
+    // } else if (isChecked === '') {
+    //   alert('약관에 모두 동의해주세요.');
+  } else if (cnt !== 3) {
     alert('약관에 모두 동의해주세요.');
   } else if (!alert('가입이 완료되었습니다!')) {
     document.location.href = '../index.html';
