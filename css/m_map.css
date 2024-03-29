@@ -1,0 +1,148 @@
+@media screen and (max-width: 479px) {
+  main {
+    width: 480px;
+    overflow: hidden;
+    height: 1300px;
+  }
+  body {
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/main-frame.png');
+    background-size: cover;
+  }
+  header {
+    display: block;
+  }
+
+  #map {
+    position: absolute;
+    margin: 0;
+    max-width: 100%;
+    height: 600px;
+    z-index: 1;
+  }
+
+  #map_header {
+    display: none;
+  }
+
+  .info-detail {
+    overflow: scroll;
+    height: 700px;
+    position: absolute;
+    z-index: 999;
+    top: 400px;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    width: 480px;
+    border-radius: 15px;
+  }
+
+  .m_map_header {
+    display: flex;
+    flex-direction: row;
+    width: 480px;
+    overflow: scroll;
+    height: 80px;
+    position: absolute;
+    top: 500px;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .m_map_header ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  .m_map_header li {
+    padding-top: 10px;
+    list-style: none;
+    margin-right: 6px;
+  }
+  .m_map_header a {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    padding-top: 16px;
+    padding-right: 15px;
+    /* padding-bottom: 5px; */
+    cursor: pointer;
+  }
+  .m_map_header ul a:hover {
+    color: #ff8f8f;
+  }
+
+  .m_map_header input {
+    width: 75px;
+    height: 35px;
+    border-radius: 15px;
+    font-size: 13px;
+    border: 1px solid #e4e4e4;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+
+  .m_map_header input:hover {
+    border: 1px solid #fcd9d9;
+    background-color: rgb(251, 229, 229);
+  }
+
+  .map_wrap {
+    width: 480px;
+    position: block;
+  }
+
+  .map_wrap #map {
+    margin: 0;
+    width: 480px;
+    height: 400px;
+  }
+
+  #menu_wrap.bg_white {
+    position: absolute;
+    top: 470px;
+    left: 10px;
+    bottom: 0;
+    /* margin: 10px 0 60px 10px; */
+    padding: 5px;
+    overflow-y: auto;
+    background: #ffffff;
+    z-index: 2;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 460px;
+  }
+
+  .info-detail-2 {
+    display: none;
+  }
+
+  #pl-img {
+    margin-left: 25%;
+    border-radius: 10px;
+    width: 50%;
+    height: 180px;
+    margin-bottom: 10px;
+  }
+  #place-name {
+    font-weight: bolder;
+    font-size: medium;
+    margin-bottom: 10px;
+  }
+  .info-detail .bookmark {
+    left: 400px;
+  }
+
+  .info-detail #pl-review {
+    width: 430px;
+  }
+  .info-detail .gotoDetailBtn {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+}

@@ -1,138 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMIPET | ABOUT</title>
-    <link rel="icon" type="image/png" href="../logo_2.png" />
-    <link rel="stylesheet" href="../css/about.css" />
-    <link rel="stylesheet" href="../css/header_for_login.css" />
-    <script defer src="../js/header.js"></script>
-    <script defer src="../js/footer.js"></script>
 
-    <!-- bootstrap cdn -->
-    <link
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMIPET | ABOUT</title>
+  <link rel="icon" type="image/png" href="../logo_2.png" />
+  <link rel="stylesheet" href="../css/about.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/header_for_login.css" />
+  <!-- <script defer src="../js/header.js"></script> -->
+
+  <script defer src="../js/footer.js"></script>
+  <script defer src="../js/loginHeader.js"></script>
+
+  <!-- to top btn bootstrap cdn -->
+  <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" type="image/png" href="../img/logo_2.png" />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <header>
-        <div class="header-container">
-          <!-- nav메뉴 -->
-          <!-- 모바일 햄버거 -->
-          <div class="m-nav hamb">
-            <img
-              src="../img/hamb.png"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasExample"
-              role="button"
-              aria-controls="offcanvasExample"
-            />
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="offcanvasExample"
-              aria-labelledby="offcanvasExampleLabel"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul id="m-ul">
-                  <li class="m-li">
-                    <a href="./about.html">ABOUT</a>
-                  </li>
-                  <li class="m-li">
-                    <a href="./communityMain.html">COMMUNITY</a>
-                  </li>
-                  <li class="m-li">
-                    <a href="./map.html">MAP</a>
-                  </li>
-                  <li class="m-li">
-                    <a href="./walk.html">산책하기</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="nav-left">
-            <ul id="leftToRight">
-              <li class="nav-li">
-                <div class="hover-img"></div>
-                <a href="./about.html">ABOUT</a>
-              </li>
-              <li class="nav-li">
-                <div class="hover-img"></div>
-                <a href="./communityMain.html">COMMUNITY</a>
-              </li>
-              <li class="nav-li">
-                <div class="hover-img"></div>
-                <a href="./map.html">MAP</a>
-              </li>
-            </ul>
-          </div>
-          <!-- 가운데 로고 -->
-          <div class="nav-center">
-            <a href="../index.html"
-              ><img class="logo" src="../img/logo.png"
-            /></a>
-          </div>
-          <!-- 로그인/마이페이지 -->
-          <div class="nav-right">
-            <div style="width: 20px; height: 20px"></div>
-            <a href="./login.html" class="loginOnOff">LOGIN </a>
-          </div>
-          <div class="m-nav login">
-            <a href="./login.html">LOGIN</a>
-            <!-- <img src="./img/profile.png" /> -->
-          </div>
-        </div>
-      </header>
 
-      <main>
-        <div id="main-title">ABOUT US</div>
-        <div><img src="../img/logo.png" alt="logo" id="about" /></div>
-        <div id="introduce">
-          우리가 하는 모든 일은<br />
-          우리 아이들의 행복한 순간을<br />
-          만들어 낸다고 믿습니다.
-        </div>
-        <div id="forPet">
-          '루미펫' 은 사랑하는 우리 아이들을 위해, 실제 반려동물을 키우는
-          팀원들이 모여서 만든 브랜드입니다. 또 하나의 가족인 반려동물이
-          반려인에게 얼마나 소중한지 누구보다 잘 이해하기 때문에, 항상 어떻게
-          하면 반려동물이 더 건강하고 행복한 삶을 누릴 수 있을지 고민하고,
-          반려인에게 편리한 서비스를 제공할 수 있을지 연구합니다.
-          <br />앞으로도 저희는 1500만 반려인의 목소리를 듣고, 모두의 행복을
-          위해 노력할 것입니다.
-        </div>
-        <div id="last-ment">
-          내 펫과 함께 할 모든 공간,<br />
-          찾기부터 예약까지 한 번에!
-        </div>
-        <div id="brandname">LUMIPET</div>
-      </main>
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="../img/logo_2.png" />
 
-      <div class="container footer"></div>
-    </div>
-  </body>
+  <script>
+    // to top btn
+    const toTopBtn = document.querySelector('#toTopBtn');
+    function topFunc() {
+    document.documentElement.scrollTop = 0;
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <header>
+    </header>
+
+    <main>
+      <div id="main-title">ABOUT US</div>
+      <div><img src="../img/logo.png" alt="logo" id="about" /></div>
+      <div id="introduce">
+        우리가 하는 모든 일은<br />
+        우리 아이들의 행복한 순간을<br />
+        만들어 낸다고 믿습니다.
+      </div>
+      <div id="forPet">
+        '루미펫' 은 사랑하는 우리 아이들을 위해, 실제 반려동물을 키우는
+        팀원들이 모여서 만든 브랜드입니다. 또 하나의 가족인 반려동물이
+        반려인에게 얼마나 소중한지 누구보다 잘 이해하기 때문에, 항상 어떻게
+        하면 반려동물이 더 건강하고 행복한 삶을 누릴 수 있을지 고민하고,
+        반려인에게 편리한 서비스를 제공할 수 있을지 연구합니다.
+        <br />앞으로도 저희는 1500만 반려인의 목소리를 듣고, 모두의 행복을
+        위해 노력할 것입니다.
+      </div>
+      <div id="last-ment">
+        내 펫과 함께 할 모든 공간,<br />
+        찾기부터 예약까지 한 번에!
+      </div>
+      <div id="brandname">LUMIPET</div>
+    </main>
+
+    <!-- to top btn --> 
+  <button id="toTopBtn" onclick="topFunc()">
+      <i class="bi bi-arrow-up-square"></i>
+    </button>
+
+    <div class="container footer"></div>
+  </div>
+</body>
+
 </html>
