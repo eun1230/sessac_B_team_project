@@ -281,7 +281,7 @@ h2 {
 .gif2 {
   position: absolute;
   top: 890px;
-  left: 850px;
+  left: 820px;
   z-index: 999;
 }
 .gif3 {
@@ -315,7 +315,7 @@ h2 {
   .gif img {
     position: absolute;
     top: 225px;
-    left: 220px;
+    left: 210px;
     z-index: 999;
   }
 }

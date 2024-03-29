@@ -1,27 +1,3 @@
-// let currentSlide = 0;
-// const slides = document.querySelectorAll('.slide');
-// const slideCount = slides.length;
-
-// function showSlide(n) {
-//   slides.forEach((slide) => (slide.style.display = 'none'));
-//   slides[n].style.display = 'block';
-// }
-
-// function nextSlide() {
-//   currentSlide = (currentSlide + 1) % slideCount;
-//   showSlide(currentSlide);
-// }
-
-// function prevSlide() {
-//   currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-//   showSlide(currentSlide);
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   showSlide(currentSlide);
-//   setInterval(nextSlide, 2000);
-// });
-
 function toggleLike(index) {
   const heartIcon = document.querySelector(`#heart-icon-${index}`);
   const likeCount = document.querySelector(`#like-count-${index}`);
@@ -45,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     communityData = await fetch('../html/community.json').then((response) =>
       response.json()
     );
-    console.log('커뮤니티 데이터 가져옴:', communityData);
     const wrap3 = document.querySelector('.wrap3');
     if (!wrap3) return; // wrap3 요소가 없으면 함수 종료
     wrap3.innerHTML = ''; // 기존의 내용을 지우고 다시 추가
