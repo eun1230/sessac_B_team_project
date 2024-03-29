@@ -199,9 +199,10 @@ function logOut() {
 }
 
 let userInfo = localStorage.getItem('userinfo');
+petName = userInfo.petName;
 console.log(userInfo);
 
-let code1 = `<div class="profilename">${userInfo}</div>`;
+let code1 = `<div class="profilename">${petName}</div>`;
 document.querySelector('.pnbox').innerHTML = code1;
 
 // document.querySelector('.profilename').innerText = userInfo;
