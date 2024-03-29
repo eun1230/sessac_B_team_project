@@ -197,10 +197,9 @@ function logOut() {
   });
   location.href = '../index.html';
 }
-
-let userInfo = localStorage.getItem('userinfo');
-petName = userInfo.petName;
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 console.log(userInfo);
+petName = userInfo.petName;
 
 let code1 = `<div class="profilename">${petName}</div>`;
 document.querySelector('.pnbox').innerHTML = code1;
