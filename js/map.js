@@ -579,3 +579,9 @@ function removeAllChildNods(el) {
     el.removeChild(el.lastChild);
   }
 }
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}

@@ -197,3 +197,17 @@ function logOut() {
   });
   location.href = '../index.html';
 }
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}
+
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+console.log(userInfo);
+petName = userInfo.petName;
+
+let code1 = `<div class="profilename">${petName}</div>`;
+document.querySelector('.pnbox').innerHTML = code1;
+
+// document.querySelector('.profilename').innerText = userInfo;
