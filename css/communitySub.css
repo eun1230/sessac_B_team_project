@@ -11,6 +11,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: 100%;
   margin: auto;
 }
 .container-fluid {
@@ -167,7 +168,7 @@ button.btn.btn-primary:hover {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   main {
     width: 480px;
   }
@@ -215,7 +216,7 @@ button.btn.btn-primary:hover {
   img.card-img-top {
     height: 200px;
   }
-}
+} */
 
 @font-face {
   font-family: 'GmarketSansMedium';
@@ -248,4 +249,51 @@ button.btn.btn-primary:hover {
   cursor: pointer;
   text-decoration: none;
 }
+
+/* community sub - mobile */
+@media screen and (max-width: 480px) { 
+  .c-nav {
+    display: block;
+    flex-direction: column;
+    width: 350px;
+  }
+
+  .c-nav ul {
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 38px;
+
+  }
+  .c-nav ul li {
+    margin-top: -30px; 
+    margin-left: 40px;
+  }
+  .bg-pink {
+    width: 350px;
+    height: 200px;
+    border-radius: 50px;
+  }
+
+  .btnWrite {
+    display: contents;
+  }
+
+  div.category {
+    width: 100px;
+  }
+
+  div.cards {
+    width: 300px;
+    height: 100%;
+    margin-top: 30px;
+  }
+
+  div.card {
+    flex-basis: calc(100% - 0px);
+  }
+
+
+}
+
 
