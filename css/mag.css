@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./../img/main-frame.png');
+  background-size: cover;
+}
+.backKey {
+  display: flex;
+  margin: 30px 10px 40px 10px;
+  padding-left: 170px;
+  width: 70%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.backKey svg {
+  font-size: 30px;
+  margin-right: auto;
+}
+
+.magInfo {
+  width: 1070px;
+  margin: auto;
+  /* background-color: rgb(116, 125, 125); */
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+#mag-img1 {
+  width: 300px;
+  height: 400px;
+}
+#mag-img2 {
+  width: 1070px;
+}
+
+/* btn to top */
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.bi-arrow-up-square {
+  font-size: 34px;
+  color: #f4a29c;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+}
