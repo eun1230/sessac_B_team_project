@@ -2,9 +2,19 @@
 let map;
 let mapContainer;
 let locPosition;
+let init = 0;
 
+// document.querySelector('.mwalkbt').addEventListener('click',() => {
+// })
+document.querySelector('#distance').innerText = init;
+document.querySelector('#pointDisplay').innerText = init;
+document.querySelector('#hours').innerText = init;
+document.querySelector('#minutes').innerText = init;
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
 // navigator.geolocation가 undefined가 아니라면
+// document.querySelector('.ing') = init;
+// document.querySelector('.play') = init;
+// document.querySelector('.walkfinish') = init;
 if (navigator.geolocation) {
   // GeoLocation을 이용해서 현재 위치를 얻어옵니다
   // 현재위치를 성공적으로 가져오면 position 객체를 갖는 callback함수를 호출
@@ -107,130 +117,137 @@ function displayMarker(locPosition, message) {
       coords: '1,20,1,9,5,2,10,0,21,0,27,3,30,9,30,20,17,33,14,33',
     }
   );
+  document.querySelector('.walkstart').addEventListener('click', () => {
+    marker = new kakao.maps.Marker({
+      map: map,
+      image: endMarker,
+      position: endPoint,
+    });
+    marker.setMap(map);
 
-  marker = new kakao.maps.Marker({
-    map: map,
-    image: endMarker,
-    position: endPoint,
-  });
-  marker.setMap(map);
+    (iwContent = '도착위치'), // 인포윈도우에 표시할 내용
+      (iwRemoveable = true); // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
 
-  (iwContent = '도착위치'), // 인포윈도우에 표시할 내용
-    (iwRemoveable = true); // 인포윈도우를 닫을 수 있는지 여부, true로 설정하면 사용자가 인포윈도우를 닫을 수 있음
+    // 인포윈도우를 생성합니다
+    infowindow = new kakao.maps.InfoWindow({
+      content: iwContent,
+      removable: iwRemoveable,
+    });
 
-  // 인포윈도우를 생성합니다
-  infowindow = new kakao.maps.InfoWindow({
-    content: iwContent,
-    removable: iwRemoveable,
-  });
+    // 인포윈도우를 마커위에 표시합니다
+    // 지도 상에 특정한 위치나 요소에 연다 .앞에는 열고자하는 객체
+    infowindow.open(map, marker);
+    let linePath = [
+      locPosition,
+      new kakao.maps.LatLng(37.5572406, 127.1713051),
+      new kakao.maps.LatLng(37.5597007, 127.170877),
+      new kakao.maps.LatLng(37.5596547, 127.1696005),
+    ];
 
-  // 인포윈도우를 마커위에 표시합니다
-  // 지도 상에 특정한 위치나 요소에 연다 .앞에는 열고자하는 객체
-  infowindow.open(map, marker);
-  let linePath = [
-    locPosition,
-    new kakao.maps.LatLng(37.5572406, 127.1713051),
-    new kakao.maps.LatLng(37.5597007, 127.170877),
-    new kakao.maps.LatLng(37.5596547, 127.1696005),
-  ];
+    // 지도에 표시할 선을 생성합니다
+    let polyline = new kakao.maps.Polyline({
+      path: linePath, // 선을 구성하는 좌표배열 입니다
+      strokeWeight: 5, // 선의 두께 입니다
+      strokeColor: '#ff8f8f', // 선의 색깔입니다
+      strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+      strokeStyle: 'solid', // 선의 스타일입니다
+    });
 
-  // 지도에 표시할 선을 생성합니다
-  let polyline = new kakao.maps.Polyline({
-    path: linePath, // 선을 구성하는 좌표배열 입니다
-    strokeWeight: 5, // 선의 두께 입니다
-    strokeColor: '#ff8f8f', // 선의 색깔입니다
-    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-    strokeStyle: 'solid', // 선의 스타일입니다
-  });
+    // 지도에 선을 표시합니다
+    polyline.setMap(map);
 
-  // 지도에 선을 표시합니다
-  polyline.setMap(map);
-
-  // ================================================================
-  // 두 지점 간의 거리를 계산하는 함수
-  function calculateDistance(lat1, lon1, lat2, lon2) {
-    let R = 6371; // 지구의 반지름 (단위: km)
-    let dLat = deg2rad(lat2 - lat1);
-    let dLon = deg2rad(lon2 - lon1);
-    let a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    let d = R * c; // 두 지점 사이의 거리 (단위: km)
-    return d;
-  }
-
-  // 각도를 라디안 값으로 변환하는 함수
-  function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-  }
-
-  // 주어진 경로의 총 거리를 계산하는 함수
-  function calculatePathDistance(path) {
-    let totalDistance = 0;
-    for (var i = 0; i < path.length - 1; i++) {
-      let point1 = path[i];
-      let point2 = path[i + 1];
-      let distance = calculateDistance(
-        point1.getLat(),
-        point1.getLng(),
-        point2.getLat(),
-        point2.getLng()
-      );
-      totalDistance += distance;
+    // ================================================================
+    // 두 지점 간의 거리를 계산하는 함수
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      let R = 6371; // 지구의 반지름 (단위: km)
+      let dLat = deg2rad(lat2 - lat1);
+      let dLon = deg2rad(lon2 - lon1);
+      let a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) *
+          Math.cos(deg2rad(lat2)) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
+      let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      let d = R * c; // 두 지점 사이의 거리 (단위: km)
+      return d;
     }
-    return totalDistance;
-  }
 
-  // 총 거리 계산
-  let totalDistance = calculatePathDistance(linePath);
-  console.log('Total distance:', totalDistance.toFixed(2), 'km');
+    // 각도를 라디안 값으로 변환하는 함수
+    function deg2rad(deg) {
+      return deg * (Math.PI / 180);
+    }
 
-  // =============================================================
-  // 거리에 따른 예상 이동 시간을 계산하는 함수
-  function calculateTravelTime(distance, averageSpeed) {
-    // 거리를 평균 속도로 나누어 시간을 계산
-    let time = distance / averageSpeed;
-    return time;
-  }
+    // 주어진 경로의 총 거리를 계산하는 함수
+    function calculatePathDistance(path) {
+      let totalDistance = 0;
+      for (var i = 0; i < path.length - 1; i++) {
+        let point1 = path[i];
+        let point2 = path[i + 1];
+        let distance = calculateDistance(
+          point1.getLat(),
+          point1.getLng(),
+          point2.getLat(),
+          point2.getLng()
+        );
+        totalDistance += distance;
+      }
+      return totalDistance;
+    }
 
-  // 거리 (km)
-  let distance = totalDistance; // 위에서 계산한 총 거리
+    // 총 거리 계산
+    let totalDistance = calculatePathDistance(linePath);
+    console.log('Total distance:', totalDistance.toFixed(2), 'km');
 
-  // 평균 이동 속도 (km/h)
-  let averageSpeed = 5; // 예시로 5km/h로 설정
+    // =============================================================
+    // 거리에 따른 예상 이동 시간을 계산하는 함수
+    function calculateTravelTime(distance, averageSpeed) {
+      // 거리를 평균 속도로 나누어 시간을 계산
+      let time = distance / averageSpeed;
+      return time;
+    }
 
-  // 예상 이동 시간 계산
-  let travelTime = calculateTravelTime(distance, averageSpeed);
+    // 거리 (km)
+    let distance = totalDistance; // 위에서 계산한 총 거리
 
-  // 시간을 시간과 분으로 변환
-  let hours = Math.floor(travelTime);
-  let minutes = Math.round((travelTime - hours) * 60);
+    // 평균 이동 속도 (km/h)
+    let averageSpeed = 5; // 예시로 5km/h로 설정
 
-  console.log('Estimated travel time:', hours, 'hours', minutes, 'minutes');
-  // ======================================================================
-  // 100m당 30포인트 쌓이도록 포인트 생성
-  let pointInterval = 100; // 미터
-  let pointsPerInterval = 30;
+    // 예상 이동 시간 계산
+    let travelTime = calculateTravelTime(distance, averageSpeed);
 
-  let totalPoints =
-    Math.floor((totalDistance * 1000) / pointInterval) * pointsPerInterval; // 거리를 미터로 변환하여 계산
-  let ceilPoint = Math.ceil(totalPoints);
-  console.log('Total points:', ceilPoint);
-  // 결과를 화면에 출력
-  document.getElementById('distance').innerText = distance.toFixed(2);
-  document.getElementById('hours').innerText = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('pointDisplay').innerText = ceilPoint;
+    // 시간을 시간과 분으로 변환
+    let hours = Math.floor(travelTime);
+    let minutes = Math.round((travelTime - hours) * 60);
 
-  // for (let i = 0; i < totalPoints; i++) {
-  //   let pointElement = document.createElement('span');
-  //   pointElement.textContent = '●'; // 원하는 모양으로 변경 가능
-  //   pointDisplay.appendChild(pointElement);
-  // }
+    console.log('Estimated travel time:', hours, 'hours', minutes, 'minutes');
+    // ======================================================================
+    // 100m당 30포인트 쌓이도록 포인트 생성
+    let pointInterval = 100; // 미터
+    let pointsPerInterval = 30;
+
+    let totalPoints =
+      Math.floor((totalDistance * 1000) / pointInterval) * pointsPerInterval; // 거리를 미터로 변환하여 계산
+    let ceilPoint = Math.ceil(totalPoints);
+    console.log('Total points:', ceilPoint);
+    // 결과를 화면에 출력
+    document.getElementById('distance').innerText = distance.toFixed(2);
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('pointDisplay').innerText = ceilPoint;
+
+    // for (let i = 0; i < totalPoints; i++) {
+    //   let pointElement = document.createElement('span');
+    //   pointElement.textContent = '●'; // 원하는 모양으로 변경 가능
+    //   pointDisplay.appendChild(pointElement);
+    // }
+    document.querySelector('.walkfinish').addEventListener('click', () => {
+      document.querySelector('#distance').innerText = init;
+      document.querySelector('#pointDisplay').innerText = init;
+      document.querySelector('#hours').innerText = init;
+      document.querySelector('#minutes').innerText = init;
+    });
+  });
 }
 
 document.querySelector('.walkstart').addEventListener('click', () => {
