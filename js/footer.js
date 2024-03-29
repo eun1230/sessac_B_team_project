@@ -35,3 +35,4 @@ const footer = `
 </div>
 </footer>`;
 document.querySelector('.container.footer').innerHTML = footer;
+

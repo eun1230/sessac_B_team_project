@@ -197,6 +197,11 @@ function logOut() {
   });
   location.href = '../index.html';
 }
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}
 
 let userInfo = localStorage.getItem('userinfo');
 petName = userInfo.petName;

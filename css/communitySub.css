@@ -230,3 +230,22 @@ button.btn.btn-primary:hover {
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
     format('woff');
 }
+
+/* btn to top */
+#toTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.bi-arrow-up-square {
+  font-size: 34px;
+  color: #f4a29c;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+

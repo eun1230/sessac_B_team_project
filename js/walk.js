@@ -257,3 +257,9 @@ document.querySelector('#modalclosebutton').addEventListener('click', () => {
   document.querySelector('#weatherbutton').style.display = 'block';
   document.querySelector('.back').style.display = 'block';
 });
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}

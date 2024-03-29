@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
+ 
   let Data = [];
   let currentPage = 1;
   const commentsPerPage = 5;
@@ -123,3 +124,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 });
+ // to top btn
+  let toTopBtn = document.querySelector('#toTopBtn');
+  function topFunc() {
+    document.documentElement.scrollTop = 0;
+  }
