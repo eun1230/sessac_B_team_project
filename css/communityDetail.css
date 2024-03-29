@@ -63,7 +63,7 @@ main {
   width: 770px;
 }
 .pictureLink a {
-  padding-left: 150px;
+  padding-left: 30px;
   text-align: center;
 }
 .moreImage {
@@ -320,6 +320,15 @@ section img:hover {
 
   .commentBox {
     width: 100%;
+  }
+  .moreImage {
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  .moreImage img {
+    width: 240px;
   }
 }
 
