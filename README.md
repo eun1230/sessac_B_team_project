@@ -6,12 +6,16 @@
 <p align=center><img src="https://github.com/eun1230/sessac_B_teamproject/blob/develop/img/logo.png" width="300"></p>
 <br>
 SeSAC 강동 3기 - 2차 팀 프로젝트에서 만든 페이지입니다. 프론트엔드 기술과 OPEN API를 활용하여 반려인을 위한 공간 예약 사이트 '루미펫'을 제작해보았습니다.
+<br>
+<br>
 
 ## 💻 배포 주소
 
 https://lumipet.netlify.app/
 
 https://github.com/eun1230/sessac_B_teamproject
+<br>
+<br>
 
 ## 👨‍🏫 프로젝트 소개
 
@@ -24,6 +28,7 @@ https://github.com/eun1230/sessac_B_teamproject
   - 2024.03.17(일) ~ 2024.03.28(수) : 개발(Agile Scrum)
 
   - 2024.03.29(목) : 발표 및 평가
+<br>
 
 ## 👩‍💻 개발자 소개 & 업무분담
 
@@ -36,6 +41,7 @@ https://github.com/eun1230/sessac_B_teamproject
 - **이윤호** [@Leeyoonho0310](http://github.com/Leeyoonho0310) : 커뮤니티 (메인, 서브, 디테일, 글쓰기)
 
 - **홍정민** [@meenie49](http://github.com/meenie49) : 마이 페이지, 산책하기 (모바일 전용)
+<br>
 
 ## 🐶 주요 기능
 
@@ -114,6 +120,7 @@ https://github.com/eun1230/sessac_B_teamproject
 - `일시정지` 혹은 `종료` 버튼으로 시간 카운트 중지
 
 - Open Weather Map API를 이용하여 현재 위치를 기준으로 한 날씨 정보 제공
+<br>
 
 ## 💻 기술 스택
 
@@ -140,6 +147,8 @@ https://github.com/eun1230/sessac_B_teamproject
 ![Zoom](https://img.shields.io/badge/Zoom-0B5CFF?style=flat&logo=zoom&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
 (+ 대면 회의)
+<br>
+<br>
 
 ## 📌 API
 
@@ -160,6 +169,7 @@ https://github.com/eun1230/sessac_B_teamproject
   - 정보제공에 동의하면 로그인 완료를 알리는 자체제작 팝업으로 변경
 
   - '확인' 버튼을 클릭하면 팝업이 자동으로 닫히며 부모창에서 index.html로 이동
+<br>
 
 ## 📁 프로젝트 구조
 
