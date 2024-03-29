@@ -62,10 +62,7 @@ main {
 .moreImage {
   width: 770px;
 }
-.pictureLink a {
-  padding-left: 30px;
-  text-align: center;
-}
+
 .moreImage {
   width: 750px;
   margin: auto;
@@ -250,7 +247,12 @@ section img:hover {
   line-height: 23px;
   font-size: 15px;
 }
-
+@media (max-width: 1200px) {
+.pictureLink a {
+  padding-left: 150px;
+  text-align: center;
+}
+}
 @media (max-width: 479px) {
   main {
     width: 460px;

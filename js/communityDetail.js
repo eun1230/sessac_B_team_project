@@ -103,10 +103,10 @@ function loadCommunityData(data) {
         newComment.innerHTML = `
         <div class="commentMini">
           <div>
-            <img src="../img/profile.png" alt="프로필" />
+            <img src="../img/profilephoto.png" alt="프로필" />
           </div>
           <div>
-            <p class="re-user">루미펫</p>
+            <p class="re-user">흰둥이</p>
           </div>
         </div>
         <div class="commentText">
