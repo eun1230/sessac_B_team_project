@@ -87,6 +87,7 @@ function checkSelectAll() {
     selectAll.checked = false;
   }
 }
+
 /* 
 가입완료 버튼 클릭하면 안내 alert 등장
 alert에서 '확인' 클릭하면 메인으로 이동
@@ -96,9 +97,6 @@ function regOk() {
   let userPw1 = document.querySelector('#password1').value;
   let userPw2 = document.querySelector('#password2').value;
   let petName = document.querySelector('#petName').value;
-
-  // let agreebox = document.querySelectorAll('.terms');
-  // isChecked = agreebox.checked;
   const isChecked = document.querySelectorAll('input[class=terms]:checked');
   const cnt = isChecked.length;
 
@@ -108,11 +106,10 @@ function regOk() {
     alert('비밀번호를 입력해주세요.');
   } else if (userPw2 == '') {
     alert('비밀번호가 확인되지 않았습니다.');
-    // } else if (isChecked === '') {
-    //   alert('약관에 모두 동의해주세요.');
   } else if (cnt !== 3) {
     alert('약관에 모두 동의해주세요.');
   } else if (!alert('가입이 완료되었습니다!')) {
+    
     /* 여기서 입력한 값이 마이페이지에서 보이게 보내기 -> 입력한 value값들을 저장하기 */
     const { setItem, getItem, removeItem, clear, length, key } = localStorage;
     const userInfo = {
@@ -120,6 +117,7 @@ function regOk() {
       pw: userPw1,
       petName: petName,
     };
+    
     // 로그인 상태와 프로필 이미지 URL을 로컬 스토리지에 저장
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('userInfo', JSON.stringify(userInfo));
