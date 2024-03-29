@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let header;
   // 로그인 상태를 확인
   const isLoggedIn = localStorage.getItem('isLoggedIn');
-  console.log('로그인상태', isLoggedIn);
   // 로그인 상태가 true이면 프로필 이미지를 헤더에 표시
   if (isLoggedIn === 'true') {
     header = `    
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>`;
   } else {
-    console.log('로그인상태', isLoggedIn);
     header = `    
     <div class="header-container">
     <!-- nav메뉴 -->
