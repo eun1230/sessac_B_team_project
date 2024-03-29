@@ -279,6 +279,31 @@ button.btn:hover {
   background-color: #ff6b6b;
 }
 
+.searchBox {
+  width: 100%;
+}
+.searchBar {
+  width: 600px;
+  margin-left: 225px;
+}
+.searchBox button {
+  top: 20px;
+  right: 260px;
+}
+@media (max-width: 1200px) {
+  .searchBox {
+    width: 100%;
+  }
+  .searchBar {
+    width: 600px;
+    margin-left: 225px;
+  }
+  .searchBox button {
+    top: 20px;
+    right: 260px;
+  }
+}
+
 @media (max-width: 479px) {
   .searchBar {
     width: 100%;
@@ -458,15 +483,15 @@ button.btn:hover {
 
   .searchBox {
     width: 479px;
+    position: relative;
   }
 
   .searchBar {
     width: 443px;
-  }
-
-  .searchBox button {
-    width: 13%;
-  }
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0px;
 }
 
 @font-face {
