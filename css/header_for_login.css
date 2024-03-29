@@ -20,6 +20,13 @@ header {
   width: 100vw;
   height: 150px;
 }
+img.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
 
 .header-container {
   width: 1200px;
