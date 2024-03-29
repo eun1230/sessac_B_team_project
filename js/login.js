@@ -32,7 +32,6 @@ function login() {
     } else if (pw.value === userPw) {
       // 로그인 상태와 프로필 이미지 URL을 로컬 스토리지에 저장
       localStorage.setItem('isLoggedIn', 'true');
-
       // 로그인이 완료되었을 때 프로필 이미지 URL을 받아와서 헤더에 반영
       // 예시: replaceLoginWithProfile('프로필이미지URL');
       document.location.href = '../index.html';

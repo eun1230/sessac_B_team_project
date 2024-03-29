@@ -197,9 +197,17 @@ function logOut() {
   });
   location.href = '../index.html';
 }
-
 // to top btn
 let toTopBtn = document.querySelector('#toTopBtn');
 function topFunc() {
   document.documentElement.scrollTop = 0;
 }
+
+let userInfo = localStorage.getItem('userinfo');
+petName = userInfo.petName;
+console.log(userInfo);
+
+let code1 = `<div class="profilename">${petName}</div>`;
+document.querySelector('.pnbox').innerHTML = code1;
+
+// document.querySelector('.profilename').innerText = userInfo;
