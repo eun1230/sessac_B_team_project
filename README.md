@@ -122,7 +122,7 @@ https://github.com/eun1230/sessac_B_teamproject
 - Open Weather Map API를 이용하여 현재 위치를 기준으로 한 날씨 정보 제공
 <br>
 
-## 💻 기술 스택
+## 🛠 기술 스택
 
 - **Frontend**
 
