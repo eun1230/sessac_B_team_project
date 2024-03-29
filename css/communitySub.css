@@ -140,6 +140,7 @@ button.btn.btn-primary:hover {
   background-color: aqua;
 }
 
+
 @media (max-width: 1200px) {
   .buttonBox {
     display: flex;

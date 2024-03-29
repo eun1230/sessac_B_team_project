@@ -15,8 +15,8 @@ main {
   align-items: center;
   justify-content: center;
 }
-.likeup{
-  cursor:pointer;
+.likeup {
+  cursor: pointer;
 }
 .backKey {
   display: flex;
@@ -59,7 +59,37 @@ main {
   justify-content: center;
   margin: 20px;
 }
-
+.moreImage {
+  width: 770px;
+}
+.pictureLink a {
+  padding-left: 150px;
+  text-align: center;
+}
+.moreImage {
+  width: 750px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.moreImage img {
+  width: 186px;
+}
+.more1 {
+  margin: 0;
+  padding: 0;
+}
+.more2 {
+  margin: 0;
+  padding: 0;
+}
+.more3 {
+  margin: 0;
+  padding: 0;
+}
 .titleThema {
   margin: 30px;
 }
@@ -324,4 +354,3 @@ section img:hover {
   cursor: pointer;
   text-decoration: none;
 }
-
