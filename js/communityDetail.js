@@ -89,15 +89,7 @@ function loadCommunityData(data) {
         </div>
 
       </div>
-      <div class="morePicture">
-            <div class="pictureLink">
-              <a href="../communtiySub.html">
-                <h4>이미지 더보기</h4>
-                <i class="fa-solid fa-angles-right"></i>
-              </a>
-            </div>
-            </div>
-
+   
     </div>
     </div>
     </div>
