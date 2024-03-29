@@ -203,7 +203,8 @@ function topFunc() {
   document.documentElement.scrollTop = 0;
 }
 
-let userInfo = localStorage.getItem('userinfo');
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+console.log(userInfo);
 petName = userInfo.petName;
 
 let code1 = `<div class="profilename">${petName}</div>`;
