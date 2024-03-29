@@ -48,3 +48,9 @@ regBtn.addEventListener('click', emailReg);
 function emailReg() {
   document.location.href = './register.html';
 }
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}

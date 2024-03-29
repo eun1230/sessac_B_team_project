@@ -124,3 +124,9 @@ const userInfo = {
   spay: 'ok', // 중성화 여부
 };
 localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}
