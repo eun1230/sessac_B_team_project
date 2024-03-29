@@ -64,8 +64,8 @@ body {
     height: 46px;
     padding: 8px;
   }
-  [type='password'],
-  [type='email'] {
+  #password,
+  #userId {
     width: 275px;
   }
   [placeholder] {
