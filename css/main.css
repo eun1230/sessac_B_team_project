@@ -226,8 +226,8 @@ h2 {
   padding-left: 10px;
   margin-bottom: 200px;
 }
-.more-2{
-position:absolute;
+.more-2 {
+  position: absolute;
 }
 
 .wrap5 > .card {
@@ -271,16 +271,17 @@ position:absolute;
   /* 흰색으로 변경 */
 }
 
+/* 수정 */
 .gif img {
   position: absolute;
-  top: 230px;
-  left: 235px;
+  top: 225px;
+  left: 480px;
   z-index: 999;
 }
 .gif2 {
   position: absolute;
-  top: 900px;
-  left: 930px;
+  top: 890px;
+  left: 1210px;
   z-index: 999;
 }
 .gif3 {
@@ -289,6 +290,36 @@ position:absolute;
   left: 340px;
   z-index: 999;
 }
+
+/* 수정 */
+.card-bb {
+  width: 16rem;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 수정 */
+@media (max-width: 1200px) {
+  .gif3 {
+    position: absolute;
+    top: 2340px;
+    left: 80px;
+    z-index: 999;
+  }
+  .gif2 {
+    position: absolute;
+    top: 890px;
+    left: 950px;
+    z-index: 999;
+  }
+  .gif img {
+    position: absolute;
+    top: 225px;
+    left: 220px;
+    z-index: 999;
+  }
+}
+
 @media screen and (max-height: 500px) {
   .wrap.wrap2 {
     margin-top: 0;
@@ -296,9 +327,6 @@ position:absolute;
 }
 
 @media screen and (max-width: 479px) {
-  .gif .gif2 .gif3 img {
-    display: none;
-  }
   /* 수정 */
   .wrap {
     width: 460px;
@@ -332,7 +360,7 @@ position:absolute;
 
   .box1-1 {
     z-index: 1;
-    width: 100%;
+    width: 479px;
     height: 300px;
     margin: 0;
     padding: 0;
@@ -349,7 +377,7 @@ position:absolute;
     flex-direction: row;
   }
   .mini-box img {
-    width: 100%;
+    width: 479px;
     height: 156px;
   }
   .slider {
@@ -400,5 +428,59 @@ position:absolute;
 
   div.carousel-item.active {
     height: 300px;
+  }
+
+  /* 수정 */
+  .gif3 {
+    top: 2500px;
+    left: 160px;
+  }
+  .gif2 {
+    left: 110px;
+    top: 920px;
+  }
+  .gif img {
+    left: 0px;
+    top: 150px;
+  }
+
+  .wrapFix {
+    margin-top: 280px;
+  }
+
+  .card-bb {
+    width: 200px;
+  }
+
+  .wrap3 {
+    flex-direction: row;
+  }
+
+  .wrap5 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .card-img-overlay {
+    width: 200px;
+    height: 200px;
+  }
+
+  div.mobileContent {
+    display: none;
+  }
+
+  div.content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+
+  .searchBar {
+    width: 450px;
   }
 }
