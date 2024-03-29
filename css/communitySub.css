@@ -169,56 +169,6 @@ button.btn.btn-primary:hover {
   }
 }
 
-/* @media (max-width: 480px) {
-  main {
-    width: 480px;
-  }
-
-  .container-fluid {
-    padding: 5px;
-  }
-
-  .backPage {
-    width: 96%;
-    margin-bottom: 40px;
-    margin-right: 8px;
-  }
-
-  .backPage svg {
-    padding-left: 0;
-    font-size: 30px;
-  }
-
-  .mainTitle {
-    font-size: 30px;
-    line-height: 80px;
-  }
-
-  div svg {
-    font-size: 10px;
-  }
-
-  div.category {
-    width: 480px;
-  }
-
-  div.card {
-    flex-basis: calc(50% - 10px);
-  }
-
-  div.card-body img {
-    display: none;
-  }
-
-  div.card-body span#cnt-heart {
-    display: none;
-  }
-
-  img.card-img-top {
-    height: 200px;
-  }
-} */
-
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
@@ -277,7 +227,10 @@ button.btn.btn-primary:hover {
   }
 
   .btnWrite {
-    display: contents;
+    /* display: contents; */
+    width: 300px;
+    text-align: right;
+    margin-right: -50px;
   }
 
   div.category {
@@ -293,8 +246,6 @@ button.btn.btn-primary:hover {
   div.card {
     flex-basis: calc(100% - 0px);
   }
-
-
 }
 
 
