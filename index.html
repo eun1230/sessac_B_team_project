@@ -1,276 +1,302 @@
 <!-- 메인페이지 -->
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMIPET</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUMIPET</title>
-
-  <!-- bootstrap cdn -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <link rel="icon" type="image/png" href="../img/logo_2.png" />
-
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/communityMain.css" />
-
-  <script defer type="text/javascript" src="./js/main.js"></script>
-  <script defer type="text/javascript" src="./js/footer.js"></script>
-  <script defer type="text/javascript" src="./js/community.js"></script>
-  <script defer type="text/javascript" src="./js/mainHeader.js"></script>
-  <!-- <script defer type="text/javascript" src="../js/header.js"></script> -->
-
-  <!-- to top btn bootstrap cdn -->
+    <!-- bootstrap cdn -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
     />
     <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
 
-</head>
+    <link rel="icon" type="image/png" href="../img/logo_2.png" />
 
-<body>
-  <!-- 헤더 -->
-  <header>
-  </header>
-  <div class="event"></div>
-  <!-- 콘텐츠 -->
-  <main>
-    <div class="gif" style="width:1920px;">
-      <img src="./img/a.gif" width='240px;' />
-    </div>
-    <div class="wrap wrap1">
-      <div class="wrap">
-        <!-- 수정 -->
-        <img src="../img/main-text3.png" width="100%" style="margin-bottom: 30px" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/communityMain.css" />
+
+    <script defer type="text/javascript" src="./js/main.js"></script>
+    <script defer type="text/javascript" src="./js/footer.js"></script>
+    <script defer type="text/javascript" src="./js/community.js"></script>
+    <script defer type="text/javascript" src="./js/mainHeader.js"></script>
+    <!-- <script defer type="text/javascript" src="../js/header.js"></script> -->
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <header></header>
+    <div class="event"></div>
+    <!-- 콘텐츠 -->
+    <main>
+      <div class="gif" style="width: 1920px">
+        <img src="./img/a.gif" width="240px;" />
       </div>
-      <div class="box box-left">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-bs-ride="carousel"
-          data-bs-interval="3500">
+      <div class="wrap wrap1">
+        <div class="wrap">
+          <!-- 수정 -->
+          <img
+            src="./img/main-text3.png"
+            width="100%"
+            style="margin-bottom: 30px"
+          />
+        </div>
+        <div class="box box-left">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-ride="carousel"
+            data-bs-ride="carousel"
+            data-bs-interval="3500"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="d-block w-100 img1"
+                  src="./img/img-main1.png"
+                  alt="First slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100 img2"
+                  src="./img/img-main2.png"
+                  alt="Second slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100 img3"
+                  src="./img/img-main3.png"
+                  alt="Third slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100 img4"
+                  src="./img/lumipet.png"
+                  alt="4th slide"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box box-right box1">
+          <a href="./html/map.html">
+            <div class="box box1-1">
+              <span class="span-map"> 지도로 장소 찾기 </span>
+              <img class="map-icon" src="./img/map-icon.png" />
+            </div>
+          </a>
+          <div class="box box1-2">
+            <div class="row">
+              <div class="mini-box slider">
+                <div class="slide">
+                  <img src="./img/m-1.png" alt="이미지 1" />
+                </div>
+                <div class="slide">
+                  <img src="./img/m-2.png" alt="이미지 2" />
+                </div>
+                <div class="slide">
+                  <img src="./img/m-3.png" alt="이미지 3" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="com-box">
+        <div class="mainTitle">
+          <h2>반려동물의 모든 것,</h2>
+          <h2>루미펫에서 검색해보세요!</h2>
+        </div>
+
+        <div class="searchBox">
+          <form class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              class="searchBar"
+              type="text"
+              placeholder="궁금한 내용을 검색해보세요!"
+            />
+          </form>
+          <button class="searchBtn">검색</button>
+        </div>
+
+        <div class="mobileContent">
+          <button>베스트</button>
+          <button>자유</button>
+          <button>질문</button>
+          <button>후기인증</button>
+        </div>
+
+        <div class="content">
+          <button class="content-box">#BEST</button>
+          <button class="content-box">#멍냥포토</button>
+          <button class="content-box">#자유</button>
+          <button class="content-box">#질문</button>
+          <button class="content-box">#후기</button>
+          <button class="content-box">#강아지</button>
+          <button class="content-box">#고양이</button>
+          <button class="content-box">#핫플레이스</button>
+        </div>
+
+        <div class="communityBox">
+          <div class="community">
+            <div class="topBox">
+              <h4>베스트</h4>
+              <p>더보기</p>
+            </div>
+            <!--여기에 commentBox들이 들어감-->
+            <div class="pagination"></div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <br />
+      <div class="wrap wrapFix">
+        <img src="./img/main-text1.png" width="1070px" />
+      </div>
+      <!-- 수정 -->
+      <div class="gif2">
+        <img src="./img/b.gif" width="240px;" />
+      </div>
+      <!-- 매거진영역 -->
+      <h2>이달의 매거진</h2>
+      <div class="wrap wrap2">
+        <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100 img1" src="../img/img-main1.png" alt="First slide" />
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100 img2" src="../img/img-main2.png" alt="Second slide" />
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100 img3" src="../img/img-main3.png" alt="Third slide" />
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100 img4" src="../img/lumipet.png" alt="4th slide" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="box box-right box1">
-        <a href="./html/map.html">
-          <div class="box box1-1">
-            <span class="span-map"> 지도로 장소 찾기 </span>
-            <img class="map-icon" src="../img/map-icon.png" />
-          </div>
-        </a>
-        <div class="box box1-2">
-          <div class="row">
-            <div class="mini-box slider">
-              <div class="slide">
-                <img src="../img/m-1.png" alt="이미지 1" />
+              <!-- 매거진 이미지에 클릭 이벤트 추가 -->
+              <div class="mag mag-1">
+                <a href="./html/mag.html?id=1"
+                  ><img src="./img/mag/mag1.png" width="100%"
+                /></a>
               </div>
-              <div class="slide">
-                <img src="../img/m-2.png" alt="이미지 2" />
+              <div class="mag mag-2">
+                <a href="./html/mag.html?id=2"
+                  ><img src="./img/mag/mag2.png" width="100%"
+                /></a>
               </div>
-              <div class="slide">
-                <img src="../img/m-3.png" alt="이미지 3" />
+              <div class="mag mag-3">
+                <a href="./html/mag.html?id=3"
+                  ><img src="./img/mag/mag3.png" width="100%"
+                /></a>
               </div>
             </div>
+            <div class="carousel-item">
+              <div class="mag mag-4">
+                <a href="./html/mag.html?id=4">
+                  <img src="./img/mag/mag4.png" width="100%"
+                /></a>
+              </div>
+              <div class="mag mag-5">
+                <a href="./html/mag.html?id=5">
+                  <img src="./img/mag/mag5.png" width="100%"
+                /></a>
+              </div>
+              <div class="mag mag-6">
+                <a href="./html/mag.html?id=6">
+                  <img src="./img/mag/mag6.png" width="100%"
+                /></a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="mag mag-7">
+                <a href="./html/mag.html?id=7">
+                  <img src="./img/mag/mag7.png" width="100%"
+                /></a>
+              </div>
+              <div class="mag mag-8">
+                <a href="./html/mag.html?id=8">
+                  <img src="./img/mag/mag8.png" width="100%"
+                /></a>
+              </div>
+              <div class="mag mag-9">
+                <a href="./html/mag.html?id=9">
+                  <img src="./img/mag/mag9.png" width="100%"
+                /></a>
+              </div>
+            </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-    </div>
-
-    <br />
-    <div class="com-box">
-
-      <div class="mainTitle">
-        <h2>반려동물의 모든 것,</h2>
-        <h2>루미펫에서 검색해보세요!</h2>
-      </div>
-
-      <div class="searchBox">
-        <form class="search-container">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input class="searchBar" type="text" placeholder="궁금한 내용을 검색해보세요!" />
-        </form>
-        <button class="searchBtn">검색</button>
-      </div>
-
-
-      <div class="mobileContent">
-        <button>베스트</button>
-        <button>자유</button>
-        <button>질문</button>
-        <button>후기인증</button>
-      </div>
-
-      <div class="content">
-        <button class="content-box">#BEST</button>
-        <button class="content-box">#멍냥포토</button>
-        <button class="content-box">#자유</button>
-        <button class="content-box">#질문</button>
-        <button class="content-box">#후기</button>
-        <button class="content-box">#강아지</button>
-        <button class="content-box">#고양이</button>
-        <button class="content-box">#핫플레이스</button>
-      </div>
-
-      <div class="communityBox">
-        <div class="community">
-          <div class="topBox">
-            <h4>베스트</h4>
-            <p>더보기</p>
-          </div>
-          <!--여기에 commentBox들이 들어감-->
-          <div class="pagination">
-          </div>
-
+      <div class="wrap">
+        <div class="gif3">
+          <img src="./img/c.gif" width="150px;" />
         </div>
+        <img src="./img/main-text2.png" width="100%" />
       </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
 
-    <br />
-    <div class="wrap wrapFix">
-      <img src="../img/main-text1.png" width="1070px" />
-    </div>
-    <div class="gif2" style="width:1920px;">
-      <img src="./img/b.gif" width='240px;' />
-    </div>
-    <!-- 매거진영역 -->
-    <h2>이달의 매거진</h2>
-    <div class="wrap wrap2">
-      <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <!-- 매거진 이미지에 클릭 이벤트 추가 -->
-            <div class="mag mag-1">
-              <a href="./html/mag.html?id=1"><img src="../img/mag/mag1.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-2">
-              <a href="./html/mag.html?id=2"><img src="../img/mag/mag2.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-3">
-              <a href="./html/mag.html?id=3"><img src="../img/mag/mag3.png" width="100%" /></a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="mag mag-4">
-              <a href="./html/mag.html?id=4">
-                <img src="../img/mag/mag4.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-5">
-              <a href="./html/mag.html?id=5">
-                <img src="../img/mag/mag5.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-6">
-              <a href="./html/mag.html?id=6">
-                <img src="../img/mag/mag6.png" width="100%" /></a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="mag mag-7">
-              <a href="./html/mag.html?id=7">
-                <img src="../img/mag/mag7.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-8">
-              <a href="./html/mag.html?id=8">
-                <img src="../img/mag/mag8.png" width="100%" /></a>
-            </div>
-            <div class="mag mag-9">
-              <a href="./html/mag.html?id=9">
-                <img src="../img/mag/mag9.png" width="100%" /></a>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="gif3">
-        <img src="./img/c.gif" width='150px;' />
-      </div>
-      <img src="../img/main-text2.png" width="100%" />
-    </div>
-
-    <br />
-    <!-- 베스트 글 4개 영역 -->
-    <h2>🔥 지금 핫한 루미톡 🔥</h2>
-    <a href="./html/communitySub.html" style="
+      <br />
+      <!-- 베스트 글 4개 영역 -->
+      <h2>🔥 지금 핫한 루미톡 🔥</h2>
+      <a
+        href="./html/communitySub.html"
+        style="
           font-size: 16px;
           margin-left: 82%;
           text-decoration: none;
           color: black;
-        ">more</a>
+        "
+        >more</a
+      >
 
-    <div class="wrap wrap3">
-      <br /><br />
-    </div>
-    <br />
+      <div class="wrap wrap3"><br /><br /></div>
+      <br />
 
-    <!-- 사진 카드 리스트 -->
-    <h2>생생 후기글</h2>
-    <a href="./html/communitySub.html" class="more-2" style="
+      <!-- 사진 카드 리스트 -->
+      <h2>생생 후기글</h2>
+      <a
+        href="./html/communitySub.html"
+        class="more-2"
+        style="
           font-size: 16px;
           margin-left: 82%;
           text-decoration: none;
           color: black;
-        ">more</a>
-    <div class="wrap wrap5" style="margin-top: 50px"></div>
+        "
+        >more</a
+      >
+      <div class="wrap wrap5" style="margin-top: 50px"></div>
+    </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </main>
-
-  <!-- to top btn --> 
-    <button id="toTopBtn" onclick="topFunc()">
-      <i class="bi bi-arrow-up-square"></i>
-    </button>
-
-  <!-- 푸터 -->
-  <div class="container footer"></div>
-</body>
-
+    <!-- 푸터 -->
+    <div class="container footer"></div>
+  </body>
 </html>
