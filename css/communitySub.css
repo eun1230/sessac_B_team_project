@@ -21,6 +21,8 @@ main {
   margin-top: 70px;
 }
 .bg-pink {
+  height: 50px;
+  border-radius: 10px;
   width: 1200px;
   background-color: #ffd7d76f;
 }
