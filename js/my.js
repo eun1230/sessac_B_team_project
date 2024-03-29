@@ -197,8 +197,13 @@ function logOut() {
   });
   location.href = '../index.html';
 }
-const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-console.log(userInfo);
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}
+
+let userInfo = localStorage.getItem('userinfo');
 petName = userInfo.petName;
 
 let code1 = `<div class="profilename">${petName}</div>`;

@@ -106,3 +106,9 @@ function reserve() {
     window.location.href = './my.html';
   }
 }
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}

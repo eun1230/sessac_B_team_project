@@ -31,6 +31,8 @@ function loadCommunityData(data) {
     // 예시: 카드 정보를 이용하여 디테일 페이지에 내용 추가하기
     const detailPage = document.querySelector('main');
     detailPage.innerHTML = `
+   
+
     <div class="backKey">
       <i class="fa-solid fa-arrow-left" style="cursor:pointer" onclick="goBack()"></i>
       <h2>${post.category}</h2>
@@ -39,22 +41,20 @@ function loadCommunityData(data) {
       <p>작성자 : ${post.write}</p>
       <div class="dataMiniBox">
         <p>작성일 : ${post.date}</p>
-        <p class='likeup' onclick="toggleLike(${post.id})">좋아요<img id="heart-icon-${post.id}" src=${post.heart} width="20px" height="20px" onclick="toggleLike(${post.id})"/><span id="like-count-${post.id}">${post.like}</span></p>
-</div>
+        <p class='likeup' onclick="toggleLike(${post.id})">좋아요<img id="heart-icon-${post.id}" src=${post.heart}
+            width="20px" height="20px" onclick="toggleLike(${post.id})" /><span
+            id="like-count-${post.id}">${post.like}</span></p>
+      </div>
     </div>
     <div class="mainDiv">
       <h4 class="titleThema">${post.title}</h4>
       ${post.addr}
-      <img
-        class="mainPicture"
-        src="${post.image}"
-        alt="똘이"
-      />
+      <img class="mainPicture" src="${post.image}" alt="똘이" />
       <div class="mainText">
         ${post.content}
       </div>
-      <br/><br/>
-      <br/><br/>
+      <br /><br />
+      <br /><br />
       <div class="comment">
         <h4>댓글</h4>
         <input placeholder="댓글을 입력하세요!" />
@@ -64,32 +64,43 @@ function loadCommunityData(data) {
         <div class="commentContainer">
 
           <div class="commentMini">
-              <div>
-                <img src="../img/community/떠나.png" alt="프로필" />
-              </div>
-              <div>
-                <p>컨티타</p>
-              </div>
+            <div>
+              <img src="../img/community/떠나.png" alt="프로필" />
+            </div>
+            <div>
+              <p>컨티타</p>
+            </div>
           </div>
-          <div class="commentText"><p>${post.re1}</p>
+          <div class="commentText">
+            <p>${post.re1}</p>
           </div>
 
-        <div class="commentMini">
+          <div class="commentMini">
             <div>
-                <img src="../img/community/간식.png" alt="프로필" />
+              <img src="../img/community/간식.png" alt="프로필" />
             </div>
             <div>
-                <p>seven27</p>
+              <p>seven27</p>
             </div>
+          </div>
+          <div class="commentText">
+            <p>${post.re2}</p>
+          </div>
         </div>
-        <div class="commentText"><p>${post.re2}</p>
-        </div>
-        </div>  
-        
-        </div> 
-      </div> 
-  </div>
+
       </div>
+      <div class="morePicture">
+            <div class="pictureLink">
+              <a href="../communtiySub.html">
+                <h4>이미지 더보기</h4>
+                <i class="fa-solid fa-angles-right"></i>
+              </a>
+            </div>
+            </div>
+
+    </div>
+    </div>
+    </div>
     </div>`;
 
     // 댓글 등록 버튼에 이벤트 리스너 추가
@@ -140,4 +151,10 @@ function toggleLike(index) {
     heartIcon.src = '../img/h-on.png';
     likeCount.textContent = currentLike + 1;
   }
+}
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
 }

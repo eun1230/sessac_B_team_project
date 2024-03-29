@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
+ 
   let Data = [];
   let currentPage = 1;
   const commentsPerPage = 8;
@@ -62,27 +63,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-document.querySelector('.cards').addEventListener('click', (event) => {
-  if (event.target.classList.contains('card-img')) {
-    const postId = event.target.dataset.id;
-    window.location.href = `../html/communityDetail.html?id=${postId}`;
-  }
-});
-
-// li 클릭 이벤트 처리
-const liElements = document.querySelectorAll('li');
-liElements.forEach((li) => {
-  li.addEventListener('click', () => {
-    const categoryId = li.id;
-    // 해당 카테고리에 맞는 데이터 필터링 또는 로드
-    // 데이터 필터링
-    let filteredData = Data;
-    if (categoryId !== 'ALL') {
-      filteredData = Data.filter((item) => item.category === categoryId);
+  document.querySelector('.cards').addEventListener('click', (event) => {
+    if (event.target.classList.contains('card-img')) {
+      const postId = event.target.dataset.id;
+      window.location.href = `../html/communityDetail.html?id=${postId}`;
     }
-    loadCommunityData(filteredData, currentPage);
   });
-});
+
+  // li 클릭 이벤트 처리
+  const liElements = document.querySelectorAll('li');
+  liElements.forEach((li) => {
+    li.addEventListener('click', () => {
+      const categoryId = li.id;
+      // 해당 카테고리에 맞는 데이터 필터링 또는 로드
+      // 데이터 필터링
+      let filteredData = Data;
+      if (categoryId !== 'ALL') {
+        filteredData = Data.filter((item) => item.category === categoryId);
+      }
+      loadCommunityData(filteredData, currentPage);
+    });
+  });
 });
 // 페이징 숫자를 클릭했을 때 해당 페이지의 카드 로드하는 함수
 function loadPage(pageNumber) {
@@ -105,3 +106,4 @@ function toggleLike(index) {
     likeCount.textContent = currentLike + 1;
   }
 }
+

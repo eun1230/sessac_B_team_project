@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
   <div style="width:20px; height:20px;">
   </div>
   <a href='./html/my.html'>
-  <img src='../img/profile.png' class='profile-image'>
+  <img src='../img/profilephoto.png' class='profile-image'>
   </a>
 </div>
 <div class="m-nav login">
   <a href='./html/my.html'>
-  <img src='../img/profile.png' class='profile-image'>
+  <img src='../img/profilephoto.png' class='profile-image'>
   </a>
 </div>
 </div>`;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="m-nav login">
       <a href='./html/my.html'>
       <a href='./my.html'>
-      <img src='../img/profile.png' class='profile-image'>
+      <a href="./html/login.html" class="loginOnOff">LOGIN </a>
       </a>
       </a>
     </div>

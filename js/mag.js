@@ -75,3 +75,9 @@ magDetail.innerHTML = `
 function goBack() {
   window.history.back();
 }
+
+// to top btn
+let toTopBtn = document.querySelector('#toTopBtn');
+function topFunc() {
+  document.documentElement.scrollTop = 0;
+}
