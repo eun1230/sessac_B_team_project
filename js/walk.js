@@ -46,7 +46,6 @@ if (navigator.geolocation) {
   });
 } else {
   // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-
   (locPosition = new kakao.maps.LatLng(33.450701, 126.570667)),
     (message = 'geolocation을 사용할수 없어요..');
   // kakao.maps.Map은 카카오맵에서 제공하는 지도객체를 생성하는 생성자 함수 인자 두개를 가짐
@@ -58,7 +57,6 @@ if (navigator.geolocation) {
       level: 4, // 지도의 확대 레벨
     });
   // console.log(mapOption); // center 와 level 정보를 보여줌
-
   // kakao.maps.Map은 카카오맵에서 제공하는 지도객체를 생성하는 생성자 함수 인자 두개를 가짐
   // mapContainer는 지도가 표시될 html요소
   map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
