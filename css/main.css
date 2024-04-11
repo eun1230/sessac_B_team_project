@@ -278,12 +278,14 @@ h2 {
   left: 480px;
   z-index: 999;
 }
+
 .gif2 {
   position: absolute;
   top: 890px;
   left: 820px;
   z-index: 999;
 }
+
 .gif3 {
   position: absolute;
   top: 2270px;
@@ -318,6 +320,12 @@ h2 {
     left: 210px;
     z-index: 999;
   }
+}
+@media screen and (max-height: 1070px) {
+  .box.box-left{
+    display: none;
+  }
+
 }
 
 @media screen and (max-height: 500px) {
