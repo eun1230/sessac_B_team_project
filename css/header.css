@@ -13,14 +13,16 @@
 }
 
 header {
+  background-color: white;
+  width: 100vw;
+  height: 150px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #fff;
-  width: 100vw;
-  height: 150px;
+  text-align: center;
 }
 
+/* 로그인 후 프로필 이미지 */
 img.profile-image {
   width: 60px;
   height: 60px;
@@ -29,25 +31,25 @@ img.profile-image {
 }
 
 .header-container {
-  width: 1200px;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
+  margin: auto;
+  /* background-color: rgb(223, 236, 161); */
   display: flex;
   flex-direction: row;
-  padding: 0;
-  height: 100px;
   line-height: 150px;
+  justify-content: center;
 }
 
 .nav-left {
   width: 400px;
+  height: 100%;
+  /* background-color: aqua; */
 }
+
 .nav-left ul {
   display: block;
-  margin: 0 50px 0 55px;
-  padding: 0;
+  padding-left: 18%;
   display: flex;
   flex-direction: row;
 }
@@ -74,7 +76,7 @@ img.profile-image {
   position: absolute;
   content: '';
   display: block;
-  border-bottom: 3px solid #ff8f8f;
+  /* border-bottom: 3px solid #ff8f8f; */
   transition: width 250ms ease-out;
   left: auto;
   right: 0;
@@ -90,23 +92,25 @@ img.profile-image {
 
 .nav-center {
   width: 400px;
+  height: 100%;
+  /* background-color: #e2dada; */
+  /* width:100%; */
 }
 
-.logo {
-  cursor: pointer;
-  padding-top: 50px;
-  padding-left: 100px;
-  width: 300px;
-}
-
-.logo img {
+img.logo {
   width: 200px;
+  /* width:100%; */
+  /* justify-content: center; */
+  cursor: pointer;
+  /* padding-top: 50px; */
+  /* padding-left: 100px; */
 }
 
 .nav-right {
+  height: 100%;
   width: 400px;
   text-align: right;
-  padding-top: 78px;
+  /* background-color: red; */
 }
 
 .nav-right a {
@@ -130,94 +134,13 @@ header a:hover {
 .m-nav {
   display: none;
 }
+img.logo2 {
+  display: none;
+}
 .hamb-inner {
   display: none;
 }
 
-@media screen and (max-width: 479px) {
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    width: 100vw;
-    height: 100px; /* 수정: 높이 조정 */
-  }
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    width: 479px;
-  }
-  .nav-center {
-    /* background-image: url(./../img/logo-test.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0 50%; */
-    margin: auto;
-    line-height: 100px;
-    width: 30%;
-    height: 100%;
-  }
-  img.logo {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  .nav-left {
-    display: none;
-  }
-  .nav-right {
-    display: none;
-  }
-  .m-nav {
-    width: 30%;
-    display: block;
-    line-height: 100px;
-    cursor: pointer;
-  }
-  .hamb {
-    padding-left: 10px;
-  }
-  .hamb-inner {
-    display: block;
-  }
-  .login {
-    text-align: right;
-    padding-right: 19px;
-  }
-  .hamb img {
-    width: 30px;
-  }
-  .login img {
-    border-radius: 30px;
-    width: 50px;
-    height: 50px;
-  }
-  li.m-li {
-    list-style: none;
-
-    height: 50px;
-  }
-  .m-li a {
-    text-decoration: none;
-    color: black;
-  }
-  .m-nav.login a {
-    text-decoration: none;
-    color: #4d4d4d;
-    margin: auto;
-  }
-  .m-nav.login a:hover {
-    color: #ff8f8f;
-  }
-  .m-nav .offcanvas {
-    width: 480px;
-    height: 300px;
-  }
-}
-
-/* btn to top */
 #toTopBtn {
   position: fixed;
   bottom: 20px;
@@ -235,3 +158,107 @@ header a:hover {
   text-decoration: none;
 }
 
+/* 1070px 이하부터 */
+@media screen and (max-width: 1070px) {
+  .nav-left {
+    display: none;
+  }
+  .nav-right {
+    display: none;
+  }
+  a.m-nav-logo img.logo2 {
+    display: none;
+  }
+
+  header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+  }
+
+  .header-container {
+    width: 100%;
+    /* background-color: #b3d3bf; */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-center {
+    line-height: 100px;
+    height: 100%;
+    width: 40%;
+  }
+
+  img.logo {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .m-nav {
+    width: 100%;
+    display: block;
+    line-height: 100px;
+    cursor: pointer;
+  }
+
+  .m-nav.hamb {
+    width: 30%;
+  }
+  .hamb-inner {
+    display: block;
+  }
+  .login {
+    width: 30%;
+  }
+  .hamb img {
+    width: 30px;
+  }
+  .login img {
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  li.m-li {
+    list-style: none;
+    height: 50px;
+  }
+  .m-li a {
+    text-decoration: none;
+    color: black;
+  }
+  .m-nav.login a {
+    text-decoration: none;
+    color: #4d4d4d;
+    margin: auto;
+  }
+  .m-nav.login a:hover {
+    color: #ff8f8f;
+  }
+  .m-nav .offcanvas {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .header-container {
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+  }
+
+  img.logo {
+    display: none;
+  }
+
+
+}

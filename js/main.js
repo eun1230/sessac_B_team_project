@@ -1,3 +1,4 @@
+
 function toggleLike(index) {
   const heartIcon = document.querySelector(`#heart-icon-${index}`);
   const likeCount = document.querySelector(`#like-count-${index}`);
