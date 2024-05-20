@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // li 클릭 이벤트 처리
+  // 카테고리 클릭 이벤트 처리
   const liElements = document.querySelectorAll('li');
   liElements.forEach((li) => {
     li.addEventListener('click', () => {

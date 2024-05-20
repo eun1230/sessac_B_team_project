@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!wrap3) return; // wrap3 요소가 없으면 함수 종료
     wrap3.innerHTML = ''; // 기존의 내용을 지우고 다시 추가
     for (let i = 9; i < 17; i++) {
-      // 수정
       let code = `<div class="card-bb">
       <div class="image-container" onclick="showDetail(${i}, communityData)">
           <img src=${communityData[i].image} class="card-img-top" alt="...">

@@ -92,6 +92,7 @@ function getUserLocation() {
   }
   navigator.geolocation.watchPosition(success);
 }
+
 getUserLocation();
 
 // 장소 검색 객체를 생성합니다
@@ -489,7 +490,6 @@ function getListItem(index, places) {
       handleListItemClick(places, index);
     });
   }
-
   return el;
 }
 
@@ -525,8 +525,7 @@ function removeMarker() {
 // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
 function displayPagination(pagination) {
   let paginationEl = document.getElementById('pagination'),
-    fragment = document.createDocumentFragment(),
-    i;
+    fragment = document.createDocumentFragment(),i;
 
   // 기존에 추가된 페이지번호를 삭제합니다
   while (paginationEl.hasChildNodes()) {
