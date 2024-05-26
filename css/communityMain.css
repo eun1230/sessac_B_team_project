@@ -9,6 +9,10 @@
   padding-top: 20px;
 }
 
+.mainTitle > div{
+  font-size: 35px;
+}
+
 .search-container {
   position: relative;
   width: 70%;
@@ -302,9 +306,22 @@ button.btn:hover {
     top: 20px;
     right: 260px;
   }
+
+}
+@media (max-width: 750px) {
+  .mainTitle > div{
+    font-size: 24px;
+  } 
 }
 
 @media (max-width: 479px) {
+  .mainTitle{
+    margin-top:0;
+    padding-top:0;
+  }
+  .mainTitle > div{
+    font-size: 20px;
+  } 
   .searchBar {
     width: 100%;
     height: 60px;
