@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+}
+
 .com-box {
   max-width: 1070px;
   margin: auto;
@@ -9,9 +23,13 @@
   padding-top: 20px;
 }
 
-.search-container {
+.mainTitle > div {
+  font-size: 35px;
+}
+
+/* .search-container {
   position: relative;
-  width: 70%;
+  width: 100%;
   margin: 10px;
 }
 
@@ -22,28 +40,15 @@
   transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
-  color: black; /* 아이콘 색상 추가 */
-}
+  color: black;
+} */
 
 .searchBox {
   display: flex;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.searchBox button {
-  position: absolute;
-  top: 30px;
-  right: 170px;
-  border: none;
-  border-radius: 20px;
-  padding: 0 10px 0 10px;
-  height: 40px;
-  width: 70px;
-}
-
-.searchBox button:hover {
-  font-weight: 700;
+  width: 75%;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .searchBar {
@@ -54,7 +59,21 @@
   padding-left: 30px;
   font-size: 20px;
 }
+.searchBar:focus {
+  border-color: #ffd9d9;
+}
 
+.btn.btn-outline-secondary {
+  border-radius: 30px;
+  border: 3px rgb(243, 169, 169) solid;
+  background-color: rgb(243, 169, 169);
+  color: white;
+  width: 125px;
+}
+.btn.btn-outline-secondary:hover {
+  background-color: rgb(243, 169, 169);
+  color: rgb(83, 83, 83);
+}
 .mobileContent {
   display: none;
 }
@@ -263,7 +282,7 @@ a.page-link:hover {
   height: 250px;
 }
 
-button.btn {
+/* button.btn {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -273,25 +292,25 @@ button.btn {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 button.btn:hover {
   background-color: #ff6b6b;
 }
 
-.searchBox {
+/* .searchBox {
   width: 100%;
-}
-.searchBar {
+} */
+/* .searchBar {
   width: 600px;
   margin-left: 225px;
-}
-.searchBox button {
+} */
+/* .searchBox button {
   top: 20px;
   right: 260px;
-}
+} */
 @media (max-width: 1200px) {
-  .searchBox {
+  /* .searchBox {
     width: 100%;
   }
   .searchBar {
@@ -301,11 +320,33 @@ button.btn:hover {
   .searchBox button {
     top: 20px;
     right: 260px;
+  } */
+}
+@media (max-width: 750px) {
+  .mainTitle > div {
+    font-size: 24px;
+  }
+  .searchBox {
+    width: 80%;
+  }
+  .searchBar::placeholder{
+    font-size:15px;
+  }
+  .btn.btn-outline-secondary {
+    font-size: 10px;
+    width:70px;
   }
 }
 
 @media (max-width: 479px) {
-  .searchBar {
+  .mainTitle {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .mainTitle > div {
+    font-size: 20px;
+  }
+  /* .searchBar {
     width: 100%;
     height: 60px;
     border: 3px pink solid;
@@ -318,7 +359,7 @@ button.btn:hover {
     right: 40px;
     top: 24px;
     height: 30px;
-  }
+  } */
 
   .svg-inline--fa {
     font-size: 20px;
@@ -367,19 +408,13 @@ button.btn:hover {
     height: 100px;
   }
 
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    width: 479px;
-  }
   .nav-center {
     /* background-image: url(./../img/logo-test.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 50%; */
     margin: auto;
-    line-height: 100px;
+    /* line-height: 50px; */
     width: 30%;
     height: 100%;
   }
@@ -387,6 +422,7 @@ button.btn:hover {
     display: flex;
     justify-content: space-evenly;
   }
+
   img.logo {
     margin: 0;
     padding: 0;
@@ -401,7 +437,7 @@ button.btn:hover {
   .m-nav {
     width: 30%;
     display: block;
-    line-height: 100px;
+    line-height: 80px;
     cursor: pointer;
   }
   .hamb {
@@ -480,7 +516,7 @@ button.btn:hover {
     right: 3px;
     top: 5px;
   }
-
+  /* 
   .searchBox {
     width: 479px;
     position: relative;
@@ -488,23 +524,11 @@ button.btn:hover {
 
   .searchBar {
     width: 443px;
+    width:100%;
+
     position: absolute;
     left: 0;
     top: 0;
     margin: 0px;
-  }
-
-  @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-      format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  * {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-      format('woff');
-  }
+  } */
 }
