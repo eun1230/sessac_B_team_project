@@ -48,7 +48,7 @@
   width: 75%;
   justify-content: center;
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .searchBar {
@@ -79,17 +79,20 @@
 }
 
 .content {
+
   display: flex;
   flex-direction: row;
-  width: 1070px;
+  flex-wrap: wrap;
+  width: 100%;
   margin-bottom: 10px;
   justify-content: center;
-  /* margin-left: 20px; */
 }
 
 .content-box {
   width: 130px;
   height: 55px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   line-height: 50px;
   text-align: center;
   border-radius: 30px;
@@ -110,7 +113,7 @@
 }
 
 .communityBox {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   margin-bottom: 250px;
 
   width: 100%;
@@ -121,6 +124,7 @@
 }
 
 .community {
+  /* background-color: #ff8f8f; */
   width: 100%;
   height: 420px;
   position: relative;
@@ -329,12 +333,12 @@ button.btn:hover {
   .searchBox {
     width: 80%;
   }
-  .searchBar::placeholder{
-    font-size:15px;
+  .searchBar::placeholder {
+    font-size: 15px;
   }
   .btn.btn-outline-secondary {
     font-size: 10px;
-    width:70px;
+    width: 70px;
   }
 }
 
@@ -360,6 +364,10 @@ button.btn:hover {
     top: 24px;
     height: 30px;
   } */
+
+  .searchBox{
+    margin-bottom:0;
+  }
 
   .svg-inline--fa {
     font-size: 20px;
@@ -390,12 +398,11 @@ button.btn:hover {
   }
 
   .content-box {
-    width: 15%;
+    width: 100px;
+    height: 35px;
     text-align: center;
-    border-radius: 20px;
-    border: none;
-    font-size: 10px;
-    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 35px;
   }
 
   .photoList {
