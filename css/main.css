@@ -40,6 +40,8 @@ h2 {
 }
 
 .wrap {
+  max-width: 1070px;
+  margin:auto;
   /* height: 900px; */
   /* width: 1070px; */
   justify-content: center;
@@ -307,11 +309,9 @@ h2 {
 }
 
 @media screen and (max-width: 800px) {
-  div.wrap.wrap1 {
-    height: 400px;
-  }
+
   div.main-boxs {
-    height: 300px;
+    height: 400px;
   }
   div.box.box-right {
     height: 100%;
@@ -333,9 +333,7 @@ h2 {
   }
 }
 @media screen and (max-width: 500px) {
-  div.wrap.wrap1 {
-    height: 400px;
-  }
+
   div.main-boxs {
     height: 300px;
   }
@@ -359,9 +357,6 @@ h2 {
 }
 
 @media screen and (max-width: 479px) {
-  div.wrap.wrap1 {
-    height: 300px;
-  }
   div.main-boxs {
     height: 200px;
   }
@@ -445,7 +440,9 @@ h2 {
   }
 
   .wrapFix {
-    margin-top: 280px;
+    /* margin-top: 280px; */
+    margin-top: 30px;
+
   }
 
   .card-bb {
