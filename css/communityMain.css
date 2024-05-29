@@ -85,30 +85,6 @@ input.form-control::placeholder {
   color: rgb(83, 83, 83);
 }
 
-/* .content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow-x: scroll;
-  margin-bottom: 10px;
-  justify-content: center;
-} */
-/* 
-.content-box {
-  width: 130px;
-  height: 55px;
-  margin-right: 5px;
-  margin-bottom: 10px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 30px;
-  border: none;
-  margin-right: 20px;
-  background-color: #ffc1c1a2;
-  color: rgb(77, 77, 77);
-  border: 3px rgb(243, 169, 169) solid;
-} */
-
 .content {
   width: 80%;
   margin: auto;
@@ -328,11 +304,9 @@ a.page-link:hover {
   height: 250px;
 }
 
-
 button.btn:hover {
   background-color: #ff6b6b;
 }
-
 
 @media (max-width: 900px) {
   .content-box {
@@ -380,37 +354,32 @@ button.btn:hover {
 
 @media (max-width: 479px) {
   body > * {
-    width:100vw;
+    width: 100vw;
     overflow-x: hidden;
   }
   .mainTitle {
     margin-top: 0;
     padding-top: 0;
+    margin-bottom: 2px;
   }
   .mainTitle > div {
     font-size: 20px;
   }
 
-
   .svg-inline--fa {
     font-size: 20px;
   }
 
-  
   .photoList {
     width: 100%;
   }
 
   .nav-center {
-
     margin: auto;
     width: 30%;
     height: 100%;
   }
-  .mobileContent {
-    display: flex;
-    justify-content: space-evenly;
-  }
+  
 
   img.logo {
     margin: 0;
@@ -485,7 +454,6 @@ button.btn:hover {
     height: 200px;
   }
 
-
   .topBox {
     width: 95%;
   }
@@ -511,6 +479,6 @@ button.btn:hover {
     height: 40px;
   }
   .searchBar::placeholder {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
