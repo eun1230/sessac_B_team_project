@@ -41,8 +41,7 @@ function pwCheckFunc() {
   }
 }
 
-/* 펫 사진 등록하면 미리보기 되도록 */
-// TODO: 사진 한 개만 업로드되도록 (두번째 업로드시 대체되도록)
+/* 펫 사진 하나만 등록되고, 미리보기 되도록 */
 function showImage() {
   let newImage = document.querySelector('.showPetImg').lastElementChild;
   newImage.style.visibility = 'visible';
@@ -50,6 +49,9 @@ function showImage() {
 
 function loadFile(input) {
   let file = input.files[0];
+
+  let container = document.querySelector('.showPetImg');
+  container.innerHTML = ''; // 기존 이미지 제거
 
   let newImage = document.createElement('img');
   newImage.setAttribute('class', 'img');
@@ -60,7 +62,10 @@ function loadFile(input) {
   newImage.style.height = '100px';
   newImage.style.objectFit = 'contain';
 
-  let container = document.querySelector('.showPetImg');
+  newImage.onload = function () {
+    URL.revokeObjectURL(newImage.src); // 메모리 해제
+  };
+
   container.append(newImage);
 }
 
@@ -109,7 +114,6 @@ function regOk() {
   } else if (cnt !== 3) {
     alert('약관에 모두 동의해주세요.');
   } else if (!alert('가입이 완료되었습니다!')) {
-    
     /* 여기서 입력한 값이 마이페이지에서 보이게 보내기 -> 입력한 value값들을 저장하기 */
     const { setItem, getItem, removeItem, clear, length, key } = localStorage;
     const userInfo = {
@@ -117,7 +121,7 @@ function regOk() {
       pw: userPw1,
       petName: petName,
     };
-    
+
     // 로그인 상태와 프로필 이미지 URL을 로컬 스토리지에 저장
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('userInfo', JSON.stringify(userInfo));
