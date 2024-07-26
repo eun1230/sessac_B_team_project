@@ -142,6 +142,7 @@ https://github.com/eun1230/sessac_B_teamproject
 - **Development Tool**
 
   ![VScode](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+  ![prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
 
 - **Design Tool**
   
