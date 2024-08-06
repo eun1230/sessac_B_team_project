@@ -31,6 +31,42 @@ https://github.com/eun1230/sessac_B_teamproject
   - 2024.03.29(금) : 발표 및 평가
 <br>
 
+## 🛠 기술 스택
+
+- **Frontend**
+
+  ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+- **Version Control**
+
+  ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+  ![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+- **Development Tool**
+
+  ![VScode](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+  ![prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
+
+- **Design Tool**
+  
+  ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+- **Deploy Platform**
+
+  ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+
+- **Scrum**
+
+  ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white)
+  ![Kakaotalk](https://img.shields.io/badge/KakaoTalk-FFCD00?style=for-the-badge&logo=kakaotalk&logoColor=black)
+  ![Zoom](https://img.shields.io/badge/Zoom-0B5CFF?style=for-the-badge&logo=zoom&logoColor=white)
+  ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+  (+ 대면 회의)
+<br>
+
 ## 👩‍💻 개발자 소개 & 업무분담
 
 - **조은별** [@eun1230](http://github.com/eun1230) : `팀장` 메인, 지도 페이지
@@ -125,42 +161,6 @@ https://github.com/eun1230/sessac_B_teamproject
 - Open Weather Map API를 이용하여 현재 위치를 기준으로 한 날씨 정보 제공
 <br>
 
-## 🛠 기술 스택
-
-- **Frontend**
-
-  ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-  ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-  ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
-
-- **Version Control**
-
-  ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-  ![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
-- **Development Tool**
-
-  ![VScode](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-  ![prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black)
-
-- **Design Tool**
-  
-  ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-
-- **Deploy Platform**
-
-  ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
-
-- **Scrum**
-
-  ![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white)
-  ![Kakaotalk](https://img.shields.io/badge/KakaoTalk-FFCD00?style=for-the-badge&logo=kakaotalk&logoColor=black)
-  ![Zoom](https://img.shields.io/badge/Zoom-0B5CFF?style=for-the-badge&logo=zoom&logoColor=white)
-  ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
-  (+ 대면 회의)
-<br>
-
 ## 📌 API
 
 - **카카오맵 API**
@@ -180,6 +180,12 @@ https://github.com/eun1230/sessac_B_teamproject
   - 정보제공에 동의하면 로그인 완료를 알리는 자체제작 팝업으로 변경
 
   - '확인' 버튼을 클릭하면 팝업이 자동으로 닫히며 부모창에서 index.html로 이동
+<br>
+
+## 📍 User Flow
+
+<p align=center><img src="https://github.com/eun1230/sessac_B_teamproject/blob/develop/img/userflow.png" width="800"></p>
+
 <br>
 
 ## 📁 프로젝트 구조
