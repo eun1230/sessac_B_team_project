@@ -17,6 +17,7 @@ body {
   padding: 0;
   background-image: url('./../img/main-frame.png');
   background-size: cover;
+  overflow-x: hidden;
 }
 .backKey {
   display: flex;
